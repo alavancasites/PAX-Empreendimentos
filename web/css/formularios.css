@@ -1,0 +1,10 @@
+form select.error,input.error,select.error,table.errorSummary{border:1px solid #C00}.checkbox .error{background-color:#C00;padding:10px}div.errorSummary,table.errorSummary{padding:7px 7px 12px;margin:0 0 20px;background:#FEE}div.errorSummary{border:2px solid #C00;font-size:.9em;font-size:12px}div.errorMessage{color:red;font-weight:700}div.errorSummary p{font-weight:700;margin:0;padding:5px}div.errorSummary ul{margin:0;padding:0 0 0 20px}div.errorSummary ul li{margin-bottom:5px}label.error{font-weight:700}form input.error,form textarea.error{border:1px solid #C00}
+/*PERSONALIZAR*/
+form input, form select, form textarea { border: 1px solid #cecece; color: #606060; padding: 20px; font-size: 14px;width:100%;box-sizing:border-box }
+::-webkit-input-placeholder {color:#5e5e5e;}
+::-moz-placeholder {color:#5e5e5e;}
+form input:focus, form textarea:focus { border-color:#f00}
+form button { margin-top: 15px; border: none; padding: 18px 45px; color: #FFF; float: right !important; display: inline-block; background: #383839; transition: all .3s linear }
+form button:hover { background: #000; }
+form select { cursor: pointer; }
+.sucesso_msg{border:2px solid #333;padding:10px 0;margin:0 0 20px;background:#eee;font-size:14px;font-weight:700;text-align:center}
