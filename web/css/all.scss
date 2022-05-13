@@ -733,6 +733,9 @@ body{
 	font-family: 'Montserrat', sans-serif;
 	color: #333333;
 }
+option, select{
+	font-family: 'Montserrat', sans-serif !important;
+}
 $cor1: #B87E13;
 a{
 	text-decoration: none;
@@ -894,7 +897,7 @@ a{
 		.frase{
 			position: absolute;
 			left: 20%;
-			top:20%;;
+			top:20%;
 		}
 		.infos{
 			position: absolute;
@@ -1062,6 +1065,15 @@ a{
 	font-size: 16px;
 	background-size: 100% 100%;
 	border: none;
+	transition: all .3 ease;
+	&:hover{
+		color: #fff;
+		text-decoration: none;
+		-webkit-box-shadow: 0px 21px 39px -10px rgba(0,0,0,0.7);
+-moz-box-shadow: 0px 21px 39px -10px rgba(0,0,0,0.7);
+box-shadow: 0px 21px 39px -10px rgba(0,0,0,0.7);
+		transition: all .3 ease;
+	}
 }
 .btn-secundary{
 	background-image: url(img/bt-secundary.jpg);
@@ -1108,6 +1120,9 @@ footer{
 		color: #CEB380;
 		font-size: 16px;
 		margin: 15px 0;
+		&:hover{
+			text-decoration: none;
+		}
 		img{
 			margin-right: 10px;
 			position: relative;
@@ -1534,7 +1549,7 @@ footer{
 			span{
 				width: 30px;
 				height: 30px;
-				background-image: url(img/next1.svg);
+			//	background-image: url(img/next1.svg);
 				background-size: auto 100%;
 				background-repeat: no-repeat;
 				float: right;
@@ -1551,14 +1566,19 @@ footer{
 		}
 		.padding{
 			display: table;
-			width: 96%;
-			padding: 0 20px;
+			width: 100%;
+			padding: 10px 20px;
 			box-sizing: border-box;
 			color: #000000;
+
 		}
 		&:hover{
 			transition: all .3s ease;
 			background: #1F1B2B;
+			a{
+				color: #fff;
+				text-decoration: none;
+			}
 			.padding{
 				background: #1F1B2B;
 				transition: all .3s ease;
@@ -1701,6 +1721,44 @@ footer{
 		}
 	}
 }
+#gallery{
+	div{
+		width: 25%;
+		padding: 8px;
+		box-sizing: border-box;
+		float: left;
+		a{
+			display: table;
+			width: 100%;
+			position: relative;
+			span{
+				position: absolute;
+				background-color: rgba(0, 0, 0, 0.5);
+				color: #fff;
+				width: 100%;
+				height: 100%;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+				top:0;
+				left: 0;
+				font-size: 18px;
+				opacity: 0;
+				transition: all .3s ease;
+			}
+			&:hover{
+			 span{
+				 opacity: 1;
+				 transition: all .3s ease;
+			 }
+			}
+		}
+
+	}
+	div:first-child{
+		width: 50%;
+	}
+}
 @media (max-width: 1680px)
 {
 	.pag-empreendimentos {
@@ -1738,6 +1796,7 @@ footer{
 	.bg-sobre{
 		background-size: auto 100%;
 		background-position-x: -270px;
+		margin-top: 0px;
 	}
 	.bg-sobre2{
 		background-size: auto 100%;
@@ -1780,6 +1839,24 @@ footer{
 		max-width: 200px;
 	}
 }
+@media (min-width: 768px) and (max-width: 1200px)
+{
+	.list .infos{
+		padding: 15px;
+		.espacos{
+			margin-bottom: 10px;
+		}
+	}
+	.descricao{
+		padding: 0;
+		span{
+			padding: 15px;
+		}
+	}
+	.lista-noticias div {
+    width: 30%;
+	}
+}
 @media (min-width: 768px)
 {
   .desktop-hidden{
@@ -1788,6 +1865,15 @@ footer{
 }
 @media (max-width: 768px)
 {
+
+	.bg-conheca {
+		padding: 50px 0 150px;
+    position: relative;
+    margin-bottom: 20px;
+		iframe{
+			height: auto;
+		}
+	}
   .mobile-hidden{
 		display: none !important;
 	}
@@ -1898,31 +1984,15 @@ footer{
 		background-size: auto 50%, auto 80% !important;
 		position: relative;
 		background-image: none !important;
-    padding-top: 90px;
+    padding-top: 70px;
 		.title-bord{
 			position: absolute;
-			top: -180px;
+			top: -130px;
 		}
-		.col-7{
-			text-align: center;
-			img{
-				position: absolute;
-				top:-60px;
-				max-height: 320px;
-				left: 10px;
-			}
-		}
+
 	}
 	.lista-empreendimentos.right{
-		.title-bord{
-			right: -30px;
-		}
-		.col-7{
-			img{
-				right: 10px;
-				left: inherit;
-			}
-		}
+
 	}
 	.pag-empreendimentos {
 		.elemento-bottom{
@@ -1932,7 +2002,6 @@ footer{
 			display: none;
 		}
 		.descricao {
-			margin-top: 260px;
 			background-color: #040C23;
 			padding: 20px;
 			span{

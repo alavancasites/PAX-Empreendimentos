@@ -8,7 +8,7 @@
   <style type="text/css">
     <?php echo file_get_contents ('css/slick.css');
     ?>
-    <?php echo file_get_contents ('css/unite-gallery.css');
+    <?php echo file_get_contents ('css/lightbox.min.css');
     ?>
   </style>
 </head>
@@ -45,32 +45,35 @@
         <div class="clear"></div>
 
         <div class="colunas col-18 off-1">
-          <div id="gallery" class="mt-4 mb-4" style="display:none;">
+          <div id="gallery" class="mt-4 mb-4">
+      			<div>
+              <a href="img/haus.png" data-lightbox="image-1" data-title="SUÍTE CASAL"><img alt="SUÍTE CASAL" src="img/haus.png" class="img-responsive"><span>SUÍTE CASAL</span></a>
+            </div>
 
-      			<img alt="Ello haus" src="img/haus.png"
-      				data-image="img/haus.png">
-
-      			<img alt="Quarto" src="img/quarto.png"
-      				data-image="img/quarto.png">
-
-            <img alt="Ello haus" src="img/haus.png"
-                data-image="img/haus.png">
-
-            <img alt="Ello haus" src="img/haus.png"
-          				data-image="img/haus.png">
-
-          	<img alt="Quarto" src="img/quarto.png"
-          				data-image="img/quarto.png">
-
-            <img alt="Ello haus" src="img/haus.png"
-                    data-image="img/haus.png">
-
-            <img alt="Quarto" src="img/quarto.png"
-                          data-image="img/quarto.png">
-
-            <img alt="Ello haus" src="img/haus.png"
-                      data-image="img/haus.png">
-
+        		<div>
+              <a href="img/haus.png" data-lightbox="image-1" data-title="SUÍTE CASAL"><img alt="Quarto" src="img/quarto.png" class="img-responsive"><span>SUÍTE CASAL</span></a>
+            </div>
+            <div>
+              <a href="img/haus.png" data-lightbox="image-1" data-title="SUÍTE CASAL"><img alt="Quarto" src="img/quarto.png" class="img-responsive"><span>SUÍTE CASAL</span></a>
+            </div>
+            <div>
+              <a href="img/haus.png" data-lightbox="image-1" data-title="SUÍTE CASAL"><img alt="Quarto" src="img/quarto.png" class="img-responsive"><span>SUÍTE CASAL</span></a>
+            </div>
+            <div>
+              <a href="img/haus.png" data-lightbox="image-1" data-title="SUÍTE CASAL"><img alt="Quarto" src="img/quarto.png" class="img-responsive"><span>SUÍTE CASAL</span></a>
+            </div>
+            <div>
+              <a href="img/haus.png" data-lightbox="image-1" data-title="SUÍTE CASAL"><img alt="Quarto" src="img/quarto.png" class="img-responsive"><span>SUÍTE CASAL</span></a>
+            </div>
+            <div>
+              <a href="img/haus.png" data-lightbox="image-1" data-title="SUÍTE CASAL"><img alt="Quarto" src="img/quarto.png" class="img-responsive"><span>SUÍTE CASAL</span></a>
+            </div>
+            <div>
+              <a href="img/haus.png" data-lightbox="image-1" data-title="SUÍTE CASAL"><img alt="Quarto" src="img/quarto.png" class="img-responsive"><span>SUÍTE CASAL</span></a>
+            </div>
+            <div>
+              <a href="img/haus.png" data-lightbox="image-1" data-title="SUÍTE CASAL"><img alt="Quarto" src="img/quarto.png" class="img-responsive"><span>SUÍTE CASAL</span></a>
+            </div>
       		</div>
         </div>
 
@@ -89,11 +92,11 @@
       <div class="colunas col-16 off-2 mb-3">
         <div class="slide-plantas">
           <div>
-            <img src="img/planta.png" class="img-responsive center-block" alt="Planta">
+            <a href="img/planta.png" data-lightbox="image-1" data-title="Planta haus"><img src="img/planta.png" class="img-responsive center-block" alt="Planta"></a>
             <h3> <strong>Planta Haus</strong> <small>72m² | 2 suíte + quarto</small></h3>
           </div>
           <div>
-            <img src="img/planta.png" class="img-responsive center-block" alt="Planta">
+            <a href="img/planta.png" data-lightbox="image-1" data-title="Planta haus"><img src="img/planta.png" class="img-responsive center-block" alt="Planta"></a>
             <h3> <strong>Planta Haus</strong> <small>72m² | 2 suíte + quarto</small></h3>
           </div>
         </div>
@@ -227,20 +230,11 @@
     <div class="clear"></div>
   <?php include("scripts.php"); ?>
   <script type="text/javascript" src="gzip/gzip.php?arquivo=../jquery/jquery.slick.min.js&amp;cid=<?=$cid?>"></script>
-  <script type="text/javascript" src="gzip/gzip.php?arquivo=../jquery/unitegallery.js&amp;cid=<?=$cid?>"></script>
-  <script type="text/javascript" src="gzip/gzip.php?arquivo=../jquery/ug-theme-grid.js&amp;cid=<?=$cid?>"></script>
+  <script type="text/javascript" src="gzip/gzip.php?arquivo=../jquery/lightbox.js&amp;cid=<?=$cid?>"></script>
   <script type="text/javascript">
     $(document).ready(function() {
 
-      jQuery("#gallery").unitegallery({
-      	grid_num_cols:2,
-      	gridpanel_vertical_scroll:false,
-      	gridpanel_grid_align: "top",
-      	thumb_width:280,
-      	thumb_height:195,
-        thumb_image_overlay_effect:true,
-      	thumb_image_overlay_type: "sepia",
-      });
+
 
       $('.slide-plantas').slick({
         dots: false,

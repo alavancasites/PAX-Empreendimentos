@@ -9,23 +9,23 @@
 			<a href="#" class="redes-sociais mt-5"><img src="img/whatsapp.svg" alt="whatsapp"></a>
 		</div>
 		<div class="colunas col-4 off-1 mobile-hidden">
-			<a href="#" class="tit">navegação</a>
-			<a href="#">Home</a>
-			<a href="#">Sobre nós</a>
-			<a href="#">Novidades</a>
-			<a href="#">Contato</a>
+			<a href="javascript:;" class="tit">navegação</a>
+			<a href="inicial">Home</a>
+			<a href="sobre">Sobre nós</a>
+			<a href="novidades">Novidades</a>
+			<a href="contato">Contato</a>
 			<a href="#">Portal do Cliente</a>
 		</div>
 		<div class="colunas col-4 mobile-hidden">
-			<a href="#" class="tit">Empreendimentos</a>
-			<a href="#">Acqua Residence</a>
-			<a href="#">Darci Luiz</a>
-			<a href="#">Plaza Rieck</a>
-			<a href="#">Contato</a>
-			<a href="#">Ello Haus</a>
+			<a href="empreendimento" class="tit">Empreendimentos</a>
+			<a href="empreendimento">Acqua Residence</a>
+			<a href="empreendimento">Darci Luiz</a>
+			<a href="empreendimento">Plaza Rieck</a>
+			<a href="empreendimento">Contato</a>
+			<a href="empreendimento">Ello Haus</a>
 		</div>
 		<div class="colunas col-5">
-			<a href="#" class="tit">Central de atendimento</a>
+			<a href="contato" class="tit">Central de atendimento</a>
 			<a href="tell:+554933163020" class="fone"><strong><img src="img/fone.svg" alt="+55  (49) 3316-3020"> +55  (49) 3316-3020</strong></a>
 			<a href="mailto:paxatendimento@pax.com.br"><img src="img/mail.svg" alt="paxatendimento@pax.com.br"> paxatendimento@pax.com.br</a>
 		</div>

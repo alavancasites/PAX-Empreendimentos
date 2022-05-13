@@ -45,46 +45,46 @@
           <a href="novidade">
             <img src="img/noticia.png" class="img-responsive" alt="É um fato conhecido de todos que um leitor se distrairá.">
           </a>
-          <div class="padding">
-            <p><a href="novidade">Implantação</a></p>
-            <h2 class="mt-2 mb-2"><a href="novidade"><strong>É um fato conhecido de todos que um leitor se distrairá.</strong><span></span></a></h2>
-          </div>
+          <a href="novidade" class="padding">
+            <p>Implantação</p>
+            <h2 class="mt-2 mb-2"><strong>É um fato conhecido de todos que um leitor se distrairá.</strong><span></span></h2>
+          </a>
         </div>
         <div>
           <a href="novidade">
             <img src="img/noticia.png" class="img-responsive" alt="É um fato conhecido de todos que um leitor se distrairá.">
           </a>
-          <div class="padding">
-            <p><a href="novidade">Implantação</a></p>
-            <h2 class="mt-2 mb-2"><a href="novidade"><strong>É um fato conhecido de todos que um leitor se distrairá.</strong><span></span></a></h2>
-          </div>
+          <a href="novidade" class="padding">
+            <p>Implantação</p>
+            <h2 class="mt-2 mb-2"><strong>É um fato conhecido de todos que um leitor se distrairá.</strong><span></span></h2>
+          </a>
         </div>
         <div>
           <a href="novidade">
             <img src="img/noticia.png" class="img-responsive" alt="É um fato conhecido de todos que um leitor se distrairá.">
           </a>
-          <div class="padding">
-            <p><a href="novidade">Implantação</a></p>
-            <h2 class="mt-2 mb-2"><a href="novidade"><strong>É um fato conhecido de todos que um leitor se distrairá.</strong><span></span></a></h2>
-          </div>
+          <a href="novidade" class="padding">
+            <p>Implantação</p>
+            <h2 class="mt-2 mb-2"><strong>É um fato conhecido de todos que um leitor se distrairá.</strong><span></span></h2>
+          </a>
         </div>
         <div>
           <a href="novidade">
             <img src="img/noticia.png" class="img-responsive" alt="É um fato conhecido de todos que um leitor se distrairá.">
           </a>
-          <div class="padding">
-            <p><a href="novidade">Implantação</a></p>
-            <h2 class="mt-2 mb-2"><a href="novidade"><strong>É um fato conhecido de todos que um leitor se distrairá.</strong><span></span></a></h2>
-          </div>
+          <a href="novidade" class="padding">
+            <p>Implantação</p>
+            <h2 class="mt-2 mb-2"><strong>É um fato conhecido de todos que um leitor se distrairá.</strong><span></span></h2>
+          </a>
         </div>
         <div>
           <a href="novidade">
             <img src="img/noticia.png" class="img-responsive" alt="É um fato conhecido de todos que um leitor se distrairá.">
           </a>
-          <div class="padding">
-            <p><a href="novidade">Implantação</a></p>
-            <h2 class="mt-2 mb-2"><a href="novidade"><strong>É um fato conhecido de todos que um leitor se distrairá.</strong><span></span></a></h2>
-          </div>
+          <a href="novidade" class="padding">
+            <p>Implantação</p>
+            <h2 class="mt-2 mb-2"><strong>É um fato conhecido de todos que um leitor se distrairá.</strong><span></span></h2>
+          </a>
         </div>
       </div>
       <div class="paginacao">
