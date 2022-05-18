@@ -31,7 +31,7 @@
         <h2><strong>Sobre nós</strong></h2>
       </div>
       <div class="colunas col-14">
-        <h3 class="cor"><img src="img/pax-empreendimentos.png" class="img-responsive" alt="PAX Empreendimentos"></h3>
+        <h3 class="cor uppercase"><strong>PAX Empreendimentos</strong></h3>
         <p class="mt-3">
           Nós somos a PAX Empreendimentos e vamos ressignificar o segmento em Chapecó. Nosso propósito é trazer para o mercado soluções arrojadas e rentáveis aplicando tecnologias em soluções inovadoras e transformando o status quo do investidor local.
 
@@ -93,7 +93,7 @@
         <p class="mt-2">
           Ou seja, permutamos com o cliente o terreno por área construída. Na prática, funciona assim: o proprietário de um terreno nos procura para que nossos especialistas façam uma análise de viabilidade e um estudo preliminar do projeto arquitetônico com um escritório de nossa escolha.
         </p>
-        <h3 class="cor mt-4"><img width="180" src="img/pax-empreendimentos.png" class="img-responsive" alt="PAX Empreendimentos"></h3>
+        <h3 class="cor mt-4 uppercase"><strong>PAX Empreendimentos</strong></h3>
       </div>
     </div>
   </section>

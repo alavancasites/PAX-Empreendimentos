@@ -891,18 +891,78 @@ a{
 .slick-dots li button{
 	background: #7F7F8F !important;
 }
-.banner{
-	div{
-		position: relative;
-		.frase{
-			position: absolute;
-			left: 20%;
-			top:20%;
+
+.banner {
+	.frase{
+		font-size: 48px;
+		line-height: 60px;
+		width: 550px;
+		background-repeat: no-repeat;
+		background-image: url(img/span-banner.png);
+		padding: 90px 0 0 40px;
+		position: absolute;
+		left: 20%;
+		top:20%;
+		span{
+			background: rgb(238,221,115);
+			background: linear-gradient(90deg, rgba(238,221,115,1) 0%, rgba(186,130,23,1) 52%, rgba(186,130,23,1) 100%);
+			color: #000;
+			padding: 15px 25px;
+			font-size: 17px;
+			text-transform: uppercase;
 		}
-		.infos{
-			position: absolute;
-			right: 20%;;
-			top:70%;
+		a{
+			color: #fff;
+
+			&:hover{
+				text-decoration: none;
+			}
+		}
+		small{
+			margin-top: 30px;
+			display: table;
+			font-size: 16px;
+			line-height: 28px;
+			margin-bottom: 20px;
+		}
+	}
+	.infos{
+		right: 18%;
+		top: 65%;
+		position: absolute;
+		width: 280px;
+		p{
+			color: #fff;
+			font-size: 20px;
+			small{
+				display: table;
+				font-size: 14px;
+				color: #C4C4C4;
+			}
+		}
+		.espacos{
+			display: flex;
+			margin-bottom: 58px;
+			align-items: end;
+			flex-direction: row;
+			justify-content: center;
+			margin-top: 15px;
+			background-image: url(img/line.png);
+			background-repeat: no-repeat;
+			background-size: auto 100%;
+
+			span{
+				text-align: center;
+				color: #CEB380;
+				font-size: 14px;
+				box-sizing: border-box;
+				padding: 7px;
+				img{
+					width: 30px;
+					margin: 0 auto 5px;
+					float: none;
+				}
+			}
 		}
 	}
 }
@@ -1025,7 +1085,7 @@ a{
 	.elemento{
 		position: absolute;
 		left: 0;
-		top:-320px;
+		top:-240px;
 	}
 	.elemento1{
 		position: absolute;
@@ -1066,13 +1126,15 @@ a{
 	background-size: 100% 100%;
 	border: none;
 	transition: all .3 ease;
+	border: 1px solid transparent;
 	&:hover{
 		color: #fff;
 		text-decoration: none;
 		-webkit-box-shadow: 0px 21px 39px -10px rgba(0,0,0,0.7);
--moz-box-shadow: 0px 21px 39px -10px rgba(0,0,0,0.7);
-box-shadow: 0px 21px 39px -10px rgba(0,0,0,0.7);
+		-moz-box-shadow: 0px 21px 39px -10px rgba(0,0,0,0.7);
+		box-shadow: 0px 21px 39px -10px rgba(0,0,0,0.7);
 		transition: all .3 ease;
+		border: 1px solid $cor1;
 	}
 }
 .btn-secundary{
@@ -1086,6 +1148,16 @@ box-shadow: 0px 21px 39px -10px rgba(0,0,0,0.7);
 	background-size: 100% 100%;
 	border: none;
 	font-weight: 600;
+	border: 1px solid transparent;
+	transition: all .3 ease;
+	&:hover{
+		text-decoration: none;
+		-webkit-box-shadow: 0px 1px 12px 0px rgba(0,0,0,0.45);
+		-moz-box-shadow: 0px 1px 12px 0px rgba(0,0,0,0.45);
+		box-shadow: 0px 1px 12px 0px rgba(0,0,0,0.45);
+		transition: all .3 ease;
+		border: 1px solid $cor1;
+	}
 }
 .btn-lg{
 	padding: 22px 30px;
@@ -1549,9 +1621,6 @@ footer{
 			span{
 				width: 30px;
 				height: 30px;
-			//	background-image: url(img/next1.svg);
-				background-size: auto 100%;
-				background-repeat: no-repeat;
 				float: right;
 				margin-top: 10px;
 				background-position: center center;
@@ -1591,9 +1660,6 @@ footer{
 				a{
 				 color: #fff;
 				 transition: all .3s ease;
-			 }
-			 span{
-				 background-image: url(img/next.svg);
 			 }
 			}
 		}
@@ -1759,6 +1825,7 @@ footer{
 		width: 50%;
 	}
 }
+
 @media (max-width: 1680px)
 {
 	.pag-empreendimentos {
@@ -1808,17 +1875,7 @@ footer{
 	.time .efeito{
 		width: 160px;
 	}
-	.banner {
-		div {
-			.frase{
-				left: 91px;
-				max-width: 450px;
-			}
-			.infos{
-				right: 91px;
-			}
-		}
-	}
+
 	.empreendimentos-inicial {
 		.elemento {
 	    top: -120px;
@@ -1839,8 +1896,33 @@ footer{
 		max-width: 200px;
 	}
 }
+@media (max-width: 1440px)
+{
+	.banner {
+		.frase{
+			font-size: 40px;
+			line-height: 50px;
+			left: 119px;
+		}
+		.infos{
+			right: 160px;
+		}
+	}
+}
 @media (min-width: 768px) and (max-width: 1200px)
 {
+	.banner {
+		.frase{
+			left: 40px;
+			top:100px;
+		}
+		.infos{
+			right: inherit;
+			left: 40px;
+			top:inherit;
+			bottom: 20px;
+		}
+	}
 	.list .infos{
 		padding: 15px;
 		.espacos{
@@ -2110,12 +2192,32 @@ footer{
     right: 35% !important;
 	}
 	.banner {
-		div {
-			.frase{
-				width: 200px;
-		    left: 10px;
-		    top: 35%;
+		.frase{
+			width: 200px;
+			left: 10px;
+			top: 35%;
+			font-size: 18px;
+			line-height: 28px;
+			padding: 15px;
+			background-size: 10%;
+
+			small{
+				margin-top: 10px;
+		    display: table;
+		    font-size: 11px;
+		    line-height: 19px;
+		    margin-bottom: 10px;
+				display: none;
 			}
+			span{
+				padding: 8px 15px;
+				font-size: 13px;
+				display: table;
+				margin-top: 20px;
+			}
+		}
+		.infos{
+			display: none;
 		}
 	}
 	.title {

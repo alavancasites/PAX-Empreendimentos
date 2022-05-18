@@ -26,7 +26,7 @@
       <div class="clear"></div>
       <div class="mt-4">
         <div class="list">
-          <img src="img/foto1.png" alt="Acqua Residence ">
+          <a href="empreendimento"><img src="img/foto1.png" alt="Acqua Residence "></a>
           <div class="infos">
             <h3>Acqua Residence </h3>
             <p>Em construção</p>
@@ -53,7 +53,7 @@
           </div>
         </div>
         <div class="list right">
-          <img src="img/darci.png" alt="Darci Luiz ">
+          <a href="empreendimento"><img src="img/darci.png" alt="Darci Luiz "></a>
           <div class="infos">
             <h3>Darci Luiz </h3>
             <p>Em construção</p>
@@ -83,7 +83,7 @@
       <div class="clear"></div>
       <div class="mt-4">
         <div class="list">
-          <img src="img/foto1.png" alt="Acqua Residence ">
+          <a href="empreendimento"><img src="img/foto1.png" alt="Acqua Residence "></a>
           <div class="infos">
             <h3>Acqua Residence </h3>
             <p>Em construção</p>
@@ -110,7 +110,7 @@
           </div>
         </div>
         <div class="list right">
-          <img src="img/darci.png" alt="Darci Luiz ">
+          <a href="empreendimento"><img src="img/darci.png" alt="Darci Luiz "></a>
           <div class="infos">
             <h3>Darci Luiz </h3>
             <p>Em construção</p>
