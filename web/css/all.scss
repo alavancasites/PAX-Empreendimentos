@@ -910,13 +910,19 @@ a{
 			padding: 15px 25px;
 			font-size: 17px;
 			text-transform: uppercase;
+			transition: all .3s ease;
 		}
 		a{
 			color: #fff;
 
 			&:hover{
 				text-decoration: none;
+				span{
+					background: linear-gradient(90deg, rgba(238,221,115,1) 0%, rgba(186,130,23,1) 100%), rgba(186,130,23,1) 52%;
+					transition: all .3s ease;
+				}
 			}
+
 		}
 		small{
 			margin-top: 30px;
