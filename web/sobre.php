@@ -3,7 +3,7 @@
 
 <head profile="http://gmpg.org/xfn/11">
   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-  <title>Sonre Nós - PAX Empreendimentos</title>
+  <title>Sonbe Nós - PAX Empreendimentos</title>
   <?php include("header.php"); ?>
 </head>
 
