@@ -25,7 +25,21 @@ class Empreendimento extends BaseEmpreendimento
     
     public function behaviors(){
     	return array(
-			'galeria' => array(
+			'foto' => array(
+				'class' => 'GalleryBehavior',
+				'idAttribute' => 'gallery_id',
+				'versions' => array(
+					'small' => array(
+						'centeredpreview' => array(200, 200),
+					),
+					'medium' => array(
+						'resize' => array(800, null),
+					)
+				),
+				'name' => true,
+				'description' => true,
+			 ),
+			'planta' => array(
 				'class' => 'GalleryBehavior',
 				'idAttribute' => 'gallery_id1',
 				'versions' => array(
@@ -36,9 +50,10 @@ class Empreendimento extends BaseEmpreendimento
 						'resize' => array(800, null),
 					)
 				),
-				'name' => false,
+				'name' => true,
 				'description' => true,
-			 )
+			 ),
+        
         	//{{behaviors}}
         );
     }

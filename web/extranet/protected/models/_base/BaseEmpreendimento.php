@@ -11,11 +11,14 @@
  *
  * @property integer $idempreendimento
  * @property integer $emp_categoria_idemp_categoria
-  * @property string $titulo
+ * @property integer $ordem
+ * @property string $titulo
+ * @property string $banner
+ * @property string $slogan
  * @property string $chamada
  * @property string $capa
  * @property string $imagem
-  * @property integer $gallery_id
+ * @property integer $gallery_id
  * @property integer $gallery_id1
  * @property string $fundacao
  * @property string $estrutura
@@ -25,6 +28,7 @@
  * @property string $titulo_2
  * @property string $texto_2
  * @property string $suite
+ * @property string $quarto
  * @property string $garagem
  * @property string $area_lazer
  * @property string $metragem
@@ -33,12 +37,16 @@
  * @property string $terreno
  * @property string $pavimentos
  * @property string $adicional_1
+ * @property string $info_1
  * @property string $adicional_2
+ * @property string $info_2
  * @property string $adicional_3
+ * @property string $info_3
  * @property string $adicional_4
+ * @property string $info_4
  * @property string $endereco
- * @property string $cidade_estado
  * @property string $mapa
+ * @property string $cidade_estado
  * @property string $ativo
  *
  * @property EmpCategoria $empCategoria
@@ -66,16 +74,15 @@ abstract class BaseEmpreendimento extends GxActiveRecord {
 
 	public function rules() {
 		return array(
-			array('emp_categoria_idemp_categoria, gallery_id, gallery_id1', 'required'),
-			array('emp_categoria_idemp_categoria, gallery_id, gallery_id1', 'numerical', 'integerOnly'=>true),
-			array('fundacao, estrutura, vadacao, instalacao, acabamento, suite, garagem, area_lazer, metragem, elevador, ap_andar, terreno, pavimentos, adicional_1, adicional_2, adicional_3, adicional_4, endereco, cidade_estado', 'length', 'max'=>100),
-			array('titulo', 'length', 'max'=>45),
-			array('capa, imagem', 'length', 'max'=>140),
+			array('emp_categoria_idemp_categoria', 'required'),
+			array('emp_categoria_idemp_categoria, ordem, gallery_id, gallery_id1', 'numerical', 'integerOnly'=>true),
+			array('titulo, fundacao, estrutura, vadacao, instalacao, acabamento, suite, quarto, garagem, area_lazer, metragem, elevador, ap_andar, terreno, pavimentos, adicional_1, info_1, adicional_2, info_2, adicional_3, info_3, adicional_4, info_4, endereco, cidade_estado', 'length', 'max'=>100),
+			array('banner, capa, imagem', 'length', 'max'=>140),
 			array('titulo_2', 'length', 'max'=>200),
 			array('ativo', 'length', 'max'=>1),
-			array('chamada, texto_2, mapa', 'safe'),
-			array('titulo, chamada, capa, imagem, fundacao, estrutura, vadacao, instalacao, acabamento, titulo_2, texto_2, suite, garagem, area_lazer, metragem, elevador, ap_andar, terreno, pavimentos, adicional_1, adicional_2, adicional_3, adicional_4, endereco, cidade_estado, mapa, ativo', 'default', 'setOnEmpty' => true, 'value' => null),
-			array('idempreendimento, emp_categoria_idemp_categoria, titulo, chamada, capa, imagem, gallery_id, gallery_id1, fundacao, estrutura, vadacao, instalacao, acabamento, titulo_2, texto_2, suite, garagem, area_lazer, metragem, elevador, ap_andar, terreno, pavimentos, adicional_1, adicional_2, adicional_3, adicional_4, endereco, cidade_estado, mapa, ativo', 'safe', 'on'=>'search'),
+			array('slogan, chamada, texto_2, mapa', 'safe'),
+			array('ordem, titulo, banner, slogan, chamada, capa, imagem, fundacao, estrutura, vadacao, instalacao, acabamento, titulo_2, texto_2, suite, quarto, garagem, area_lazer, metragem, elevador, ap_andar, terreno, pavimentos, adicional_1, info_1, adicional_2, info_2, adicional_3, info_3, adicional_4, info_4, endereco, mapa, cidade_estado, ativo', 'default', 'setOnEmpty' => true, 'value' => null),
+			array('idempreendimento, emp_categoria_idemp_categoria, ordem, titulo, banner, slogan, chamada, capa, imagem, gallery_id, gallery_id1, fundacao, estrutura, vadacao, instalacao, acabamento, titulo_2, texto_2, suite, quarto, garagem, area_lazer, metragem, elevador, ap_andar, terreno, pavimentos, adicional_1, info_1, adicional_2, info_2, adicional_3, info_3, adicional_4, info_4, endereco, mapa, cidade_estado, ativo', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -93,38 +100,46 @@ abstract class BaseEmpreendimento extends GxActiveRecord {
 	public function attributeLabels() {
 		return array(
 			'idempreendimento' => Yii::t('app', 'Idempreendimento'),
-			'emp_categoria_idemp_categoria' => Yii::t('app', 'Categoria'),
+			'emp_categoria_idemp_categoria' => null,
+			'ordem' => Yii::t('app', 'Ordem'),
 			'titulo' => Yii::t('app', 'Titulo'),
+			'banner' => Yii::t('app', 'Banner'),
+			'slogan' => Yii::t('app', 'Slogan'),
 			'chamada' => Yii::t('app', 'Chamada'),
 			'capa' => Yii::t('app', 'Capa'),
 			'imagem' => Yii::t('app', 'Imagem'),
-			'gallery_id' => Yii::t('app', 'Gaaleria de fotos'),
-			'gallery_id1' => Yii::t('app', 'Planta'),
-			'fundacao' => Yii::t('app', 'Fundação'),
+			'gallery_id' => null,
+			'gallery_id1' => null,
+			'fundacao' => Yii::t('app', 'Fundacao'),
 			'estrutura' => Yii::t('app', 'Estrutura'),
-			'vadacao' => Yii::t('app', 'Vedação'),
-			'instalacao' => Yii::t('app', 'Instalação'),
+			'vadacao' => Yii::t('app', 'Vadacao'),
+			'instalacao' => Yii::t('app', 'Instalacao'),
 			'acabamento' => Yii::t('app', 'Acabamento'),
 			'titulo_2' => Yii::t('app', 'Titulo 2'),
 			'texto_2' => Yii::t('app', 'Texto 2'),
-			'suite' => Yii::t('app', 'Suíte'),
+			'suite' => Yii::t('app', 'Suite'),
+			'quarto' => Yii::t('app', 'Quarto'),
 			'garagem' => Yii::t('app', 'Garagem'),
-			'area_lazer' => Yii::t('app', 'Área de lazer'),
+			'area_lazer' => Yii::t('app', 'Area Lazer'),
 			'metragem' => Yii::t('app', 'Metragem'),
 			'elevador' => Yii::t('app', 'Elevador'),
 			'ap_andar' => Yii::t('app', 'Ap Andar'),
 			'terreno' => Yii::t('app', 'Terreno'),
 			'pavimentos' => Yii::t('app', 'Pavimentos'),
 			'adicional_1' => Yii::t('app', 'Adicional 1'),
+			'info_1' => Yii::t('app', 'Info 1'),
 			'adicional_2' => Yii::t('app', 'Adicional 2'),
+			'info_2' => Yii::t('app', 'Info 2'),
 			'adicional_3' => Yii::t('app', 'Adicional 3'),
+			'info_3' => Yii::t('app', 'Info 3'),
 			'adicional_4' => Yii::t('app', 'Adicional 4'),
-			'endereco' => Yii::t('app', 'Endereço'),
-			'cidade_estado' => Yii::t('app', 'Cidade/Estado'),
+			'info_4' => Yii::t('app', 'Info 4'),
+			'endereco' => Yii::t('app', 'Endereco'),
 			'mapa' => Yii::t('app', 'Mapa'),
+			'cidade_estado' => Yii::t('app', 'Cidade Estado'),
 			'ativo' => Yii::t('app', 'Ativo'),
-			'empCategoria' => Yii::t('app', 'Categoria'),
-			'gallery' => Yii::t('app', 'Galeria de fotos'),
+			'empCategoria' => null,
+			'gallery' => null,
 		);
 	}
 
@@ -133,7 +148,10 @@ abstract class BaseEmpreendimento extends GxActiveRecord {
 
 		$criteria->compare('idempreendimento', $this->idempreendimento);
 		$criteria->compare('emp_categoria_idemp_categoria', $this->emp_categoria_idemp_categoria);
+		$criteria->compare('ordem', $this->ordem);
 		$criteria->compare('titulo', $this->titulo, true);
+		$criteria->compare('banner', $this->banner, true);
+		$criteria->compare('slogan', $this->slogan, true);
 		$criteria->compare('chamada', $this->chamada, true);
 		$criteria->compare('capa', $this->capa, true);
 		$criteria->compare('imagem', $this->imagem, true);
@@ -147,6 +165,7 @@ abstract class BaseEmpreendimento extends GxActiveRecord {
 		$criteria->compare('titulo_2', $this->titulo_2, true);
 		$criteria->compare('texto_2', $this->texto_2, true);
 		$criteria->compare('suite', $this->suite, true);
+		$criteria->compare('quarto', $this->quarto, true);
 		$criteria->compare('garagem', $this->garagem, true);
 		$criteria->compare('area_lazer', $this->area_lazer, true);
 		$criteria->compare('metragem', $this->metragem, true);
@@ -155,12 +174,16 @@ abstract class BaseEmpreendimento extends GxActiveRecord {
 		$criteria->compare('terreno', $this->terreno, true);
 		$criteria->compare('pavimentos', $this->pavimentos, true);
 		$criteria->compare('adicional_1', $this->adicional_1, true);
+		$criteria->compare('info_1', $this->info_1, true);
 		$criteria->compare('adicional_2', $this->adicional_2, true);
+		$criteria->compare('info_2', $this->info_2, true);
 		$criteria->compare('adicional_3', $this->adicional_3, true);
+		$criteria->compare('info_3', $this->info_3, true);
 		$criteria->compare('adicional_4', $this->adicional_4, true);
+		$criteria->compare('info_4', $this->info_4, true);
 		$criteria->compare('endereco', $this->endereco, true);
-		$criteria->compare('cidade_estado', $this->cidade_estado, true);
 		$criteria->compare('mapa', $this->mapa, true);
+		$criteria->compare('cidade_estado', $this->cidade_estado, true);
 		$criteria->compare('ativo', $this->ativo, true);
 
 		return new CActiveDataProvider($this, array(

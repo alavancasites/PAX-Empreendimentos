@@ -14,13 +14,7 @@
   <div class="clear"></div>
   <section class="banner-interno mb-4" style="background-image: url(img/banner-empreendimento.jpg)">
     <div class="container">
-      <h1>
-        <a href="empreendimento">Home | <strong>Empreendimentos</strong></a>
-        <strong>
-          Nosso DNA conecta
-          histórias de sucesso
-          aos nossos clientes
-        </strong>
+      <h1><a href="empreendimento">Home | <strong>Empreendimentos</strong></a><strong>Nosso DNA conecta histórias de sucesso aos nossos clientes</strong>
       </h1>
     </div>
   </section>

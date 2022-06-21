@@ -22,7 +22,7 @@ $form = new CActiveForm();
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
 <title>Contato - PAX Empreendimentos</title>
 <?php include("header.php"); ?>
-<style type="text/css"><?php echo file_get_contents ('css/slick.css');?><?php echo file_get_contents ('css/unite-gallery.css');?></style>
+<style type="text/css"><?php echo file_get_contents ('css/slick.css');?><?php echo file_get_contents ('css/unite-gallery.css');?><?php echo file_get_contents ('css/formularios.css');?></style>
 </head>
 <body>
   <header>
@@ -83,9 +83,8 @@ $form = new CActiveForm();
               <?php echo $form->textField($model,'telefone',array('class'=>'colunas col-5 alpha','maxlength'=>100,'placeholder'=>$model->getAttributeLabel('telefone'))); ?>
               <?php echo $form->textField($model,'assunto',array('class'=>'colunas col-5 omega','maxlength'=>100,'placeholder'=>$model->getAttributeLabel('assunto'))); ?>
               <?php echo $form->textArea($model,'mensagem',array('rows'=>'6','cols'=>'40','placeholder'=>'Mensagem','class'=>'')); ?>
-              <button class="btn-secundary mt-1" type="button" name="button">Enviar</button>
+              <button class="btn-secundary mt-1" type="submit" name="button">Enviar</button>
             </form>            
-          
           </div>
         </div>
       </div>

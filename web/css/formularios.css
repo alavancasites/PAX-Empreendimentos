@@ -4,7 +4,5 @@ form input, form select, form textarea { border: 1px solid #cecece; color: #6060
 ::-webkit-input-placeholder {color:#5e5e5e;}
 ::-moz-placeholder {color:#5e5e5e;}
 form input:focus, form textarea:focus { border-color:#f00}
-form button { margin-top: 15px; border: none; padding: 18px 45px; color: #FFF; float: right !important; display: inline-block; background: #383839; transition: all .3s linear }
-form button:hover { background: #000; }
 form select { cursor: pointer; }
 .sucesso_msg{border:2px solid #333;padding:10px 0;margin:0 0 20px;background:#eee;font-size:14px;font-weight:700;text-align:center}

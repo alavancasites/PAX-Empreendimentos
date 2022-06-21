@@ -1,3 +1,6 @@
+<?
+include_once("extranet/autoload.php");
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br">
 <head profile="http://gmpg.org/xfn/11">
@@ -20,119 +23,41 @@
     <div class="container">
       <h2 class="title text-center mb-5 mt-5"><span> mercado moderno</span> e sustentável</h2>
       <div class="clear"></div>
-      <div class="mt-4">
-        <div class="list">
-          <a href="empreendimento"><img src="img/foto1.png" alt="Acqua Residence "></a>
-          <div class="infos">
-            <h3>Acqua Residence </h3>
-            <p>Em construção</p>
-            <div class="espacos">
-              <span>
-                <img src="img/cama.svg" alt="Suítes"> <br>
-                Suíte + 1
-              </span>
-              <span>|</span>
-              <span>
-                <img src="img/home.svg" alt="Metros"> <br>
-                72 a 84m²
-              </span>
-              <span>|</span>
-              <span>
-                <img src="img/carro.svg" alt="Vagas"> <br>
-                1 vaga
-              </span>
-
+      <div class="">
+        <?php
+          $direita = 0;
+          $clear = 0;
+          $criteria = new CDbCriteria();
+          $criteria->order = 'idempreendimento desc';
+          $criteria->addCondition("ativo = 1");
+          $empreendimentos = Empreendimento::model()->findAll($criteria);
+          foreach($empreendimentos as $empreendimento) {
+            $direita++;
+            $clear++;
+        ?>
+          <div class="list right">
+            <a href="empreendimento"><img src="img/darci.png" alt="Darci Luiz "></a>
+            <div class="infos">
+              <h3><?=$empreendimento->titulo?></h3>
+              <p><?=$empreendimento->empCategoria?></p>
+              <div class="espacos">
+                <span><img src="img/cama.svg" alt="Suítes"> <br><?=$empreendimento->suite?></span>
+                <span>|</span>
+                <span><img src="img/home.svg" alt="Metros"> <br>72 a 84m²</span>
+                <span> |</span>
+                <span><img src="img/carro.svg" alt="Vagas"> <br>1 vaga</span>
+              </div>
+              <a href="empreendimento" class="bt">
+                saiba mais
+              </a>
             </div>
-            <a href="empreendimento" class="bt">
-              saiba mais
-            </a>
           </div>
-        </div>
-        <div class="list right">
-          <a href="empreendimento"><img src="img/darci.png" alt="Darci Luiz "></a>
-          <div class="infos">
-            <h3>Darci Luiz </h3>
-            <p>Em construção</p>
-            <div class="espacos">
-              <span>
-                <img src="img/cama.svg" alt="Suítes"> <br>
-                Suíte + 1
-              </span>
-              <span>|</span>
-              <span>
-                <img src="img/home.svg" alt="Metros"> <br>
-                72 a 84m²
-              </span>
-              <span> |</span>
-              <span>
-                <img src="img/carro.svg" alt="Vagas"> <br>
-                1 vaga
-              </span>
-
-            </div>
-            <a href="empreendimento" class="bt">
-              saiba mais
-            </a>
-          </div>
-        </div>
+        <?php
+         }
+        ?>
+        <div class="clear"></div>
       </div>
       <div class="clear"></div>
-      <div class="mt-4">
-        <div class="list">
-          <a href="empreendimento"><img src="img/foto1.png" alt="Acqua Residence "></a>
-          <div class="infos">
-            <h3>Acqua Residence </h3>
-            <p>Em construção</p>
-            <div class="espacos">
-              <span>
-                <img src="img/cama.svg" alt="Suítes"> <br>
-                Suíte + 1
-              </span>
-              <span>|</span>
-              <span>
-                <img src="img/home.svg" alt="Metros"> <br>
-                72 a 84m²
-              </span>
-              <span>|</span>
-              <span>
-                <img src="img/carro.svg" alt="Vagas"> <br>
-                1 vaga
-              </span>
-
-            </div>
-            <a href="empreendimento" class="bt">
-              saiba mais
-            </a>
-          </div>
-        </div>
-        <div class="list right">
-          <a href="empreendimento"><img src="img/darci.png" alt="Darci Luiz "></a>
-          <div class="infos">
-            <h3>Darci Luiz </h3>
-            <p>Em construção</p>
-            <div class="espacos">
-              <span>
-                <img src="img/cama.svg" alt="Suítes"> <br>
-                Suíte + 1
-              </span>
-              <span>|</span>
-              <span>
-                <img src="img/home.svg" alt="Metros"> <br>
-                72 a 84m²
-              </span>
-              <span> |</span>
-              <span>
-                <img src="img/carro.svg" alt="Vagas"> <br>
-                1 vaga
-              </span>
-
-            </div>
-            <a href="empreendimento" class="bt">
-              saiba mais
-            </a>
-          </div>
-        </div>
-      </div>
     </div>
   </section>
   <div class="clear"></div>

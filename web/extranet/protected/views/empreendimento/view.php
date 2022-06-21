@@ -30,8 +30,26 @@ $this->breadcrumbs[] = Yii::t('app','Visualizar');
         </div>
         <div class="formSep">
           <dl class="dl-horizontal">
+            <dt><?=Util::formataTexto($model->getAttributeLabel('ordem'));?></dt>
+            <dd><?=Util::formataTexto($model->ordem)?></dd>
+          </dl>
+        </div>
+        <div class="formSep">
+          <dl class="dl-horizontal">
             <dt><?=Util::formataTexto($model->getAttributeLabel('titulo'));?></dt>
             <dd><?=Util::formataTexto($model->titulo)?></dd>
+          </dl>
+        </div>
+        <div class="formSep">
+          <dl class="dl-horizontal">
+            <dt><?=Util::formataTexto($model->getAttributeLabel('banner'));?></dt>
+            <dd><a style="margin-top:10px;" target="_blank" class="btn-link" href="<?php echo Yii::app()->request->baseUrl; ?>/uploads/Empreendimento/<?=$model->banner;?>" ><?=$model->banner;?></a></dd>
+          </dl>
+        </div>
+        <div class="formSep">
+          <dl class="dl-horizontal">
+            <dt><?=Util::formataTexto($model->getAttributeLabel('slogan'));?></dt>
+            <dd><?=Util::formataTexto($model->slogan)?></dd>
           </dl>
         </div>
         <div class="formSep">
@@ -56,7 +74,7 @@ $this->breadcrumbs[] = Yii::t('app','Visualizar');
           <dl class="dl-horizontal">
             <dt><?=Util::formataTexto($model->getAttributeLabel('gallery_id'));?></dt>
             <dd><? $this->widget('GalleryManager', array(
-				  'gallery' => $model->galeria->getGallery(),
+				  'gallery' => $model->foto->getGallery(),
 				  'controllerRoute' => 'gallery',
 				));?></dd>
           </dl>
@@ -65,7 +83,7 @@ $this->breadcrumbs[] = Yii::t('app','Visualizar');
           <dl class="dl-horizontal">
             <dt><?=Util::formataTexto($model->getAttributeLabel('gallery_id1'));?></dt>
             <dd><? $this->widget('GalleryManager', array(
-				  'gallery' => $model->galeria->getGallery(),
+				  'gallery' => $model->planta->getGallery(),
 				  'controllerRoute' => 'gallery',
 				));?></dd>
           </dl>
@@ -120,6 +138,12 @@ $this->breadcrumbs[] = Yii::t('app','Visualizar');
         </div>
         <div class="formSep">
           <dl class="dl-horizontal">
+            <dt><?=Util::formataTexto($model->getAttributeLabel('quarto'));?></dt>
+            <dd><?=Util::formataTexto($model->quarto)?></dd>
+          </dl>
+        </div>
+        <div class="formSep">
+          <dl class="dl-horizontal">
             <dt><?=Util::formataTexto($model->getAttributeLabel('garagem'));?></dt>
             <dd><?=Util::formataTexto($model->garagem)?></dd>
           </dl>
@@ -168,8 +192,20 @@ $this->breadcrumbs[] = Yii::t('app','Visualizar');
         </div>
         <div class="formSep">
           <dl class="dl-horizontal">
+            <dt><?=Util::formataTexto($model->getAttributeLabel('info_1'));?></dt>
+            <dd><?=Util::formataTexto($model->info_1)?></dd>
+          </dl>
+        </div>
+        <div class="formSep">
+          <dl class="dl-horizontal">
             <dt><?=Util::formataTexto($model->getAttributeLabel('adicional_2'));?></dt>
             <dd><?=Util::formataTexto($model->adicional_2)?></dd>
+          </dl>
+        </div>
+        <div class="formSep">
+          <dl class="dl-horizontal">
+            <dt><?=Util::formataTexto($model->getAttributeLabel('info_2'));?></dt>
+            <dd><?=Util::formataTexto($model->info_2)?></dd>
           </dl>
         </div>
         <div class="formSep">
@@ -180,8 +216,20 @@ $this->breadcrumbs[] = Yii::t('app','Visualizar');
         </div>
         <div class="formSep">
           <dl class="dl-horizontal">
+            <dt><?=Util::formataTexto($model->getAttributeLabel('info_3'));?></dt>
+            <dd><?=Util::formataTexto($model->info_3)?></dd>
+          </dl>
+        </div>
+        <div class="formSep">
+          <dl class="dl-horizontal">
             <dt><?=Util::formataTexto($model->getAttributeLabel('adicional_4'));?></dt>
             <dd><?=Util::formataTexto($model->adicional_4)?></dd>
+          </dl>
+        </div>
+        <div class="formSep">
+          <dl class="dl-horizontal">
+            <dt><?=Util::formataTexto($model->getAttributeLabel('info_4'));?></dt>
+            <dd><?=Util::formataTexto($model->info_4)?></dd>
           </dl>
         </div>
         <div class="formSep">
@@ -192,14 +240,14 @@ $this->breadcrumbs[] = Yii::t('app','Visualizar');
         </div>
         <div class="formSep">
           <dl class="dl-horizontal">
-            <dt><?=Util::formataTexto($model->getAttributeLabel('cidade_estado'));?></dt>
-            <dd><?=Util::formataTexto($model->cidade_estado)?></dd>
+            <dt><?=Util::formataTexto($model->getAttributeLabel('mapa'));?></dt>
+            <dd><?=$model->mapa?></dd>
           </dl>
         </div>
         <div class="formSep">
           <dl class="dl-horizontal">
-            <dt><?=Util::formataTexto($model->getAttributeLabel('mapa'));?></dt>
-            <dd><?=$model->mapa?></dd>
+            <dt><?=Util::formataTexto($model->getAttributeLabel('cidade_estado'));?></dt>
+            <dd><?=Util::formataTexto($model->cidade_estado)?></dd>
           </dl>
         </div>
         <div class="formSep">
