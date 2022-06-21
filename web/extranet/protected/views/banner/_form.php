@@ -23,7 +23,7 @@
           <dt><?php echo $form->labelEx($model,'titulo',array('class'=>'control-label')); ?>
 </dt>
           <dd>
-		  	<?php echo $form->textArea($model, 'titulo',array('rows'=>'10','class'=>'input-xxlarge')); ?>                 
+		  	<?php echo $form->textField($model, 'titulo', array('maxlength' => 200,'class' => 'input-xxlarge')); ?>                 
 		 	 
       	</dd>
        </dl>

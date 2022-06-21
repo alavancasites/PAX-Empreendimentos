@@ -1,6 +1,7 @@
 <?php
 ini_set ("default_charset","");
 include("gzip/gzipHTML.php");
+include_once("extranet/autoload.php");
 include_once("RequestManager.php");
 $rotas = array(
 	'/empresa'=> 'empresa.php',
@@ -11,10 +12,10 @@ $rotas = array(
 	'/index'=>'inicial.php',
 	'/inicial'=>'inicial.php',
 	'/sobre'=>'sobre.php',
-	'/empreendimentos'=>'empreendimentos.php',
-	'/empreendimento'=>'empreendimento.php',
-	'/novidades'=>'novidades.php',
-	'/novidade'=>'novidade.php',
+	'/empreendimentos'=>'empreendimentos_page.php',
+	'/empreendimento'=>'empreendimentos_mostra.php',
+	'/novidades'=>'novidades_page.php',
+	'/novidade'=>'novidades_mostra.php',
 	'/contato'=>'contato.php',
 );
 $request_manager = new RequestManager();

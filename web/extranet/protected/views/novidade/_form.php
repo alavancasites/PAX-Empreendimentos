@@ -20,29 +20,6 @@
         	    	    
     <div class="formSep">
         <dl class="dl-horizontal">
-          <dt><?php echo $form->labelEx($model,'data',array('class'=>'control-label')); ?>
-</dt>
-          <dd>
-		  	<?php $this->widget('CJuiDateTimePicker',array(
-					'model'=>$model, //Model object
-					'attribute'=>'data', //attribute name
-					'language' => 'pt',
-					'mode'=>'datetime', //use 'time','date' or 'datetime' (default)
-					'options'=>array(
-						'readonly' => 'readonly',
-						'changeYear' => true,
-						'changeMonth' => true,
-					)
-				)
-			); ?>                 
-		 	 
-      	</dd>
-       </dl>
-    </div>
-    <!-- row -->
-        	    
-    <div class="formSep">
-        <dl class="dl-horizontal">
           <dt><?php echo $form->labelEx($model,'categoria_idcategoria',array('class'=>'control-label')); ?>
 </dt>
           <dd>
@@ -59,6 +36,21 @@
 </dt>
           <dd>
 		  	<?php echo $form->textField($model, 'titulo', array('maxlength' => 100,'class' => 'input-xxlarge')); ?>                 
+		 	 
+      	</dd>
+       </dl>
+    </div>
+    <!-- row -->
+        	    
+    <div class="formSep">
+        <dl class="dl-horizontal">
+          <dt><?php echo $form->labelEx($model,'imagem',array('class'=>'control-label')); ?>
+</dt>
+          <dd>
+		  	<?php $this->widget('application.extensions.Plupload.PluploadWidget', array(
+			'model' => $model,
+			'attribute' => 'imagem',
+		  )); ?>                 
 		 	 
       	</dd>
        </dl>
@@ -85,7 +77,19 @@
           <dt><?php echo $form->labelEx($model,'destaque',array('class'=>'control-label')); ?>
 </dt>
           <dd>
-		  	<?php echo $form->textArea($model, 'destaque',array('rows'=>'10','class'=>'input-xxlarge')); ?>                 
+		  	<?php echo $form->textField($model, 'destaque', array('maxlength' => 200,'class' => 'input-xxlarge')); ?>                 
+		 	 
+      	</dd>
+       </dl>
+    </div>
+    <!-- row -->
+        	    
+    <div class="formSep">
+        <dl class="dl-horizontal">
+          <dt><?php echo $form->labelEx($model,'destaque_texto',array('class'=>'control-label')); ?>
+</dt>
+          <dd>
+		  	<?php echo $form->editorBox($model,'destaque_texto','100%',500); ; ?>                 
 		 	 
       	</dd>
        </dl>
@@ -109,10 +113,10 @@
         	    
     <div class="formSep">
         <dl class="dl-horizontal">
-          <dt><?php echo $form->labelEx($model,'destaque_texto',array('class'=>'control-label')); ?>
+          <dt><?php echo $form->labelEx($model,'subtitulo',array('class'=>'control-label')); ?>
 </dt>
           <dd>
-		  	<?php echo $form->editorBox($model,'destaque_texto','100%',500); ; ?>                 
+		  	<?php echo $form->textField($model, 'subtitulo', array('maxlength' => 200,'class' => 'input-xxlarge')); ?>                 
 		 	 
       	</dd>
        </dl>

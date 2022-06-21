@@ -10,13 +10,14 @@
  * followed by relations of table "novidade" available as properties of the model.
  *
  * @property integer $idnovidade
- * @property string $data
  * @property integer $categoria_idcategoria
  * @property string $titulo
+ * @property string $imagem
  * @property string $banner
  * @property string $destaque
- * @property string $destaque_imagem
  * @property string $destaque_texto
+ * @property string $destaque_imagem
+ * @property string $subtitulo
  * @property string $texto
  * @property string $ativo
  *
@@ -39,7 +40,7 @@ abstract class BaseNovidade extends GxActiveRecord {
 	}
 
 	public static function representingColumn() {
-		return array('data');
+		return array('titulo');
 	}
 
 	public function rules() {
@@ -47,11 +48,12 @@ abstract class BaseNovidade extends GxActiveRecord {
 			array('categoria_idcategoria', 'required'),
 			array('categoria_idcategoria', 'numerical', 'integerOnly'=>true),
 			array('titulo', 'length', 'max'=>100),
-			array('banner, destaque_imagem', 'length', 'max'=>140),
+			array('imagem, banner, destaque_imagem', 'length', 'max'=>140),
+			array('destaque, subtitulo', 'length', 'max'=>200),
 			array('ativo', 'length', 'max'=>1),
-			array('data, destaque, destaque_texto, texto', 'safe'),
-			array('data, titulo, banner, destaque, destaque_imagem, destaque_texto, texto, ativo', 'default', 'setOnEmpty' => true, 'value' => null),
-			array('idnovidade, data, categoria_idcategoria, titulo, banner, destaque, destaque_imagem, destaque_texto, texto, ativo', 'safe', 'on'=>'search'),
+			array('destaque_texto, texto', 'safe'),
+			array('titulo, imagem, banner, destaque, destaque_texto, destaque_imagem, subtitulo, texto, ativo', 'default', 'setOnEmpty' => true, 'value' => null),
+			array('idnovidade, categoria_idcategoria, titulo, imagem, banner, destaque, destaque_texto, destaque_imagem, subtitulo, texto, ativo', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -69,13 +71,14 @@ abstract class BaseNovidade extends GxActiveRecord {
 	public function attributeLabels() {
 		return array(
 			'idnovidade' => Yii::t('app', 'Idnovidade'),
-			'data' => Yii::t('app', 'Data'),
 			'categoria_idcategoria' => null,
 			'titulo' => Yii::t('app', 'Titulo'),
+			'imagem' => Yii::t('app', 'Imagem'),
 			'banner' => Yii::t('app', 'Banner'),
 			'destaque' => Yii::t('app', 'Destaque'),
-			'destaque_imagem' => Yii::t('app', 'Destaque Imagem'),
 			'destaque_texto' => Yii::t('app', 'Destaque Texto'),
+			'destaque_imagem' => Yii::t('app', 'Destaque Imagem'),
+			'subtitulo' => Yii::t('app', 'Subtitulo'),
 			'texto' => Yii::t('app', 'Texto'),
 			'ativo' => Yii::t('app', 'Ativo'),
 			'categoria' => null,
@@ -86,13 +89,14 @@ abstract class BaseNovidade extends GxActiveRecord {
 		$criteria = new CDbCriteria;
 
 		$criteria->compare('idnovidade', $this->idnovidade);
-		$criteria->compare('data', $this->data, true);
 		$criteria->compare('categoria_idcategoria', $this->categoria_idcategoria);
 		$criteria->compare('titulo', $this->titulo, true);
+		$criteria->compare('imagem', $this->imagem, true);
 		$criteria->compare('banner', $this->banner, true);
 		$criteria->compare('destaque', $this->destaque, true);
-		$criteria->compare('destaque_imagem', $this->destaque_imagem, true);
 		$criteria->compare('destaque_texto', $this->destaque_texto, true);
+		$criteria->compare('destaque_imagem', $this->destaque_imagem, true);
+		$criteria->compare('subtitulo', $this->subtitulo, true);
 		$criteria->compare('texto', $this->texto, true);
 		$criteria->compare('ativo', $this->ativo, true);
 

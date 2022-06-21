@@ -24,12 +24,6 @@ $this->breadcrumbs[] = Yii::t('app','Visualizar');
           ?>      
         <div class="formSep">
           <dl class="dl-horizontal">
-            <dt><?=Util::formataTexto($model->getAttributeLabel('data'));?></dt>
-            <dd><?=Util::formataTexto($model->data)?></dd>
-          </dl>
-        </div>
-        <div class="formSep">
-          <dl class="dl-horizontal">
             <dt><?=Util::formataTexto($model->getAttributeLabel('categoria_idcategoria'));?></dt>
             <dd><?=($model->categoria !== null ? GxHtml::link(GxHtml::encode(GxHtml::valueEx($model->categoria)), array('categoria/view', 'id' => GxActiveRecord::extractPkValue($model->categoria, true)),array('class' => 'relational-link')) : null)?></dd>
           </dl>
@@ -38,6 +32,12 @@ $this->breadcrumbs[] = Yii::t('app','Visualizar');
           <dl class="dl-horizontal">
             <dt><?=Util::formataTexto($model->getAttributeLabel('titulo'));?></dt>
             <dd><?=Util::formataTexto($model->titulo)?></dd>
+          </dl>
+        </div>
+        <div class="formSep">
+          <dl class="dl-horizontal">
+            <dt><?=Util::formataTexto($model->getAttributeLabel('imagem'));?></dt>
+            <dd><a style="margin-top:10px;" target="_blank" class="btn-link" href="<?php echo Yii::app()->request->baseUrl; ?>/uploads/Novidade/<?=$model->imagem;?>" ><?=$model->imagem;?></a></dd>
           </dl>
         </div>
         <div class="formSep">
@@ -54,14 +54,20 @@ $this->breadcrumbs[] = Yii::t('app','Visualizar');
         </div>
         <div class="formSep">
           <dl class="dl-horizontal">
+            <dt><?=Util::formataTexto($model->getAttributeLabel('destaque_texto'));?></dt>
+            <dd><?=$model->destaque_texto?></dd>
+          </dl>
+        </div>
+        <div class="formSep">
+          <dl class="dl-horizontal">
             <dt><?=Util::formataTexto($model->getAttributeLabel('destaque_imagem'));?></dt>
             <dd><a style="margin-top:10px;" target="_blank" class="btn-link" href="<?php echo Yii::app()->request->baseUrl; ?>/uploads/Novidade/<?=$model->destaque_imagem;?>" ><?=$model->destaque_imagem;?></a></dd>
           </dl>
         </div>
         <div class="formSep">
           <dl class="dl-horizontal">
-            <dt><?=Util::formataTexto($model->getAttributeLabel('destaque_texto'));?></dt>
-            <dd><?=$model->destaque_texto?></dd>
+            <dt><?=Util::formataTexto($model->getAttributeLabel('subtitulo'));?></dt>
+            <dd><?=Util::formataTexto($model->subtitulo)?></dd>
           </dl>
         </div>
         <div class="formSep">

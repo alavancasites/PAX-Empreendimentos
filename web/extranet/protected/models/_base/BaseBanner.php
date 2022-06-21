@@ -47,11 +47,11 @@ abstract class BaseBanner extends GxActiveRecord {
 
 	public function rules() {
 		return array(
+			array('titulo, link', 'length', 'max'=>200),
 			array('emp_nome, emp_tag, quartos, metragem, vagas, botao', 'length', 'max'=>100),
 			array('imagem, responsivo', 'length', 'max'=>140),
-			array('link', 'length', 'max'=>200),
 			array('externo, ativo', 'length', 'max'=>1),
-			array('titulo, texto', 'safe'),
+			array('texto', 'safe'),
 			array('titulo, texto, emp_nome, emp_tag, quartos, metragem, vagas, imagem, responsivo, botao, link, externo, ativo', 'default', 'setOnEmpty' => true, 'value' => null),
 			array('idbanner, titulo, texto, emp_nome, emp_tag, quartos, metragem, vagas, imagem, responsivo, botao, link, externo, ativo', 'safe', 'on'=>'search'),
 		);
