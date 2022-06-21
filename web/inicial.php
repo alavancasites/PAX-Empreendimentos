@@ -28,7 +28,7 @@ include_once("extranet/autoload.php");
           $direita = 0;
           $clear = 0;
           $criteria = new CDbCriteria();
-          $criteria->order = 'idempreendimento desc';
+          $criteria->order = 'ordem asc';
           $criteria->addCondition("ativo = 1");
           $empreendimentos = Empreendimento::model()->findAll($criteria);
           foreach($empreendimentos as $empreendimento) {
@@ -37,11 +37,14 @@ include_once("extranet/autoload.php");
             if ($direita%2==0){
               $alinhamento = "right";
             }
+            else{
+              $alinhamento = "";
+            }
         ?>
           <div class="list <?=$alinhamento?>">
-            <a href="empreendimento"><img src="extranet/uploads/Empreendimento/<?=$empreendimento->capa?>" alt="<?=$empreendimento->titulo?>"></a>
+            <a href="empreendimento/<?=$empreendimento->idempreendimento?>/<?=Util::removerAcentos($empreendimento->titulo)?>"><img src="extranet/uploads/Empreendimento/<?=$empreendimento->capa?>" alt="<?=$empreendimento->titulo?>"></a>
             <div class="infos">
-              <h3><?=$empreendimento->titulo?></h3>
+              <h3><?=$empreendimento->titulo ?></h3>
               <p><?=$empreendimento->empCategoria?></p>
               <div class="espacos">
                 <span><img src="img/cama.svg" alt="Domitorios"> <br><?=$empreendimento->dormitorio?></span>
@@ -54,7 +57,12 @@ include_once("extranet/autoload.php");
             </div>
           </div>
         <?php
-         }
+          if ($clear%2==0){
+        ?>
+          <div class="clear"></div>
+        <?
+            }
+          }
         ?>
         <div class="clear"></div>
       </div>

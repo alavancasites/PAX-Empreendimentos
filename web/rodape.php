@@ -18,11 +18,17 @@
 		</div>
 		<div class="colunas col-4 mobile-hidden">
 			<a href="empreendimento" class="tit">Empreendimentos</a>
-			<a href="empreendimento">Acqua Residence</a>
-			<a href="empreendimento">Darci Luiz</a>
-			<a href="empreendimento">Plaza Rieck</a>
-			<a href="empreendimento">Contato</a>
-			<a href="empreendimento">Ello Haus</a>
+      <?php
+        $criteria = new CDbCriteria();
+        $criteria->order = 'ordem asc';
+        $criteria->addCondition("ativo = 1");
+        $empreendimentos = Empreendimento::model()->findAll($criteria);
+        foreach($empreendimentos as $empreendimento) {
+      ?>
+        <a href="empreendimento/<?=$empreendimento->idempreendimento?>/<?=Util::removerAcentos($empreendimento->titulo)?>"><?=$empreendimento->titulo ?></a>
+      <?php
+          }
+      ?>
 		</div>
 		<div class="colunas col-5">
 			<a href="contato" class="tit">Central de atendimento</a>
