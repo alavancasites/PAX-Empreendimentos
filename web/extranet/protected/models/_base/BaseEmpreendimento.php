@@ -27,8 +27,7 @@
  * @property string $acabamento
  * @property string $titulo_2
  * @property string $texto_2
- * @property string $suite
- * @property string $quarto
+ * @property string $dormitorio
  * @property string $garagem
  * @property string $area_lazer
  * @property string $metragem
@@ -76,13 +75,13 @@ abstract class BaseEmpreendimento extends GxActiveRecord {
 		return array(
 			array('emp_categoria_idemp_categoria', 'required'),
 			array('emp_categoria_idemp_categoria, ordem, gallery_id, gallery_id1', 'numerical', 'integerOnly'=>true),
-			array('titulo, fundacao, estrutura, vadacao, instalacao, acabamento, suite, quarto, garagem, area_lazer, metragem, elevador, ap_andar, terreno, pavimentos, adicional_1, info_1, adicional_2, info_2, adicional_3, info_3, adicional_4, info_4, endereco, cidade_estado', 'length', 'max'=>100),
+			array('titulo, fundacao, estrutura, vadacao, instalacao, acabamento, dormitorio, garagem, area_lazer, metragem, elevador, ap_andar, terreno, pavimentos, adicional_1, info_1, adicional_2, info_2, adicional_3, info_3, adicional_4, info_4, endereco, cidade_estado', 'length', 'max'=>100),
 			array('banner, capa, imagem', 'length', 'max'=>140),
 			array('titulo_2', 'length', 'max'=>200),
 			array('ativo', 'length', 'max'=>1),
 			array('slogan, chamada, texto_2, mapa', 'safe'),
-			array('ordem, titulo, banner, slogan, chamada, capa, imagem, fundacao, estrutura, vadacao, instalacao, acabamento, titulo_2, texto_2, suite, quarto, garagem, area_lazer, metragem, elevador, ap_andar, terreno, pavimentos, adicional_1, info_1, adicional_2, info_2, adicional_3, info_3, adicional_4, info_4, endereco, mapa, cidade_estado, ativo', 'default', 'setOnEmpty' => true, 'value' => null),
-			array('idempreendimento, emp_categoria_idemp_categoria, ordem, titulo, banner, slogan, chamada, capa, imagem, gallery_id, gallery_id1, fundacao, estrutura, vadacao, instalacao, acabamento, titulo_2, texto_2, suite, quarto, garagem, area_lazer, metragem, elevador, ap_andar, terreno, pavimentos, adicional_1, info_1, adicional_2, info_2, adicional_3, info_3, adicional_4, info_4, endereco, mapa, cidade_estado, ativo', 'safe', 'on'=>'search'),
+			array('ordem, titulo, banner, slogan, chamada, capa, imagem, fundacao, estrutura, vadacao, instalacao, acabamento, titulo_2, texto_2, dormitorio, garagem, area_lazer, metragem, elevador, ap_andar, terreno, pavimentos, adicional_1, info_1, adicional_2, info_2, adicional_3, info_3, adicional_4, info_4, endereco, mapa, cidade_estado, ativo', 'default', 'setOnEmpty' => true, 'value' => null),
+			array('idempreendimento, emp_categoria_idemp_categoria, ordem, titulo, banner, slogan, chamada, capa, imagem, gallery_id, gallery_id1, fundacao, estrutura, vadacao, instalacao, acabamento, titulo_2, texto_2, dormitorio, garagem, area_lazer, metragem, elevador, ap_andar, terreno, pavimentos, adicional_1, info_1, adicional_2, info_2, adicional_3, info_3, adicional_4, info_4, endereco, mapa, cidade_estado, ativo', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -117,8 +116,7 @@ abstract class BaseEmpreendimento extends GxActiveRecord {
 			'acabamento' => Yii::t('app', 'Acabamento'),
 			'titulo_2' => Yii::t('app', 'Titulo 2'),
 			'texto_2' => Yii::t('app', 'Texto 2'),
-			'suite' => Yii::t('app', 'Suite'),
-			'quarto' => Yii::t('app', 'Quarto'),
+			'dormitorio' => Yii::t('app', 'Dormitorio'),
 			'garagem' => Yii::t('app', 'Garagem'),
 			'area_lazer' => Yii::t('app', 'Area Lazer'),
 			'metragem' => Yii::t('app', 'Metragem'),
@@ -164,8 +162,7 @@ abstract class BaseEmpreendimento extends GxActiveRecord {
 		$criteria->compare('acabamento', $this->acabamento, true);
 		$criteria->compare('titulo_2', $this->titulo_2, true);
 		$criteria->compare('texto_2', $this->texto_2, true);
-		$criteria->compare('suite', $this->suite, true);
-		$criteria->compare('quarto', $this->quarto, true);
+		$criteria->compare('dormitorio', $this->dormitorio, true);
 		$criteria->compare('garagem', $this->garagem, true);
 		$criteria->compare('area_lazer', $this->area_lazer, true);
 		$criteria->compare('metragem', $this->metragem, true);

@@ -14,9 +14,9 @@
           <div class="accordion-heading"> <a class="accordion-toggle collapsed" data-toggle="collapse" data-parent="#accordion1" href="#collapseOne1"><i class="fa"></i><span>Empreendimentos</span></a> </div>
           <div id="collapseOne1" class="accordion-body collapse" style="height: 0px;">
             <?
-              if ( Yii::app()->user->obj->group->temPermissaoAction( 'empcategoria', 'index' ) ) {
+              if ( Yii::app()->user->obj->group->temPermissaoAction( 'empCategoria', 'index' ) ) {
             ?>
-              <a class="fa fa-lg fa-caret-right" href="<?=$this->createUrl('empcategoria/index');?>"><span>Categoria</span></a>
+              <a class="fa fa-lg fa-caret-right" href="<?=$this->createUrl('empCategoria/index');?>"><span>Categorias</span></a>
             <?
               }if ( Yii::app()->user->obj->group->temPermissaoAction( 'empreendimento', 'index' ) ) {
             ?>

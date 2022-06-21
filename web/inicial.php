@@ -41,7 +41,7 @@ include_once("extranet/autoload.php");
               <h3><?=$empreendimento->titulo?></h3>
               <p><?=$empreendimento->empCategoria?></p>
               <div class="espacos">
-                <span><img src="img/cama.svg" alt="Suítes"> <br><?=$empreendimento->suite?></span>
+                <span><img src="img/cama.svg" alt="Suítes"> <br><?=$empreendimento->dormitorio?></span>
                 <span>|</span>
                 <span><img src="img/home.svg" alt="Metros"> <br>72 a 84m²</span>
                 <span> |</span>
