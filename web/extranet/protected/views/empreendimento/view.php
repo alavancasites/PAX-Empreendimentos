@@ -30,12 +30,6 @@ $this->breadcrumbs[] = Yii::t('app','Visualizar');
         </div>
         <div class="formSep">
           <dl class="dl-horizontal">
-            <dt><?=Util::formataTexto($model->getAttributeLabel('fachada'));?></dt>
-            <dd><?=Util::formataTexto($model->fachada)?></dd>
-          </dl>
-        </div>
-        <div class="formSep">
-          <dl class="dl-horizontal">
             <dt><?=Util::formataTexto($model->getAttributeLabel('titulo'));?></dt>
             <dd><?=Util::formataTexto($model->titulo)?></dd>
           </dl>
@@ -56,12 +50,6 @@ $this->breadcrumbs[] = Yii::t('app','Visualizar');
           <dl class="dl-horizontal">
             <dt><?=Util::formataTexto($model->getAttributeLabel('imagem'));?></dt>
             <dd><a style="margin-top:10px;" target="_blank" class="btn-link" href="<?php echo Yii::app()->request->baseUrl; ?>/uploads/Empreendimento/<?=$model->imagem;?>" ><?=$model->imagem;?></a></dd>
-          </dl>
-        </div>
-        <div class="formSep">
-          <dl class="dl-horizontal">
-            <dt><?=Util::formataTexto($model->getAttributeLabel('empreendimentocol'));?></dt>
-            <dd><?=Util::formataTexto($model->empreendimentocol)?></dd>
           </dl>
         </div>
         <div class="formSep">

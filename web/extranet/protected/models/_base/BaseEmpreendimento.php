@@ -11,13 +11,11 @@
  *
  * @property integer $idempreendimento
  * @property integer $emp_categoria_idemp_categoria
- * @property string $fachada
- * @property string $titulo
+  * @property string $titulo
  * @property string $chamada
  * @property string $capa
  * @property string $imagem
- * @property string $empreendimentocol
- * @property integer $gallery_id
+  * @property integer $gallery_id
  * @property integer $gallery_id1
  * @property string $fundacao
  * @property string $estrutura
@@ -63,21 +61,21 @@ abstract class BaseEmpreendimento extends GxActiveRecord {
 	}
 
 	public static function representingColumn() {
-		return array('fachada');
+		return array('titulo');
 	}
 
 	public function rules() {
 		return array(
 			array('emp_categoria_idemp_categoria, gallery_id, gallery_id1', 'required'),
 			array('emp_categoria_idemp_categoria, gallery_id, gallery_id1', 'numerical', 'integerOnly'=>true),
-			array('fachada, fundacao, estrutura, vadacao, instalacao, acabamento, suite, garagem, area_lazer, metragem, elevador, ap_andar, terreno, pavimentos, adicional_1, adicional_2, adicional_3, adicional_4, endereco, cidade_estado', 'length', 'max'=>100),
-			array('titulo, empreendimentocol', 'length', 'max'=>45),
+			array('fundacao, estrutura, vadacao, instalacao, acabamento, suite, garagem, area_lazer, metragem, elevador, ap_andar, terreno, pavimentos, adicional_1, adicional_2, adicional_3, adicional_4, endereco, cidade_estado', 'length', 'max'=>100),
+			array('titulo', 'length', 'max'=>45),
 			array('capa, imagem', 'length', 'max'=>140),
 			array('titulo_2', 'length', 'max'=>200),
 			array('ativo', 'length', 'max'=>1),
 			array('chamada, texto_2, mapa', 'safe'),
-			array('fachada, titulo, chamada, capa, imagem, empreendimentocol, fundacao, estrutura, vadacao, instalacao, acabamento, titulo_2, texto_2, suite, garagem, area_lazer, metragem, elevador, ap_andar, terreno, pavimentos, adicional_1, adicional_2, adicional_3, adicional_4, endereco, cidade_estado, mapa, ativo', 'default', 'setOnEmpty' => true, 'value' => null),
-			array('idempreendimento, emp_categoria_idemp_categoria, fachada, titulo, chamada, capa, imagem, empreendimentocol, gallery_id, gallery_id1, fundacao, estrutura, vadacao, instalacao, acabamento, titulo_2, texto_2, suite, garagem, area_lazer, metragem, elevador, ap_andar, terreno, pavimentos, adicional_1, adicional_2, adicional_3, adicional_4, endereco, cidade_estado, mapa, ativo', 'safe', 'on'=>'search'),
+			array('titulo, chamada, capa, imagem, fundacao, estrutura, vadacao, instalacao, acabamento, titulo_2, texto_2, suite, garagem, area_lazer, metragem, elevador, ap_andar, terreno, pavimentos, adicional_1, adicional_2, adicional_3, adicional_4, endereco, cidade_estado, mapa, ativo', 'default', 'setOnEmpty' => true, 'value' => null),
+			array('idempreendimento, emp_categoria_idemp_categoria, titulo, chamada, capa, imagem, gallery_id, gallery_id1, fundacao, estrutura, vadacao, instalacao, acabamento, titulo_2, texto_2, suite, garagem, area_lazer, metragem, elevador, ap_andar, terreno, pavimentos, adicional_1, adicional_2, adicional_3, adicional_4, endereco, cidade_estado, mapa, ativo', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -96,12 +94,10 @@ abstract class BaseEmpreendimento extends GxActiveRecord {
 		return array(
 			'idempreendimento' => Yii::t('app', 'Idempreendimento'),
 			'emp_categoria_idemp_categoria' => Yii::t('app', 'Categoria'),
-			'fachada' => Yii::t('app', 'Fachada'),
 			'titulo' => Yii::t('app', 'Titulo'),
 			'chamada' => Yii::t('app', 'Chamada'),
 			'capa' => Yii::t('app', 'Capa'),
 			'imagem' => Yii::t('app', 'Imagem'),
-			'empreendimentocol' => Yii::t('app', 'Empreendimentocol'),
 			'gallery_id' => Yii::t('app', 'Gaaleria de fotos'),
 			'gallery_id1' => Yii::t('app', 'Planta'),
 			'fundacao' => Yii::t('app', 'Fundação'),
@@ -137,12 +133,10 @@ abstract class BaseEmpreendimento extends GxActiveRecord {
 
 		$criteria->compare('idempreendimento', $this->idempreendimento);
 		$criteria->compare('emp_categoria_idemp_categoria', $this->emp_categoria_idemp_categoria);
-		$criteria->compare('fachada', $this->fachada, true);
 		$criteria->compare('titulo', $this->titulo, true);
 		$criteria->compare('chamada', $this->chamada, true);
 		$criteria->compare('capa', $this->capa, true);
 		$criteria->compare('imagem', $this->imagem, true);
-		$criteria->compare('empreendimentocol', $this->empreendimentocol, true);
 		$criteria->compare('gallery_id', $this->gallery_id);
 		$criteria->compare('gallery_id1', $this->gallery_id1);
 		$criteria->compare('fundacao', $this->fundacao, true);

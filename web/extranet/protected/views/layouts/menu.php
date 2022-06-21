@@ -20,7 +20,7 @@
             <?
               }if ( Yii::app()->user->obj->group->temPermissaoAction( 'empreendimento', 'index' ) ) {
             ?>
-              <a class="fa fa-lg fa-caret-right" href="<?=$this->createUrl('empreendimento/index');?>"><span>Post</span></a>
+              <a class="fa fa-lg fa-caret-right" href="<?=$this->createUrl('empreendimento/index');?>"><span>Empreendimento</span></a>
             <?
               }
             ?>
