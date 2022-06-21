@@ -1,34 +1,32 @@
+<?
+include_once("extranet/autoload.php");
+$_GET['pagina'] = is_numeric($_GET['pagina']) ? $_GET['pagina']+1 : 0;
+$criteria = new CDbCriteria();
+$criteria->order = 'idnovidade desc';
+$criteria->addCondition("ativo = 1");
+$data_provider = new CActiveDataProvider('Novidade', array(
+  'criteria'=> $criteria,
+    'pagination'=>array(
+        'route'=> 'novidades?',
+        'pageSize'=> 16,
+      'pageVar' => 'page',
+    ),
+));
+$novidades = $data_provider->getData();
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br">
-
 <head profile="http://gmpg.org/xfn/11">
-  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-  <title>Novidades - PAX Empreendimentos</title>
-  <?php include("header.php"); ?>
-  <style type="text/css">
-    <?php echo file_get_contents ('css/slick.css');
-    ?>
-    <?php echo file_get_contents ('css/unite-gallery.css');
-    ?>
-  </style>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Novidades - PAX Empreendimentos</title>
+<?php include("header.php"); ?>
+<style type="text/css"><?php echo file_get_contents ('css/slick.css');?><?php echo file_get_contents ('css/unite-gallery.css');?></style>
 </head>
-
 <body>
-  <header>
-    <div id="topo"><?php include("topo.php"); ?></div>
-  </header>
+  <header><div id="topo"><?php include("topo.php"); ?></div></header>
   <div class="clear"></div>
   <section class="banner-interno" style="background-image: url(img/banner-noviades.png)">
-    <div class="container">
-      <h1>
-        <a href="novidade">Home | <strong>Novidades</strong></a>
-        <strong>
-          Aqui você fica
-          atualizado sobre
-          as novidades
-        </strong>
-      </h1>
-    </div>
+    <div class="container"><h1><a href="novidade">Home | <strong>Novidades</strong></a><strong>Aqui você ficaa tualizado sobre as novidades</strong></h1></div>
   </section>
   <div class="clear"></div>
   <section class="novidades">
@@ -41,71 +39,66 @@
         </h2>
       </div>
       <div class="lista-noticias">
+      <?php
+        foreach ($novidades as $key => $novidade) {
+      ?>
         <div>
-          <a href="novidade">
-            <img src="img/noticia.png" class="img-responsive" alt="É um fato conhecido de todos que um leitor se distrairá.">
+          <a href="novidade/<?=$novidade->idnovidade?>/<?=Util::removerAcentos($novidade->titulo)?>">
+            <img src="extranet/uploads/Novidade/<?=$novidade->imagem?>" class="img-responsive" alt="<?=$novidade->titulo?>">
           </a>
-          <a href="novidade" class="padding">
-            <p>Implantação</p>
-            <h2 class="mt-2 mb-2"><strong>É um fato conhecido de todos que um leitor se distrairá.</strong><span></span></h2>
+          <a href="novidade/<?=$novidade->idnovidade?>/<?=Util::removerAcentos($novidade->titulo)?>" class="padding">
+            <p><?=$novidade->categoria?></p>
+            <h2 class="mt-2 mb-2"><strong><?=$novidade->titulo?></strong><span></span></h2>
           </a>
         </div>
-        <div>
-          <a href="novidade">
-            <img src="img/noticia.png" class="img-responsive" alt="É um fato conhecido de todos que um leitor se distrairá.">
-          </a>
-          <a href="novidade" class="padding">
-            <p>Implantação</p>
-            <h2 class="mt-2 mb-2"><strong>É um fato conhecido de todos que um leitor se distrairá.</strong><span></span></h2>
-          </a>
-        </div>
-        <div>
-          <a href="novidade">
-            <img src="img/noticia.png" class="img-responsive" alt="É um fato conhecido de todos que um leitor se distrairá.">
-          </a>
-          <a href="novidade" class="padding">
-            <p>Implantação</p>
-            <h2 class="mt-2 mb-2"><strong>É um fato conhecido de todos que um leitor se distrairá.</strong><span></span></h2>
-          </a>
-        </div>
-        <div>
-          <a href="novidade">
-            <img src="img/noticia.png" class="img-responsive" alt="É um fato conhecido de todos que um leitor se distrairá.">
-          </a>
-          <a href="novidade" class="padding">
-            <p>Implantação</p>
-            <h2 class="mt-2 mb-2"><strong>É um fato conhecido de todos que um leitor se distrairá.</strong><span></span></h2>
-          </a>
-        </div>
-        <div>
-          <a href="novidade">
-            <img src="img/noticia.png" class="img-responsive" alt="É um fato conhecido de todos que um leitor se distrairá.">
-          </a>
-          <a href="novidade" class="padding">
-            <p>Implantação</p>
-            <h2 class="mt-2 mb-2"><strong>É um fato conhecido de todos que um leitor se distrairá.</strong><span></span></h2>
-          </a>
-        </div>
+      <?php
+        }
+      ?>
       </div>
-      <div class="paginacao">
-        <ul>
-          <li>
-            <a class="ativo" href="novidade">1</a>
-          </li>
-          <li>
-            <a href="novidade">2</a>
-          </li>
-          <li>
-            <a href="novidade">3</a>
-          </li>
-          <li>
-            <a href="novidade">4</a>
-          </li>
-          <li>
-            <a href="novidade"><img src="img/next1.svg" alt=""> </a>
-          </li>
-        </ul>
-      </div>
+      <div class="paginacao"> 
+          <div class="paginacao-itens">
+            <?php
+            $pagination = $data_provider->pagination;
+            $pagina = $pagination->currentPage + 1;
+            if ( $pagination->pageCount > 1 ) {
+              ?>
+            <div class="">
+              <ul>
+              <?php
+              $get_params = http_build_query( array_merge( $_GET, array( 'page' => 1 ) ) );
+              ?>
+              <li><a href="<?=$pagination->route?><?=$get_params?>" class="<?=$pagina==1?'ativado':''?>">1</a></li>
+              <?
+              if ( $pagina > 2 ) {
+                ?>
+              <a onclick="return false;">...</a>
+              <?
+              }
+              for ( $i = $pagina - 1; $i < ( $pagina + 2 ); $i++ ) {
+                if ( $i > 1 && $i < $pagination->pageCount ) {
+                  $get_params = http_build_query( array_merge( $_GET, array( 'page' => $i ) ) );
+                  ?>
+              <li><a href="<?=$pagination->route?><?=$get_params?>" class="<?=$pagina==$i?'ativado':''?>"><?=$i;?></a></li>
+              <?
+              }
+              }
+              if ( $pagina < $pagination->pageCount - 1 ) {
+                ?>
+              <li><a onclick="return false;">...</a></li>
+              <?
+              }
+              ?>
+              <?php
+              $get_params = http_build_query( array_merge( $_GET, array( 'page' => $pagination->pageCount ) ) );
+              ?>
+              <li><a href="<?=$pagination->route?><?=$get_params?>" class="<?=$pagina==$pagination->pageCount?'ativado':''?>"><?=$pagination->pageCount;?></a></li>
+              </ul>
+            </div>
+            <?php
+              }
+            ?>
+          </div>          
+        </div>      
     </div>
   </section>
   <div class="clear"></div>

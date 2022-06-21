@@ -1,18 +1,23 @@
+<?
+include_once("extranet/autoload.php");
+$novidade = Novidade::model()->findByPk($_GET['novidade'],array('condition' => "ativo = '1'")); 
+if(!is_object($novidade)){
+	echo "Página inexistente!"; exit; 
+} 
+$criteria = new CDbCriteria();
+$criteria->order = 'idnovidade desc';
+$criteria->addCondition("ativo = 1");
+$criteria->limit=3;
+$novidades = Novidade::model()->findAll($criteria);
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br">
-
 <head profile="http://gmpg.org/xfn/11">
-  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-  <title>Título - Novidades - PAX Empreendimentos</title>
-  <?php include("header.php"); ?>
-  <style type="text/css">
-    <?php echo file_get_contents ('css/slick.css');
-    ?>
-    <?php echo file_get_contents ('css/unite-gallery.css');
-    ?>
-  </style>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title><?=($novidade->titulo)?> - PAX Empreendimentos</title>
+<?php include("header.php"); ?>
+<style type="text/css"><?php echo file_get_contents ('css/slick.css');?><?php echo file_get_contents ('css/unite-gallery.css');?></style>
 </head>
-
 <body>
   <header>
     <div id="topo"><?php include("topo.php"); ?></div>
@@ -20,13 +25,8 @@
   <div class="clear"></div>
   <section class="banner-interno" style="background-image: url(img/banner-novidade.png)">
     <div class="container">
-      <img src="img/banner-novidade-frase.jpg" class="imagem-destaque" alt="Valorização do mercado imobiliário em até 40%">
-      <h1>
-        <a href="novidade">Home | <strong>Novidades</strong></a>
-        <strong>
-          Por que estamos ressignificando o mercado?
-        </strong>
-      </h1>
+      <img src="extranet/uploads/Novidade/<?=($novidade->banner)?>" class="imagem-destaque" alt="<?=($novidade->titulo)?>">
+      <h1><a href="novidade">Home | <strong>Novidades</strong></a><strong><?=($novidade->titulo)?></strong></h1>
     </div>
   </section>
   <div class="clear"></div>
@@ -57,40 +57,16 @@
       </div><?php */?>
       <div class="clear"></div>
       <div class="colunas col-10 texto mt-5">
-        <h2 class="mb-3">
-          <strong>
-            Sobre o tópico abaixo
-          </strong>
-        </h2>
-        <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-        </p>
-        <p>
-          It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages.
-        </p>
-        <p>
-          More recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-        </p>
+        <h2 class="mb-3"><strong><?=($novidade->destaque)?></strong></h2>
+        <div><?=($novidade->destaque_texto)?></div>
       </div>
       <div class="colunas col-10 mt-5">
-        <img src="img/novidade.jpg" class="img-responsive" alt="Valorização do mercado imobiliário em até 40%">
+        <img src="img/novidade.jpg" class="img-responsive" alt="<?=$novidade->titulo?>">
       </div>
       <div class="clear"></div>
       <div class="texto mt-5">
-        <h2 class="mb-3">
-          <strong>
-            Abordando outro tópico
-          </strong>
-        </h2>
-        <p>
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
-        </p>
-        <p>
-          It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages.
-        </p>
-        <p>
-          More recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
-        </p>
+        <h2 class="mb-3"><strong><?=($novidade->subtitulo)?></strong></h2>
+        <div><?=($novidade->texto)?></div>
       </div>
     </div>
   </section>
@@ -103,33 +79,21 @@
         </h2>
       </div>
       <div class="lista-noticias">
+        <?
+          foreach($novidades as $outras){
+        ?>
         <div>
-          <a href="novidade">
-            <img src="img/noticia.png" class="img-responsive" alt="É um fato conhecido de todos que um leitor se distrairá.">
+          <a href="novidade/<?=$outras->idnovidade?>/<?=Util::removerAcentos($outras->titulo)?>">
+            <img src="extranet/uploads/Novidade/<?=$outras->imagem?>" class="img-responsive" alt="<?=($outras->titulo)?>">
           </a>
-          <a href="novidade" class="padding">
-            <p>Implantação</p>
-            <h2 class="mt-2 mb-2"><strong>É um fato conhecido de todos que um leitor se distrairá.</strong><span></span></h2>
+          <a href="novidade/<?=$outras->idnovidade?>/<?=Util::removerAcentos($outras->titulo)?>" class="padding">
+            <p><?=$outras->categoria?></p>
+            <h2 class="mt-2 mb-2"><strong><?=$outras->titulo?></strong><span></span></h2>
           </a>
         </div>
-        <div>
-          <a href="novidade">
-            <img src="img/noticia.png" class="img-responsive" alt="É um fato conhecido de todos que um leitor se distrairá.">
-          </a>
-          <a href="novidade" class="padding">
-            <p>Implantação</p>
-            <h2 class="mt-2 mb-2"><strong>É um fato conhecido de todos que um leitor se distrairá.</strong><span></span></h2>
-          </a>
-        </div>
-        <div>
-          <a href="novidade">
-            <img src="img/noticia.png" class="img-responsive" alt="É um fato conhecido de todos que um leitor se distrairá.">
-          </a>
-          <a href="novidade" class="padding">
-            <p>Implantação</p>
-            <h2 class="mt-2 mb-2"><strong>É um fato conhecido de todos que um leitor se distrairá.</strong><span></span></h2>
-          </a>
-        </div>
+        <?
+          }
+        ?>
       </div>
     </div>
   </section>
