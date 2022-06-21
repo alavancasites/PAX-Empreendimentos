@@ -37,7 +37,7 @@ abstract class BaseContato extends GxActiveRecord {
 	}
 
 	public static function representingColumn() {
-		return array('ip');
+		return array('nome');
 	}
 
 	public function rules() {
@@ -45,6 +45,8 @@ abstract class BaseContato extends GxActiveRecord {
 			array('ip, nome, email, assunto, telefone', 'length', 'max'=>100),
 			array('ativo', 'length', 'max'=>1),
 			array('data, mensagem', 'safe'),
+			array('nome, email, assunto, telefone, mensagem', 'required'),
+			array('email', 'email'),
 			array('ip, data, nome, email, assunto, telefone, mensagem, ativo', 'default', 'setOnEmpty' => true, 'value' => null),
 			array('idcontato, ip, data, nome, email, assunto, telefone, mensagem, ativo', 'safe', 'on'=>'search'),
 		);

@@ -60,7 +60,7 @@ abstract class BaseCategoria extends GxActiveRecord {
 			'idcategoria' => Yii::t('app', 'Idcategoria'),
 			'titulo' => Yii::t('app', 'Titulo'),
 			'ativo' => Yii::t('app', 'Ativo'),
-			'novidades' => null,
+			'novidades' => Yii::t('app', 'Novidade'),
 		);
 	}
 

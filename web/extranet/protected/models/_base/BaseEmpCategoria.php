@@ -28,7 +28,7 @@ abstract class BaseEmpCategoria extends GxActiveRecord {
 	}
 
 	public static function label($n = 1) {
-		return Yii::t('app', 'EmpCategoria|EmpCategorias', $n);
+		return Yii::t('app', 'Categorias', $n);
 	}
 
 	public static function representingColumn() {
@@ -57,10 +57,10 @@ abstract class BaseEmpCategoria extends GxActiveRecord {
 
 	public function attributeLabels() {
 		return array(
-			'idemp_categoria' => Yii::t('app', 'Idemp Categoria'),
+			'idemp_categoria' => Yii::t('app', 'ID'),
 			'titulo' => Yii::t('app', 'Titulo'),
 			'ativo' => Yii::t('app', 'Ativo'),
-			'empreendimentos' => null,
+			'empreendimentos' => Yii::t('app', 'Empreendimento'),
 		);
 	}
 

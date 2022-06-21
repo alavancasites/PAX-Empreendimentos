@@ -71,17 +71,17 @@ abstract class BaseNovidade extends GxActiveRecord {
 	public function attributeLabels() {
 		return array(
 			'idnovidade' => Yii::t('app', 'Idnovidade'),
-			'categoria_idcategoria' => null,
-			'titulo' => Yii::t('app', 'Titulo'),
+			'categoria_idcategoria' => Yii::t('app', 'Categoria'),
+			'titulo' => Yii::t('app', 'Título'),
 			'imagem' => Yii::t('app', 'Imagem'),
 			'banner' => Yii::t('app', 'Banner'),
-			'destaque' => Yii::t('app', 'Destaque'),
-			'destaque_texto' => Yii::t('app', 'Destaque Texto'),
-			'destaque_imagem' => Yii::t('app', 'Destaque Imagem'),
+			'destaque' => Yii::t('app', 'Destaque - Título'),
+			'destaque_texto' => Yii::t('app', 'Destaque - Texto'),
+			'destaque_imagem' => Yii::t('app', 'Destaque - Imagem'),
 			'subtitulo' => Yii::t('app', 'Subtitulo'),
 			'texto' => Yii::t('app', 'Texto'),
 			'ativo' => Yii::t('app', 'Ativo'),
-			'categoria' => null,
+			'categoria' => Yii::t('app', 'Categoria'),
 		);
 	}
 

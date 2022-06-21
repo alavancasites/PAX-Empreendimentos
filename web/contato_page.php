@@ -1,18 +1,29 @@
+<?
+include_once("extranet/autoload.php");
+$model = new Contato();
+if(is_array($_POST['Contato'])){
+	$model->attributes = $_POST['Contato'];
+	$model->data = date('d/m/Y H:i:s');
+	$model->ip = $_SERVER['REMOTE_ADDR'];
+	
+	if($model->save()){
+		$model = new Contato();
+		$sucesso = 1;
+		header("Location: contato?sucesso=1");
+	}
+	
+}
+$erro = CHtml::errorSummary($model);
+$form = new CActiveForm();
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br">
-
 <head profile="http://gmpg.org/xfn/11">
-  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-  <title>Contato - PAX Empreendimentos</title>
-  <?php include("header.php"); ?>
-  <style type="text/css">
-    <?php echo file_get_contents ('css/slick.css');
-    ?>
-    <?php echo file_get_contents ('css/unite-gallery.css');
-    ?>
-  </style>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title>Contato - PAX Empreendimentos</title>
+<?php include("header.php"); ?>
+<style type="text/css"><?php echo file_get_contents ('css/slick.css');?><?php echo file_get_contents ('css/unite-gallery.css');?></style>
 </head>
-
 <body>
   <header>
     <div id="topo"><?php include("topo.php"); ?></div>
@@ -54,16 +65,27 @@
             <a href="#"><img src="img/whatsapp1.svg" alt="whatsapp"></a>
           </div>
           <div class="colunas col-10 off-1">
-            <form class="" action="index.html" method="post">
-              <input type="text" name="" value="" placeholder="Nome">
-              <input type="text" name="" value="" placeholder="E-mail">
-              <input class="tam50" type="text" name="" value="" placeholder="Telefone + DDD">
-              <select class="tam50 margin" class="" name="">
-                <option value="assunto">Assunto</option>
-              </select>
-              <textarea name="name" rows="8" cols="80" placeholder="Escreva sua mensagem"></textarea>
+            <?
+              if(!empty($erro)){
+            ?>
+              <div class="error margin20"><?=$erro;?></div>
+            <?
+              }if($_GET['sucesso'] == 1){
+            ?>
+              <div class="sucesso_msg">Contato enviado com sucesso. Obrigado!</div>
+            <?
+              }
+            ?>
+            <form id="form1" name="form1" method="post" action="contato">
+              <input type="hidden"  name="grava" value="1" />
+              <?php echo $form->textField($model,'nome',array('class'=>'colunas col-10 alpha omega','maxlength'=>100,'placeholder'=>$model->getAttributeLabel('nome'))); ?>
+              <?php echo $form->textField($model,'email',array('class'=>'colunas col-10 alpha omega','maxlength'=>100,'placeholder'=>$model->getAttributeLabel('email'))); ?>
+              <?php echo $form->textField($model,'telefone',array('class'=>'colunas col-5 alpha','maxlength'=>100,'placeholder'=>$model->getAttributeLabel('telefone'))); ?>
+              <?php echo $form->textField($model,'assunto',array('class'=>'colunas col-5 omega','maxlength'=>100,'placeholder'=>$model->getAttributeLabel('assunto'))); ?>
+              <?php echo $form->textArea($model,'mensagem',array('rows'=>'6','cols'=>'40','placeholder'=>'Mensagem','class'=>'')); ?>
               <button class="btn-secundary mt-1" type="button" name="button">Enviar</button>
-            </form>
+            </form>            
+          
           </div>
         </div>
       </div>

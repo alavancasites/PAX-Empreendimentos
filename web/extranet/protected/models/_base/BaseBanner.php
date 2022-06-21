@@ -70,18 +70,18 @@ abstract class BaseBanner extends GxActiveRecord {
 	public function attributeLabels() {
 		return array(
 			'idbanner' => Yii::t('app', 'Idbanner'),
-			'titulo' => Yii::t('app', 'Titulo'),
+			'titulo' => Yii::t('app', 'Título'),
 			'texto' => Yii::t('app', 'Texto'),
-			'emp_nome' => Yii::t('app', 'Emp Nome'),
-			'emp_tag' => Yii::t('app', 'Emp Tag'),
+			'emp_nome' => Yii::t('app', 'Empreendimento'),
+			'emp_tag' => Yii::t('app', 'TAG'),
 			'quartos' => Yii::t('app', 'Quartos'),
 			'metragem' => Yii::t('app', 'Metragem'),
 			'vagas' => Yii::t('app', 'Vagas'),
 			'imagem' => Yii::t('app', 'Imagem'),
 			'responsivo' => Yii::t('app', 'Responsivo'),
-			'botao' => Yii::t('app', 'Botao'),
+			'botao' => Yii::t('app', 'Botão'),
 			'link' => Yii::t('app', 'Link'),
-			'externo' => Yii::t('app', 'Externo'),
+			'externo' => Yii::t('app', 'Link externo?'),
 			'ativo' => Yii::t('app', 'Ativo'),
 		);
 	}
