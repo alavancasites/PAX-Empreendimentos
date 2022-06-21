@@ -23,7 +23,7 @@ include_once("extranet/autoload.php");
     <div class="container">
       <h2 class="title text-center mb-5 mt-5"><span> mercado moderno</span> e sustentável</h2>
       <div class="clear"></div>
-      <div class="">
+      <div class="mt-4">
         <?php
           $direita = 0;
           $clear = 0;
@@ -34,22 +34,23 @@ include_once("extranet/autoload.php");
           foreach($empreendimentos as $empreendimento) {
             $direita++;
             $clear++;
+            if ($direita%2==0){
+              $alinhamento = "right";
+            }
         ?>
-          <div class="list right">
-            <a href="empreendimento"><img src="img/darci.png" alt="Darci Luiz "></a>
+          <div class="list <?=$alinhamento?>">
+            <a href="empreendimento"><img src="extranet/uploads/Empreendimento/<?=$empreendimento->capa?>" alt="<?=$empreendimento->titulo?>"></a>
             <div class="infos">
               <h3><?=$empreendimento->titulo?></h3>
               <p><?=$empreendimento->empCategoria?></p>
               <div class="espacos">
-                <span><img src="img/cama.svg" alt="Suítes"> <br><?=$empreendimento->dormitorio?></span>
+                <span><img src="img/cama.svg" alt="Domitorios"> <br><?=$empreendimento->dormitorio?></span>
                 <span>|</span>
-                <span><img src="img/home.svg" alt="Metros"> <br>72 a 84m²</span>
+                <span><img src="img/home.svg" alt="Metragem"> <br><?=$empreendimento->metragem?></span>
                 <span> |</span>
-                <span><img src="img/carro.svg" alt="Vagas"> <br>1 vaga</span>
+                <span><img src="img/carro.svg" alt="Garagem"> <br><?=$empreendimento->garagem?></span>
               </div>
-              <a href="empreendimento" class="bt">
-                saiba mais
-              </a>
+              <a href="empreendimento" class="bt">Saiba mais</a>
             </div>
           </div>
         <?php
