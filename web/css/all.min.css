@@ -1088,6 +1088,9 @@ footer .redes-sociais {
 .texto {
   font-size: 16px;
   line-height: 30px
+}.emp_texto {
+  font-size: 18px;
+  line-height: 30px
 }
 .uppercase {
   text-transform: uppercase

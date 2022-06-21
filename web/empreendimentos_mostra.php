@@ -1,82 +1,56 @@
+<?
+include_once("extranet/autoload.php");
+$empreendimento = Empreendimento::model()->findByPk($_GET['empreendimento'],array('condition' => "ativo = '1'")); 
+if(!is_object($empreendimento)){
+	echo "Página inexistente!"; exit; 
+} 
+?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br">
-
 <head profile="http://gmpg.org/xfn/11">
-  <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-  <title>Ello haus - Empreendimentos - PAX Empreendimentos</title>
-  <?php include("header.php"); ?>
-  <style type="text/css">
-    <?php echo file_get_contents ('css/slick.css');
-    ?>
-    <?php echo file_get_contents ('css/lightbox.min.css');
-    ?>
-  </style>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<title><?=($empreendimento->titulo)?> - PAX Empreendimentos</title>
+<?php include("header.php"); ?>
+<style type="text/css"><?php echo file_get_contents ('css/slick.css');?><?php echo file_get_contents ('css/lightbox.min.css');?></style>
 </head>
-
 <body>
   <header>
     <div id="topo"><?php include("topo.php"); ?></div>
   </header>
   <div class="clear"></div>
-  <section class="banner-interno" style="background-image: url(img/elloh-haus.png)">
+  <section class="banner-interno" style="background-image: url(extranet/uploads/Empreendimento/<?=($empreendimento->banner)?>)">
     <div class="container">
       <h1>
-        <a href="#">Home | Empreendimentos | <strong>Ello Haus</strong></a>
-        <strong>
-          Nosso DNA conecta
-          histórias de sucesso
-          aos nossos clientes
-        </strong>
+        <a href="#">Home | Empreendimentos | <strong><?=($empreendimento->titulo)?></strong></a>
+        <strong><?=($empreendimento->slogan)?></strong>
       </h1>
     </div>
   </section>
   <div class="clear"></div>
   <section class="pag-empreendimento">
-    <img src="img/empreendimento-efeito.png" class="efeito" alt="Ello haus">
-    <img src="img/empreendimento-efeito1.png" class="efeito1" alt="Ello haus">
+    <img src="img/empreendimento-efeito.png" class="efeito" alt="<?=($empreendimento->titulo)?>">
+    <img src="img/empreendimento-efeito1.png" class="efeito1" alt="<?=($empreendimento->titulo)?>">
     <div class="container">
       <div class="text-center">
-        <h2 class="title-bord-bottom mt-4 mb-2"><strong>Ello haus</strong></h2>
-        <div class="colunas col-14 off-4">
-          <p class="texto">
-            <strong>Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos.</strong>
-          </p>
-        </div>
+        <h2 class="title-bord-bottom mt-4 mb-2"><strong><?=($empreendimento->titulo)?></strong></h2>
+        <div class="colunas col-14 off-4"><div class="texto"><strong><?=($empreendimento->chamada)?></strong></div></div>
         <div class="clear"></div>
-
         <div class="colunas col-18 off-1">
           <div id="gallery" class="mt-4 mb-4">
-      			<div>
-              <a href="img/haus.png" data-lightbox="image-1" data-title="SUÍTE CASAL"><img alt="SUÍTE CASAL" src="img/haus.png" class="img-responsive"><span>SUÍTE CASAL</span></a>
-            </div>
-
-        		<div>
-              <a href="img/haus.png" data-lightbox="image-1" data-title="SUÍTE CASAL"><img alt="Quarto" src="img/quarto.png" class="img-responsive"><span>SUÍTE CASAL</span></a>
-            </div>
-            <div>
-              <a href="img/haus.png" data-lightbox="image-1" data-title="SUÍTE CASAL"><img alt="Quarto" src="img/quarto.png" class="img-responsive"><span>SUÍTE CASAL</span></a>
-            </div>
-            <div>
-              <a href="img/haus.png" data-lightbox="image-1" data-title="SUÍTE CASAL"><img alt="Quarto" src="img/quarto.png" class="img-responsive"><span>SUÍTE CASAL</span></a>
-            </div>
-            <div>
-              <a href="img/haus.png" data-lightbox="image-1" data-title="SUÍTE CASAL"><img alt="Quarto" src="img/quarto.png" class="img-responsive"><span>SUÍTE CASAL</span></a>
-            </div>
-            <div>
-              <a href="img/haus.png" data-lightbox="image-1" data-title="SUÍTE CASAL"><img alt="Quarto" src="img/quarto.png" class="img-responsive"><span>SUÍTE CASAL</span></a>
-            </div>
-            <div>
-              <a href="img/haus.png" data-lightbox="image-1" data-title="SUÍTE CASAL"><img alt="Quarto" src="img/quarto.png" class="img-responsive"><span>SUÍTE CASAL</span></a>
-            </div>
-            <div>
-              <a href="img/haus.png" data-lightbox="image-1" data-title="SUÍTE CASAL"><img alt="Quarto" src="img/quarto.png" class="img-responsive"><span>SUÍTE CASAL</span></a>
-            </div>
-            <div>
-              <a href="img/haus.png" data-lightbox="image-1" data-title="SUÍTE CASAL"><img alt="Quarto" src="img/quarto.png" class="img-responsive"><span>SUÍTE CASAL</span></a>
-            </div>
+      			<div><a href="img/haus.png" data-lightbox="image-1" data-title="<?=($empreendimento->titulo)?>"><img alt="<?=($empreendimento->titulo)?>" src="extranet/uploads/Empreendimento/<?=($empreendimento->imagem)?>" class="img-responsive"><span><?=($empreendimento->titulo)?></span></a></div>
+            <?
+              $fotos = $empreendimento->fotos->getGallery()->galleryPhotos; 
+              if(is_array($fotos)){
+                $total = count($fotos);
+                foreach($fotos as $i => $foto){
+            ?>
+              <div><a href="img/haus.png" data-lightbox="image-1" data-title="SUÍTE CASAL"><img alt="Quarto" src="img/quarto.png" class="img-responsive"><span>SUÍTE CASAL</span></a></div>
+            <?
+                }
+              }
+            ?>
       		</div>
         </div>
-
       </div>
     </div>
   </section>
