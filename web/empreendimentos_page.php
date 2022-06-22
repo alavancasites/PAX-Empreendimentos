@@ -46,22 +46,50 @@
           <div class="colunas col-13">
             <h2 class="title-bord ml-3 mt-3"><strong class="num">Aqua residence</strong><small>Em construção</small></h2>
             <div class="descricao">
-              <span><strong class="num">02</strong>Suítes + 1 quarto</span>
-              <span><strong class="num">02</strong>vagas de garagem</span>
-              <span><strong class="num">05</strong>areas de lazer</span>
-              <span><strong class="num">72 - 84m²</strong>apartamentos com</span>
-              <span><strong class="num">02</strong>elevadores</span>
-              <span><strong class="num">04</strong>apê por andar</span>
-              <span><strong class="num">2.750</strong>área de terreno</span>
-              <span><strong class="num">24</strong>pavimentos</span>
-              <span class="btn"><a href="empreendimento"><strong>SAIBA MAIS</strong></a></span>
+              <?
+                if ($empreendimento->dormitorio != NULL){
+              ?>
+                <span><strong class="num"><?=($empreendimento->dormitorio)?></strong>Suítes + 1 quarto</span>
+              <?
+                } if ($empreendimento->garagem != NULL){
+              ?>
+                <span><strong class="num"><?=($empreendimento->garagem)?></strong>vagas de garagem</span>
+              <?
+                } if ($empreendimento->area_lazer != NULL){
+              ?>
+                <span><strong class="num"><?=($empreendimento->area_lazer)?></strong>Áreas de lazer</span>
+              <?
+                } if ($empreendimento->metragem != NULL){
+              ?>
+                <span><strong class="num"><?=($empreendimento->metragem)?></strong>metragem</span>
+              <?
+                } if ($empreendimento->elevador != NULL){
+              ?>
+                <span><strong class="num"><?=($empreendimento->elevador)?></strong>elevadores</span>
+              <?
+                } if ($empreendimento->ap_andar != NULL){
+              ?>
+                <span><strong class="num"><?=($empreendimento->ap_andar)?></strong>ap&ecirc; por andar</span>
+              <?
+                } if ($empreendimento->terreno != NULL){
+              ?>
+                <span><strong class="num"><?=($empreendimento->terreno)?></strong>&aacute;rea de terreno</span>
+              <?
+                }
+              ?>
+              <span class="btn"><a href="empreendimento/<?=$empreendimento->idempreendimento?>/<?=Util::removerAcentos($empreendimento->titulo)?>"><strong>SAIBA MAIS</strong></a></span>
             </div>
           </div>
         </div>
       </section>
-    <?
-      }
-    ?>
+      <?php
+        if ($clear%2==0){
+      ?>
+        <div class="clear"></div>
+      <?
+          }
+        }
+      ?>
     <div class="clear"></div>
   </div>
   <?php include("rodape.php"); ?>
