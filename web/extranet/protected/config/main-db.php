@@ -1,8 +1,8 @@
 <?
 return array(
-    'host' => 'localhost',
-    'db' => 'pax',
-    'username' => 'root',
-    'password' => '',
+    'host' => 'paxemp.mysql.dbaas.com.br',
+    'db' => 'paxemp',
+    'username' => 'paxemp',
+    'password' => 'CbQ1tS5H0HSHSE',
 );
 ?>
