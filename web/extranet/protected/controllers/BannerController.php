@@ -2,11 +2,11 @@
 
 class BannerController extends GxController {
 
-	
+
     public function getRepresentingFields(){
 		return Banner::representingColumn();
 	}
-    
+
 	public function actionView($id) {
 		$this->render('view', array(
 			'model' => $this->loadModel($id, 'Banner'),
@@ -15,7 +15,7 @@ class BannerController extends GxController {
 
 	public function actionCreate() {
 		$model = new Banner;
-        
+
 		if (isset($_POST['Banner'])) {
 			$model->setAttributes($_POST['Banner']);
 
@@ -58,7 +58,7 @@ class BannerController extends GxController {
 				Yii::app()->end();
 			}
 			else
-				$this->redirect($this->createUrlRel('index'));			
+				$this->redirect($this->createUrlRel('index'));
 		}
 		else{
 			$this->renderPartial("//site/delete_console", array(
@@ -72,7 +72,7 @@ class BannerController extends GxController {
 		$model->update();
 		Yii::app()->request->redirect(Yii::app()->user->returnUrl);
 	}
-	
+
 	public function actionDesativar($id){
 		$model=$this->loadModel($id);
 		$model->ativo= 0;
@@ -80,7 +80,7 @@ class BannerController extends GxController {
 		Yii::app()->request->redirect(Yii::app()->user->returnUrl);
 	}
 
-	public function loadModel($id)
+	public function loadModel($id, $class='')
 	{
 		$model=Banner::model()->findByPk($id);
 		if($model===null)
@@ -90,31 +90,31 @@ class BannerController extends GxController {
 
 	public function actionIndex() {
 		$criteria = new CDbCriteria;
-		
+
 		//Códgio de busca
 		if(isset($_GET['q'])){
 			$model = new Banner();
 			$atributos = $model->tableSchema->columns;
-					
+
 			foreach($atributos as $att){
 				if(!$att->isPrimaryKey && !$att->isForeignKey)
 					$criteria->addCondition($att->name." like '%".$_GET['q']."%'", "OR");
 			}
 		}
-		
+
 		if(isset($_GET['o']) && isset($_GET['f']) ){
 			$criteria->order = $_GET['f']." ".$_GET['o'];
 		}
         else{
         	$criteria->order = 'idbanner desc';
         }
-		
+
 		if(count($this->rel_conditions) > 0){
 			foreach($this->rel_conditions as $field => $value){
 				$criteria->addCondition($field." = '".$value."'");
 			}
 		}
-		
+
 		$dataProvider = new CActiveDataProvider('Banner', array(
             'criteria'=>$criteria,
 			'pagination' => array(
@@ -122,18 +122,18 @@ class BannerController extends GxController {
 				'pageVar'=>'p',
 			),
     	));
-		
+
 		$this->render('index', array(
 			'dataProvider' => $dataProvider,
 			'model' => Banner::model(),
 		));
 	}
-    
+
     public function afterAction($action){
 		Yii::app()->user->returnUrl = Yii::app()->request->requestUri;
 		return parent::afterAction($action);
 	}
-	
+
 	public function beforeAction($action){
 		/*
         if(is_numeric($_GET['idlinha'])){
@@ -150,7 +150,7 @@ class BannerController extends GxController {
 			}
 		}
         */
-        
+
 		return parent::beforeAction($action);
 	}
 

@@ -16,12 +16,12 @@ $this->breadcrumbs[] = Yii::t('app','Visualizar');
             <h4>Visualizar</h4>
           </div>
           <div class="w-box-content">
-          
-		  <? 
+
+		  <?
           $this->renderPartial("//layouts/sucesso",array(
               'success' => $_GET['success'],
           ));
-          ?>      
+          ?>
         <div class="formSep">
           <dl class="dl-horizontal">
             <dt><?=Util::formataTexto($model->getAttributeLabel('emp_categoria_idemp_categoria'));?></dt>
@@ -76,6 +76,7 @@ $this->breadcrumbs[] = Yii::t('app','Visualizar');
             <dd><? $this->widget('GalleryManager', array(
 				  'gallery' => $model->foto->getGallery(),
 				  'controllerRoute' => 'gallery',
+				  'id' => 'gallery1',
 				));?></dd>
           </dl>
         </div>
@@ -85,6 +86,7 @@ $this->breadcrumbs[] = Yii::t('app','Visualizar');
             <dd><? $this->widget('GalleryManager', array(
 				  'gallery' => $model->planta->getGallery(),
 				  'controllerRoute' => 'gallery',
+				  'id' => 'gallery2',
 				));?></dd>
           </dl>
         </div>
@@ -256,11 +258,11 @@ $this->breadcrumbs[] = Yii::t('app','Visualizar');
             <dd><?=Util::formataTexto($model->ativo ? 'Sim' : 'Não')?></dd>
           </dl>
         </div>
-     
-     
 
-     
-     
+
+
+
+
          <div class="formSep">
               <dl class="dl-horizontal">
                   <dt>&nbsp;</dt>
@@ -271,7 +273,7 @@ $this->breadcrumbs[] = Yii::t('app','Visualizar');
                         <a class="btn" href="<?php echo $this->createUrlRel('update',array('id'=>$model->idempreendimento));?>"><i class="icon-edit "></i> Editar</a>
                         <?
                     }
-                    ?>          
+                    ?>
                     <?
                     if(Yii::app()->user->obj->group->temPermissaoAction($this->id,'index')){
                         ?>
@@ -285,11 +287,11 @@ $this->breadcrumbs[] = Yii::t('app','Visualizar');
                         <a class="btn btn-delete" href="<?php echo $this->createUrlRel('delete',array('id'=>$model->idempreendimento));?>" style="margin-left:30px;"><i class="icon-trash"></i> Excluir</a>
                         <?
                     }
-                    ?>           
+                    ?>
                   </dd>
                </dl>
            </div>
-          
+
 		</div>
       </div>
   </div>

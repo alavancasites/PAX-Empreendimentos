@@ -92,6 +92,7 @@
         $this->widget( 'GalleryManager', array(
           'gallery' => $model->foto->getGallery(),
           'controllerRoute' => 'gallery',
+          'id' => 'gallery1',
         ) );
         echo $form->hiddenField( $model, 'gallery_id' );
         ?>
@@ -106,6 +107,7 @@
         $this->widget( 'GalleryManager', array(
           'gallery' => $model->planta->getGallery(),
           'controllerRoute' => 'gallery',
+          'id' => 'gallery2',
         ) );
         echo $form->hiddenField( $model, 'gallery_id1' );
         ?>

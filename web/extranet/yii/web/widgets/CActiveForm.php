@@ -871,10 +871,10 @@ class CActiveForm extends CWidget
 		$path_arquivos = 'uploads/'.get_class($model).'/';
 		include_once($path_editor."fckeditor.php");
 
-		$url = parse_url($_SERVER[PHP_SELF]);
-		$uri = dirname ($url[path])."/";
+		$url = parse_url($_SERVER['PHP_SELF']);
+		$uri = dirname ($url['path'])."/";
 		$sBasePath = $uri.$path_editor;
-		$_SESSION[BasePath_arquivos] = ($uri.$path_arquivos);
+		$_SESSION['BasePath_arquivos'] = ($uri.$path_arquivos);
 		$_SESSION['UserFilesPath'] = ($uri.$path_arquivos);
 
 		//A string passada por par?metro na cria??o do objeto ? o nome da varPOST que o arquivo destino receber?
