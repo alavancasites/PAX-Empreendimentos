@@ -40,7 +40,7 @@
 
         </div>
       </div>
-        <img src="img/elemento-banner.png" class="efeito" alt="PAX Empreendimentos">
+        <?php /*?><img src="img/elemento-banner.png" class="efeito" alt="PAX Empreendimentos"><?php */?>
   </div>
 
 </div>

@@ -15,7 +15,7 @@
 <meta property="og:site_name" content="Pax Empreendimentos" />
 <?php /*?>Pagina para verifica��o: https://developers.facebook.com/tools/debug<?php */?>
 <meta name="Title" content="Pax Empreendimentos"/>
-<meta name="reply-to" content="paxatendimento@pax.com.br"/>
+<meta name="reply-to" content="contato@soupax.com.br"/>
 <meta name="description" content="Empreendimentos, Imóveis, Alto padrão, Apartamentos, Chapecó, Imóvel"/>
 <meta name="keywords" content=""/>
 <meta name="copyright" content="Copyright 2022"/>

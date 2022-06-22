@@ -3,7 +3,7 @@
 		<div class="colunas col-6">
 			<img src="img/pax.svg" width="200" alt="PAX Empreendimetos">
 			<div class="">
-				<a href="#" class="redes-sociais mt-3"><img src="img/instagram.svg" alt="instagram"></a>
+				<a href="https://www.instagram.com/paxempreendimentos/" class="redes-sociais mt-3"><img src="img/instagram.svg" alt="instagram"></a>
 				<a href="#" class="redes-sociais mt-3"><img src="img/whatsapp.svg" alt="whatsapp"></a>
 			</div>
 		</div>
@@ -31,9 +31,9 @@
 		</div>
 		<div class="colunas col-5">
 			<a href="contato" class="tit">Central de atendimento</a>
-			<a href="tell:+554931992101" class="fone"><strong><img src="img/fone.svg" alt="+55  (49) 3199-2101 "> +55  (49) 3199-2101</strong></a>
-			<a href="tell:+554931992108" class="fone"><strong><img src="img/fone.svg" alt="+55  (49) 3199-2108"> +55  (49) 3199-2108</strong></a>
-			<a href="mailto:paxatendimento@pax.com.br"><img src="img/mail.svg" alt="contato@soupax.com.br"> contato@soupax.com.br</a>
+			<a href="tel:+554931992101" class="fone"><strong><img src="img/fone.svg" alt="+55  (49) 3199-2101 "> +55  (49) 3199-2101</strong></a>
+			<a href="tel:+554931992108" class="fone"><strong><img src="img/fone.svg" alt="+55  (49) 3199-2108"> +55  (49) 3199-2108</strong></a>
+			<a href="mailto:contato@soupax.com.br"><img src="img/mail.svg" alt="contato@soupax.com.br"> contato@soupax.com.br</a>
 		</div>
 		<div class="clear"></div>
 
