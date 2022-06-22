@@ -39,12 +39,12 @@ if(!is_object($empreendimento)){
           <div id="gallery" class="mt-4 mb-4">
       			<div><a href="img/haus.png" data-lightbox="image-1" data-title="<?=($empreendimento->titulo)?>"><img alt="<?=($empreendimento->titulo)?>" src="extranet/uploads/Empreendimento/<?=($empreendimento->imagem)?>" class="img-responsive"><span><?=($empreendimento->titulo)?></span></a></div>
             <?
-              $fotos = $empreendimento->fotos->getGallery()->galleryPhotos; 
+              $fotos = $empreendimento->foto->getGallery()->galleryPhotos; 
               if(is_array($fotos)){
                 $total = count($fotos);
                 foreach($fotos as $i => $foto){
             ?>
-              <div><a href="img/haus.png" data-lightbox="image-1" data-title="SUÍTE CASAL"><img alt="Quarto" src="img/quarto.png" class="img-responsive"><span>SUÍTE CASAL</span></a></div>
+              <div><a href="extranet/gallery/<?=$foto->id?>.jpg" data-lightbox="image-1" data-title="<?=$foto->description?>"><img alt="<?=$foto->description?>" src="extranet/gallery/<?=$foto->id?>.jpg" class="img-responsive"><span><?=$foto->description?></span></a></div>
             <?
                 }
               }
@@ -65,21 +65,27 @@ if(!is_object($empreendimento)){
       </div>
       <div class="colunas col-16 off-2 mb-3">
         <div class="slide-plantas">
-          <div>
-            <a href="img/planta.png" data-lightbox="image-1" data-title="Planta haus"><img src="img/planta.png" class="img-responsive center-block" alt="Planta"></a>
-            <h3> <strong>Planta Haus</strong> <small>72m² | 2 suíte + quarto</small></h3>
-          </div>
-          <div>
-            <a href="img/planta.png" data-lightbox="image-1" data-title="Planta haus"><img src="img/planta.png" class="img-responsive center-block" alt="Planta"></a>
-            <h3> <strong>Planta Haus</strong> <small>72m² | 2 suíte + quarto</small></h3>
-          </div>
+            <?
+              $plantas = $empreendimento->planta->getGallery()->galleryPhotos; 
+              if(is_array($plantas)){
+                $total = count($plantas);
+                foreach($plantas as $i => $planta){
+            ?>
+              <div>
+                <a href="extranet/gallery/<?=$planta->id?>.jpg" data-lightbox="image-1" data-title="Planta haus"><img src="extranet/gallery/<?=$planta->id?>.jpg" class="img-responsive center-block" alt="<?=$planta->name?>"></a>
+                <h3> <strong><?=$planta->name?></strong> <small><?=$planta->description?></small></h3>
+              </div>
+            <?
+                }
+              }
+            ?>
         </div>
       </div>
-      <div class="clear"></div>
+      <?php /*?><div class="clear"></div>
       <img src="img/visite-nosso-estande-decorado.svg" class="img-responsive center-block mt-4" alt="Visite nosso decorado 3D">
       <a href="#">
         <img src="img/psx-360.png" class="img-responsive center-block mt-3" alt="Pax 360">
-      </a>
+      </a><?php */?>
       <div class="clear"></div>
       <img src="img/andamento-da-obra.svg" class="img-responsive center-block mt-5" alt="Andamento da obra">
       <div class="mt-4">
@@ -207,9 +213,6 @@ if(!is_object($empreendimento)){
   <script type="text/javascript" src="gzip/gzip.php?arquivo=../jquery/lightbox.js&amp;cid=<?=$cid?>"></script>
   <script type="text/javascript">
     $(document).ready(function() {
-
-
-
       $('.slide-plantas').slick({
         dots: false,
         arrows: true,
@@ -220,18 +223,13 @@ if(!is_object($empreendimento)){
         autoplay: true,
         fade: false
       });
-
-
       var $round = $('.round'),
       roundRadius = $round.find('circle').attr('r'),
       roundPercent = $round.data('percent'),
       roundCircum = 2 * roundRadius * Math.PI,
       roundDraw = roundPercent * roundCircum / 100
       $round.css('stroke-dasharray', roundDraw  + ' 999')
-
-
     });
   </script>
 </body>
-
 </html>
