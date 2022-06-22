@@ -8,7 +8,7 @@
 <meta name="theme-color" content="#ffffff">
 
 <meta property="og:title" content="Pax Empreendimentos" />
-<meta property="og:description" content="descricao" />
+<meta property="og:description" content="Empreendimentos, Imóveis, Alto padrão, Apartamentos, Chapecó, Imóvel" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="http://www.pax.com.br" />
 <meta property="og:image" content="imagem - 1200x630" />
@@ -16,7 +16,7 @@
 <?php /*?>Pagina para verifica��o: https://developers.facebook.com/tools/debug<?php */?>
 <meta name="Title" content="Pax Empreendimentos"/>
 <meta name="reply-to" content="paxatendimento@pax.com.br"/>
-<meta name="description" content="descricao"/>
+<meta name="description" content="Empreendimentos, Imóveis, Alto padrão, Apartamentos, Chapecó, Imóvel"/>
 <meta name="keywords" content=""/>
 <meta name="copyright" content="Copyright 2022"/>
 <meta name="DC.date.created" content="2022-07-01" />

@@ -1,6 +1,4 @@
-<?
-include_once("extranet/autoload.php");
-?>
+<? include_once("extranet/autoload.php");?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br">
 <head profile="http://gmpg.org/xfn/11">
@@ -72,11 +70,7 @@ include_once("extranet/autoload.php");
   <div class="clear"></div>
   <section class="banner-contact mt-5 mb-3">
     <div class="container">
-      <h2>
-        Nós Ajudamos <br>
-        você a encontrar <br>
-        sua paz nas alturas
-      </h2>
+      <h2>Nós Ajudamos <br>você a encontrar <br>sua paz nas alturas</h2>
       <a href="contato" class="btn-primary btn-lg mt-4">Fala conosco</a>
     </div>
   </section>
