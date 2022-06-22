@@ -92,49 +92,58 @@ if(!is_object($empreendimento)){
         <div class="colunas col-6 off-1">
           <div class="andamento">
             <div class="point">
-              <div class="num">
-                20%
-              </div>
-               <svg class="round" viewbox="0 0 100 100" width="100" height="100" data-percent="20">
-                 <circle cx="50" cy="50" r="40" />
-               </svg>
+              <div class="num"><?=($empreendimento->fundacao)?>%</div>
+               <svg class="round" viewbox="0 0 100 100" width="100" height="100" data-percent="<?=($empreendimento->fundacao)?>"><circle cx="50" cy="50" r="40" /></svg>
              </div>
-             <h3>
-               <img src="img/building.svg" alt="Acabamento">
-               Acabamento
-             </h3>
+             <h3><img src="img/building.svg" alt="Fundação">FUNDA&Ccedil;&Otilde;ES</h3>
           </div>
         </div>
         <div class="colunas col-6">
           <div class="andamento">
             <div class="point">
-              <div class="num">
-                20%
-              </div>
-               <svg class="round" viewbox="0 0 100 100" width="100" height="100" data-percent="20">
-                 <circle cx="50" cy="50" r="40" />
-               </svg>
+              <div class="num"><?=($empreendimento->estrutura)?>%</div>
+               <svg class="round" viewbox="0 0 100 100" width="100" height="100" data-percent="<?=($empreendimento->estrutura)?>"><circle cx="50" cy="50" r="40" /></svg>
              </div>
-             <h3>
-               <img src="img/estrutura.svg" alt="estrutura">
-               Estrutura
-             </h3>
+             <h3><img src="img/estrutura.svg" alt="Estrutura">ESTRUTURA</h3>
           </div>
         </div>
         <div class="colunas col-6">
           <div class="andamento">
             <div class="point">
-              <div class="num">
-                20%
-              </div>
-               <svg class="round" viewbox="0 0 100 100" width="100" height="100" data-percent="20">
-                 <circle cx="50" cy="50" r="40" />
-               </svg>
+              <div class="num"><?=($empreendimento->vedacao)?>%</div>
+               <svg class="round" viewbox="0 0 100 100" width="100" height="100" data-percent="<?=($empreendimento->vedacao)?>"><circle cx="50" cy="50" r="40" /></svg>
              </div>
-             <h3>
-               <img src="img/implantaca.svg" alt="Implantação">
-               IMplantação
-             </h3>
+             <h3><img src="img/implantaca.svg" alt="Vedações">VEDA&Ccedil;&Otilde;ES</h3>
+          </div>
+        </div>
+      </div>
+      <div class="clear"></div>
+      <div class="mt-4">
+        <div class="colunas col-6 off-1">
+          <div class="andamento">
+            <div class="point">
+              <div class="num"><?=($empreendimento->instalacao)?>%</div>
+               <svg class="round" viewbox="0 0 100 100" width="100" height="100" data-percent="<?=($empreendimento->instalacao)?>"><circle cx="50" cy="50" r="40" /></svg>
+             </div>
+             <h3><img src="img/building.svg" alt="Instalação">INSTALA&Ccedil;&Otilde;ES</h3>
+          </div>
+        </div>
+        <div class="colunas col-6">
+          <div class="andamento">
+            <div class="point">
+              <div class="num"><?=($empreendimento->fachada)?>%</div>
+               <svg class="round" viewbox="0 0 100 100" width="100" height="100" data-percent="<?=($empreendimento->fachada)?>"><circle cx="50" cy="50" r="40" /></svg>
+             </div>
+             <h3><img src="img/estrutura.svg" alt="Fachada">FACHADA</h3>
+          </div>
+        </div>
+        <div class="colunas col-6">
+          <div class="andamento">
+            <div class="point">
+              <div class="num"><?=($empreendimento->acabamento)?>%</div>
+               <svg class="round" viewbox="0 0 100 100" width="100" height="100" data-percent="<?=($empreendimento->acabamento)?>"><circle cx="50" cy="50" r="40" /></svg>
+             </div>
+             <h3><img src="img/implantaca.svg" alt="Acabamento">ACABAMENTO</h3>
           </div>
         </div>
       </div>
@@ -143,47 +152,60 @@ if(!is_object($empreendimento)){
   <div class="clear"></div>
   <section class="visite">
     <div class="container mt-5">
-      <h2 class="title2 cor"><strong>O que tem no ello haus?</strong></h2>
-      <p class="texto mt-3 mb-3">
-        Lorem Ipsum é simplesmente uma simulação de texto da indústria tipográfica e de impressos, e vem sendo utilizado desde o século XVI, quando um impressor desconhecido pegou uma bandeja de tipos e os embaralhou para fazer um livro de modelos de tipos. Lorem Ipsum sobreviveu não só a cinco séculos, como também ao salto para a editoração eletrônica, permanecendo essencialmente inalterado.
-      </p>
+      <h2 class="title2 cor"><strong><?=($empreendimento->titulo_2)?></strong></h2>
+      <p class="texto mt-3 mb-3"><?=($empreendimento->texto_2)?></p>
       <div class="descricao ver-detalhes">
-        <span>
-           <strong class="num">02</strong>
-          Suítes + 1 quarto
-        </span>
-        <span>
-           <strong class="num">02</strong>
-          vagas de garagem
-        </span>
-        <span>
-           <strong class="num">05</strong>
-          areas de lazer
-        </span>
-        <span>
-           <strong class="num">72 - 84m²</strong>
-          apartamentos com
-        </span>
-        <span>
-           <strong class="num">02</strong>
-          elevadores
-        </span>
-        <span>
-           <strong class="num">04</strong>
-          apê por andar
-        </span>
-        <span>
-           <strong class="num">2.750</strong>
-          área de terreno
-        </span>
-        <span>
-           <strong class="num">24</strong>
-          pavimentos
-        </span>
-        <span>
-           <strong class="num">24</strong>
-          pavimentos
-        </span>
+        <? 
+          if ($empreendimento->dormitorio != NULL){
+        ?>
+          <span><strong class="num"><?=($empreendimento->dormitorio)?></strong>Suítes + 1 quarto</span>
+        <? 
+          } if ($empreendimento->garagem != NULL){
+        ?>
+          <span><strong class="num"><?=($empreendimento->garagem)?></strong>vagas de garagem</span>
+        <? 
+          } if ($empreendimento->area_lazer != NULL){
+        ?>
+          <span><strong class="num"><?=($empreendimento->area_lazer)?></strong>Áreas de lazer</span>
+        <? 
+          } if ($empreendimento->metragem != NULL){
+        ?>
+          <span><strong class="num"><?=($empreendimento->metragem)?></strong>metragem</span>
+        <? 
+          } if ($empreendimento->elevador != NULL){
+        ?>
+          <span><strong class="num"><?=($empreendimento->elevador)?></strong>elevadores</span>
+        <? 
+          } if ($empreendimento->ap_andar != NULL){
+        ?>
+          <span><strong class="num"><?=($empreendimento->ap_andar)?></strong>ap&ecirc; por andar</span>
+        <? 
+          } if ($empreendimento->terreno != NULL){
+        ?>
+          <span><strong class="num"><?=($empreendimento->terreno)?></strong>&aacute;rea de terreno</span>
+        <? 
+          } if ($empreendimento->pavimentos != NULL){
+        ?>
+          <span><strong class="num"><?=($empreendimento->pavimentos)?></strong>pavimentos</span>
+        <? 
+          } if ($empreendimento->adicional_1 != NULL){
+        ?>
+          <span><strong class="num"><?=($empreendimento->adicional_1)?></strong><?=($empreendimento->info_1)?></span>
+        <? 
+          } if ($empreendimento->adicional_2 != NULL){
+        ?>
+          <span><strong class="num"><?=($empreendimento->adicional_2)?></strong><?=($empreendimento->info_2)?></span>
+        <? 
+          } if ($empreendimento->adicional_3 != NULL){
+        ?>
+          <span><strong class="num"><?=($empreendimento->adicional_3)?></strong><?=($empreendimento->info_3)?></span>
+        <? 
+          } if ($empreendimento->adicional_4 != NULL){
+        ?>
+          <span><strong class="num"><?=($empreendimento->adicional_4)?></strong><?=($empreendimento->info_4)?></span>
+        <? 
+          }
+        ?>
       </div>
     </div>
   </section>
@@ -191,18 +213,12 @@ if(!is_object($empreendimento)){
   <section>
     <div class="container">
       <div class="colunas col-5">
-        <h2 class="title-bord ml-0 mt-3">
-           <strong class="num">Localização privilegiada</strong>
-        </h2>
-        <p class="texto mt-3"><img src="img/local.svg" alt="Localização"> <strong>Chapecó, Santa Catarina</strong></p>
-        <p class="texto mt-1">
-          Av. Getúlio Dorneles Vargas, 1183N - Centro, 89803-003
-        </p>
+        <h2 class="title-bord ml-0 mt-3"><strong class="num">Localiza&ccedil;&atilde;o privilegiada</strong></h2>
+        <p class="texto mt-3"><img src="img/local.svg" alt="Localização"> <strong><?=($empreendimento->cidade_estado)?></strong></p>
+        <p class="texto mt-1"><?=($empreendimento->endereco)?></p>
       </div>
       <div class="colunas col-15">
-        <div class="border-radius mb-5">
-          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d887.993705859592!2d-52.61767111526355!3d-27.094089748154097!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94e4b5dc4c16a075%3A0x8e98013b7bc83a75!2sPAX%20Empreendimentos!5e0!3m2!1spt-BR!2sbr!4v1651938741756!5m2!1spt-BR!2sbr" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </div>
+        <div class="border-radius mb-5"><?=($empreendimento->mapa)?></div>
       </div>
     </div>
   </section>

@@ -22,7 +22,8 @@
  * @property integer $gallery_id1
  * @property string $fundacao
  * @property string $estrutura
- * @property string $vadacao
+ * @property string $vedacao
+ * @property string $fachada
  * @property string $instalacao
  * @property string $acabamento
  * @property string $titulo_2
@@ -75,13 +76,13 @@ abstract class BaseEmpreendimento extends GxActiveRecord {
 		return array(
 			array('emp_categoria_idemp_categoria', 'required'),
 			array('emp_categoria_idemp_categoria, ordem, gallery_id, gallery_id1', 'numerical', 'integerOnly'=>true),
-			array('titulo, fundacao, estrutura, vadacao, instalacao, acabamento, dormitorio, garagem, area_lazer, metragem, elevador, ap_andar, terreno, pavimentos, adicional_1, info_1, adicional_2, info_2, adicional_3, info_3, adicional_4, info_4, endereco, cidade_estado', 'length', 'max'=>100),
+			array('titulo, fundacao, estrutura, vedacao,fachada, instalacao, acabamento, dormitorio, garagem, area_lazer, metragem, elevador, ap_andar, terreno, pavimentos, adicional_1, info_1, adicional_2, info_2, adicional_3, info_3, adicional_4, info_4, endereco, cidade_estado', 'length', 'max'=>100),
 			array('banner, capa, imagem', 'length', 'max'=>140),
 			array('titulo_2', 'length', 'max'=>200),
 			array('ativo', 'length', 'max'=>1),
 			array('slogan, chamada, texto_2, mapa', 'safe'),
-			array('ordem, titulo, banner, slogan, chamada, capa, imagem, fundacao, estrutura, vadacao, instalacao, acabamento, titulo_2, texto_2, dormitorio, garagem, area_lazer, metragem, elevador, ap_andar, terreno, pavimentos, adicional_1, info_1, adicional_2, info_2, adicional_3, info_3, adicional_4, info_4, endereco, mapa, cidade_estado, ativo', 'default', 'setOnEmpty' => true, 'value' => null),
-			array('idempreendimento, emp_categoria_idemp_categoria, ordem, titulo, banner, slogan, chamada, capa, imagem, gallery_id, gallery_id1, fundacao, estrutura, vadacao, instalacao, acabamento, titulo_2, texto_2, dormitorio, garagem, area_lazer, metragem, elevador, ap_andar, terreno, pavimentos, adicional_1, info_1, adicional_2, info_2, adicional_3, info_3, adicional_4, info_4, endereco, mapa, cidade_estado, ativo', 'safe', 'on'=>'search'),
+			array('ordem, titulo, banner, slogan, chamada, capa, imagem, fundacao, estrutura, vedacao,fachada instalacao, acabamento, titulo_2, texto_2, dormitorio, garagem, area_lazer, metragem, elevador, ap_andar, terreno, pavimentos, adicional_1, info_1, adicional_2, info_2, adicional_3, info_3, adicional_4, info_4, endereco, mapa, cidade_estado, ativo', 'default', 'setOnEmpty' => true, 'value' => null),
+			array('idempreendimento, emp_categoria_idemp_categoria, ordem, titulo, banner, slogan, chamada, capa,fachada, imagem, gallery_id, gallery_id1, fundacao, estrutura, vedacao, instalacao, acabamento, titulo_2, texto_2, dormitorio, garagem, area_lazer, metragem, elevador, ap_andar, terreno, pavimentos, adicional_1, info_1, adicional_2, info_2, adicional_3, info_3, adicional_4, info_4, endereco, mapa, cidade_estado, ativo', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -101,27 +102,28 @@ abstract class BaseEmpreendimento extends GxActiveRecord {
 			'idempreendimento' => Yii::t('app', 'Idempreendimento'),
 			'emp_categoria_idemp_categoria' => null,
 			'ordem' => Yii::t('app', 'Ordem'),
-			'titulo' => Yii::t('app', 'Titulo'),
+			'titulo' => Yii::t('app', 'Título'),
 			'banner' => Yii::t('app', 'Banner'),
 			'slogan' => Yii::t('app', 'Slogan'),
 			'chamada' => Yii::t('app', 'Chamada'),
 			'capa' => Yii::t('app', 'Capa'),
 			'imagem' => Yii::t('app', 'Imagem'),
-			'gallery_id' => null,
-			'gallery_id1' => null,
-			'fundacao' => Yii::t('app', 'Fundacao'),
+			'gallery_id' => Yii::t('app', 'Galeria de fotos'),
+			'gallery_id1' => Yii::t('app', 'Plantas'),
+			'fundacao' => Yii::t('app', 'Fundação'),
 			'estrutura' => Yii::t('app', 'Estrutura'),
-			'vadacao' => Yii::t('app', 'Vadacao'),
-			'instalacao' => Yii::t('app', 'Instalacao'),
+			'vedacao' => Yii::t('app', 'Vedação'),
+			'fachada' => Yii::t('app', 'Fachada'),
+			'instalacao' => Yii::t('app', 'Instalação'),
 			'acabamento' => Yii::t('app', 'Acabamento'),
 			'titulo_2' => Yii::t('app', 'Titulo 2'),
 			'texto_2' => Yii::t('app', 'Texto 2'),
-			'dormitorio' => Yii::t('app', 'Dormitorio'),
+			'dormitorio' => Yii::t('app', 'Dormitório'),
 			'garagem' => Yii::t('app', 'Garagem'),
-			'area_lazer' => Yii::t('app', 'Area Lazer'),
+			'area_lazer' => Yii::t('app', 'Área de lazer'),
 			'metragem' => Yii::t('app', 'Metragem'),
 			'elevador' => Yii::t('app', 'Elevador'),
-			'ap_andar' => Yii::t('app', 'Ap Andar'),
+			'ap_andar' => Yii::t('app', 'Ape por Andar'),
 			'terreno' => Yii::t('app', 'Terreno'),
 			'pavimentos' => Yii::t('app', 'Pavimentos'),
 			'adicional_1' => Yii::t('app', 'Adicional 1'),
@@ -132,12 +134,12 @@ abstract class BaseEmpreendimento extends GxActiveRecord {
 			'info_3' => Yii::t('app', 'Info 3'),
 			'adicional_4' => Yii::t('app', 'Adicional 4'),
 			'info_4' => Yii::t('app', 'Info 4'),
-			'endereco' => Yii::t('app', 'Endereco'),
+			'endereco' => Yii::t('app', 'Endereço'),
 			'mapa' => Yii::t('app', 'Mapa'),
-			'cidade_estado' => Yii::t('app', 'Cidade Estado'),
+			'cidade_estado' => Yii::t('app', 'Cidade/Estado'),
 			'ativo' => Yii::t('app', 'Ativo'),
-			'empCategoria' => null,
-			'gallery' => null,
+			'empCategoria' => Yii::t('app', 'Categoria'),
+			'gallery' => Yii::t('app', 'Galeria'),
 		);
 	}
 
@@ -157,7 +159,8 @@ abstract class BaseEmpreendimento extends GxActiveRecord {
 		$criteria->compare('gallery_id1', $this->gallery_id1);
 		$criteria->compare('fundacao', $this->fundacao, true);
 		$criteria->compare('estrutura', $this->estrutura, true);
-		$criteria->compare('vadacao', $this->vadacao, true);
+		$criteria->compare('vedacao', $this->vedacao, true);
+		$criteria->compare('fachada', $this->fachada, true);
 		$criteria->compare('instalacao', $this->instalacao, true);
 		$criteria->compare('acabamento', $this->acabamento, true);
 		$criteria->compare('titulo_2', $this->titulo_2, true);

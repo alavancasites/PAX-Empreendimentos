@@ -126,14 +126,20 @@
   </div>
   <div class="formSep">
     <dl class="dl-horizontal">
-      <dt><?php echo $form->labelEx($model,'vadacao',array('class'=>'control-label')); ?> </dt>
-      <dd> <?php echo $form->textField($model, 'vadacao', array('maxlength' => 100,'class' => 'input-xxlarge')); ?> </dd>
+      <dt><?php echo $form->labelEx($model,'vedacao',array('class'=>'control-label')); ?> </dt>
+      <dd> <?php echo $form->textField($model, 'vedacao', array('maxlength' => 100,'class' => 'input-xxlarge')); ?> </dd>
     </dl>
   </div>
   <div class="formSep">
     <dl class="dl-horizontal">
       <dt><?php echo $form->labelEx($model,'instalacao',array('class'=>'control-label')); ?> </dt>
       <dd> <?php echo $form->textField($model, 'instalacao', array('maxlength' => 100,'class' => 'input-xxlarge')); ?> </dd>
+    </dl>
+  </div>
+  <div class="formSep">
+    <dl class="dl-horizontal">
+      <dt><?php echo $form->labelEx($model,'fachada',array('class'=>'control-label')); ?> </dt>
+      <dd> <?php echo $form->textField($model, 'fachada', array('maxlength' => 100,'class' => 'input-xxlarge')); ?> </dd>
     </dl>
   </div>
   <div class="formSep">

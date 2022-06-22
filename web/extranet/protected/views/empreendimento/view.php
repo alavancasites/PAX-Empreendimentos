@@ -102,13 +102,19 @@ $this->breadcrumbs[] = Yii::t('app','Visualizar');
         </div>
         <div class="formSep">
           <dl class="dl-horizontal">
-            <dt><?=Util::formataTexto($model->getAttributeLabel('vadacao'));?></dt>
-            <dd><?=Util::formataTexto($model->vadacao)?></dd>
+            <dt><?=Util::formataTexto($model->getAttributeLabel('vedacao'));?></dt>
+            <dd><?=Util::formataTexto($model->vedacao)?></dd>
           </dl>
         </div>
         <div class="formSep">
           <dl class="dl-horizontal">
             <dt><?=Util::formataTexto($model->getAttributeLabel('instalacao'));?></dt>
+            <dd><?=Util::formataTexto($model->instalacao)?></dd>
+          </dl>
+        </div>
+        <div class="formSep">
+          <dl class="dl-horizontal">
+            <dt><?=Util::formataTexto($model->getAttributeLabel('fachada'));?></dt>
             <dd><?=Util::formataTexto($model->instalacao)?></dd>
           </dl>
         </div>
