@@ -5,13 +5,13 @@ if(is_array($_POST['Contato'])){
 	$model->attributes = $_POST['Contato'];
 	$model->data = date('d/m/Y H:i:s');
 	$model->ip = $_SERVER['REMOTE_ADDR'];
-	
+
 	if($model->save()){
 		$model = new Contato();
 		$sucesso = 1;
 		header("Location: contato?sucesso=1");
 	}
-	
+
 }
 $erro = CHtml::errorSummary($model);
 $form = new CActiveForm();
@@ -32,7 +32,7 @@ $form = new CActiveForm();
   <section class="banner-interno" style="background-image: url(img/banner-contato.jpg)">
     <div class="container">
       <h1>
-        <a href="#">Home | <strong>Contatos</strong></a>
+        <a href="inicial">Home | </a> <a href="contato"> <strong>Contatos</strong></a> <br>
         <strong>
           Queremos te ouvir! Entre em contato conosco e saiba mais
         </strong>
@@ -57,9 +57,8 @@ $form = new CActiveForm();
               </strong>
             </h2>
             <img src="img/span.png" width="100" class="mt-1" alt="Queremos te ouvir! Entre em contato conosco e saiba mais">
-            <h2 class="mt-3"><a href="tell>+554933163020"><strong><img src="img/phone.svg" alt="Telefone">+55  (49) 3316-3020</strong></a></h2>
-            <h2 class="mt-1 mb-3"><a href="mailto:paxatendimento@pax.com.br"><strong><img src="img/email.svg" alt="">paxatendimento@pax.com.br</strong></a></h2>
-            <a href="#"><img width="50" src="img/facebook.svg" alt="facebook"></a>
+            <h2 class="mt-3"><a href="tell>+554931992101"><strong><img src="img/phone.svg" alt="Telefone">+55  (49) 3199-2101 </strong></a><a href="tell>+554931992108"><strong> / +55  (49) 3199-2108 </strong></a></h2>
+            <h2 class="mt-1 mb-3"><a href="mailto:contato@soupax.com.br"><strong><img src="img/email.svg" alt="email">contato@soupax.com.br</strong></a></h2>
             <a href="#"><img src="img/instagram1.svg" alt="Instagram"></a>
             <a href="#"><img src="img/youtube.svg" alt="YouTube"></a>
             <a href="#"><img src="img/whatsapp1.svg" alt="whatsapp"></a>
@@ -84,7 +83,7 @@ $form = new CActiveForm();
               <?php echo $form->textField($model,'assunto',array('class'=>'colunas col-5 omega','maxlength'=>100,'placeholder'=>$model->getAttributeLabel('assunto'))); ?>
               <?php echo $form->textArea($model,'mensagem',array('rows'=>'6','cols'=>'40','placeholder'=>'Mensagem','class'=>'')); ?>
               <button class="btn-secundary mt-1" type="submit" name="button">Enviar</button>
-            </form>            
+            </form>
           </div>
         </div>
       </div>
@@ -93,7 +92,7 @@ $form = new CActiveForm();
     <section>
       <div class="container">
         <div class="colunas col-5">
-          <img src="img/onde-pax.jpg" class="img-responsive mt-5" alt="Onde a Pax está">
+					<h2 class="title-bord mt-5 ml-0"><strong class="num">onde a <br> <span class="extra-bold cor">pax</span> está</strong></h2>
           <p class="texto mt-3"><img src="img/local.svg" alt="Localização"> <strong>Chapecó, Santa Catarina</strong></p>
           <p class="texto mt-1">
             Av. Getúlio Dorneles Vargas, 1183N - Centro, 89803-003
@@ -112,50 +111,7 @@ $form = new CActiveForm();
     <div class="clear"></div>
   <?php include("scripts.php"); ?>
   <script type="text/javascript" src="gzip/gzip.php?arquivo=../jquery/jquery.slick.min.js&amp;cid=<?=$cid?>"></script>
-  <script type="text/javascript" src="gzip/gzip.php?arquivo=../jquery/unitegallery.js&amp;cid=<?=$cid?>"></script>
-  <script type="text/javascript" src="gzip/gzip.php?arquivo=../jquery/ug-theme-grid.js&amp;cid=<?=$cid?>"></script>
-  <script type="text/javascript">
-    $(document).ready(function() {
 
-      jQuery("#gallery").unitegallery({
-      	grid_num_cols:2,
-      	gridpanel_vertical_scroll:false,
-      	gridpanel_grid_align: "top",
-      	thumb_width:280,
-      	thumb_height:195,
-        thumb_image_overlay_effect:true,
-      	thumb_image_overlay_type: "sepia",
-      });
-
-      $('.slide-plantas').slick({
-        dots: false,
-        arrows: true,
-        infinite: true,
-        speed: 300,
-        slidesToShow: 1,
-        slidesToScroll: 1,
-        autoplay: true,
-        fade: false,
-        responsive: [{
-          breakpoint: 980,
-          settings: {
-            dots: true,
-            arrows: false
-          },
-        }, ]
-      });
-
-
-      var $round = $('.round'),
-      roundRadius = $round.find('circle').attr('r'),
-      roundPercent = $round.data('percent'),
-      roundCircum = 2 * roundRadius * Math.PI,
-      roundDraw = roundPercent * roundCircum / 100
-      $round.css('stroke-dasharray', roundDraw  + ' 999')
-
-
-    });
-  </script>
 </body>
 
 </html>

@@ -2,17 +2,16 @@
 	<div class="container">
 		<div class="colunas col-6">
 			<img src="img/pax.svg" width="200" alt="PAX Empreendimetos">
-			<p class="mt-1">
-				É um fato conhecido de todos que um leitor se distrairá com o conteúdo de texto legível de uma página quando estiver.
-			</p>
-			<a href="#" class="redes-sociais mt-5"><img src="img/instagram.svg" alt="instagram"></a>
-			<a href="#" class="redes-sociais mt-5"><img src="img/whatsapp.svg" alt="whatsapp"></a>
+			<div class="">
+				<a href="#" class="redes-sociais mt-3"><img src="img/instagram.svg" alt="instagram"></a>
+				<a href="#" class="redes-sociais mt-3"><img src="img/whatsapp.svg" alt="whatsapp"></a>
+			</div>
 		</div>
 		<div class="colunas col-4 off-1 mobile-hidden">
 			<a href="javascript:;" class="tit">navegação</a>
 			<a href="inicial">Home</a>
 			<a href="sobre">Sobre nós</a>
-			<a href="novidades">Novidades</a>
+			<? /* <a href="novidades">Novidades</a> */ ?>
 			<a href="contato">Contato</a>
 			<a href="#">Portal do Cliente</a>
 		</div>
@@ -32,8 +31,9 @@
 		</div>
 		<div class="colunas col-5">
 			<a href="contato" class="tit">Central de atendimento</a>
-			<a href="tell:+554933163020" class="fone"><strong><img src="img/fone.svg" alt="+55  (49) 3316-3020"> +55  (49) 3316-3020</strong></a>
-			<a href="mailto:paxatendimento@pax.com.br"><img src="img/mail.svg" alt="paxatendimento@pax.com.br"> paxatendimento@pax.com.br</a>
+			<a href="tell:+554931992101" class="fone"><strong><img src="img/fone.svg" alt="+55  (49) 3199-2101 "> +55  (49) 3199-2101</strong></a>
+			<a href="tell:+554931992108" class="fone"><strong><img src="img/fone.svg" alt="+55  (49) 3199-2108"> +55  (49) 3199-2108</strong></a>
+			<a href="mailto:paxatendimento@pax.com.br"><img src="img/mail.svg" alt="contato@soupax.com.br"> contato@soupax.com.br</a>
 		</div>
 		<div class="clear"></div>
 

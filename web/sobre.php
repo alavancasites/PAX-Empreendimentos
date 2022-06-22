@@ -15,11 +15,9 @@
   <section class="banner-interno mb-3" style="background-image: url(img/banner-sobre.png)">
     <div class="container">
       <h1>
-        <a href="#">Home | <strong>Sobre nós</strong></a>
+        <a href="inicial">Home | </a><a class="ml-1" href="sobre"> <strong> Sobre nós</strong></a> <br>
         <strong>
-          Nosso DNA conecta
-          histórias de sucesso
-          aos nossos clientes
+          Expertise + transparência + coragem
         </strong>
       </h1>
     </div>

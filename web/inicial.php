@@ -70,7 +70,7 @@
   <div class="clear"></div>
   <section class="banner-contact mt-5 mb-3">
     <div class="container">
-      <h2>Nós Ajudamos <br>você a encontrar <br>sua paz nas alturas</h2>
+      <h2>Plantas inteligentes <br> e localizações em <br> áreas nobres</h2>
       <a href="contato" class="btn-primary btn-lg mt-4">Fala conosco</a>
     </div>
   </section>

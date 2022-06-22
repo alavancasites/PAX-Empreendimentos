@@ -2,8 +2,8 @@
   <div>
     <picture>
       <source media="(max-width: 1024px)" srcset="img/banner-mob.jpg">
-      <source media="(min-width: 1800px)" srcset="img/banner.jpg">
-      <img src="img/banner.jpg" class="img-responsive center-block" alt="Conquiste o conforto e modernidade sem abrir mão do luxo">
+      <source media="(min-width: 1800px)" srcset="img/banner-v1.png">
+      <img src="img/banner-v1.png" class="img-responsive center-block" alt="Conquiste o conforto e modernidade sem abrir mão do luxo">
     </picture>
       <h2 class="frase">
         <a href="empreendimento">
@@ -34,11 +34,13 @@
           </span>
           <span> |</span>
           <span>
-            <img src="img/carro.svg" alt="Vagas"> 
+            <img src="img/carro.svg" alt="Vagas">
             1 vaga
           </span>
 
         </div>
       </div>
+        <img src="img/elemento-banner.png" class="efeito" alt="PAX Empreendimentos">
   </div>
+
 </div>

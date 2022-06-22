@@ -1,9 +1,9 @@
 <?
 include_once("extranet/autoload.php");
-$empreendimento = Empreendimento::model()->findByPk($_GET['empreendimento'],array('condition' => "ativo = '1'")); 
+$empreendimento = Empreendimento::model()->findByPk($_GET['empreendimento'],array('condition' => "ativo = '1'"));
 if(!is_object($empreendimento)){
-	echo "Página inexistente!"; exit; 
-} 
+	echo "Página inexistente!"; exit;
+}
 ?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML+RDFa 1.0//EN" "http://www.w3.org/MarkUp/DTD/xhtml-rdfa-1.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml" lang="pt-br">
@@ -21,7 +21,7 @@ if(!is_object($empreendimento)){
   <section class="banner-interno" style="background-image: url(extranet/uploads/Empreendimento/<?=($empreendimento->banner)?>)">
     <div class="container">
       <h1>
-        <a href="#">Home | Empreendimentos | <strong><?=($empreendimento->titulo)?></strong></a>
+        <a href="inicial">Home | </a> <a href="empreendimentos">Empreendimentos | </a><a href="javascript:;"> <strong><?=($empreendimento->titulo)?></strong></a> <br>
         <strong><?=($empreendimento->slogan)?></strong>
       </h1>
     </div>
@@ -39,7 +39,7 @@ if(!is_object($empreendimento)){
           <div id="gallery" class="mt-4 mb-4">
       			<div><a href="img/haus.png" data-lightbox="image-1" data-title="<?=($empreendimento->titulo)?>"><img alt="<?=($empreendimento->titulo)?>" src="extranet/uploads/Empreendimento/<?=($empreendimento->imagem)?>" class="img-responsive"><span><?=($empreendimento->titulo)?></span></a></div>
             <?
-              $fotos = $empreendimento->foto->getGallery()->galleryPhotos; 
+              $fotos = $empreendimento->foto->getGallery()->galleryPhotos;
               if(is_array($fotos)){
                 $total = count($fotos);
                 foreach($fotos as $i => $foto){
@@ -66,7 +66,7 @@ if(!is_object($empreendimento)){
       <div class="colunas col-16 off-2 mb-3">
         <div class="slide-plantas">
             <?
-              $plantas = $empreendimento->planta->getGallery()->galleryPhotos; 
+              $plantas = $empreendimento->planta->getGallery()->galleryPhotos;
               if(is_array($plantas)){
                 $total = count($plantas);
                 foreach($plantas as $i => $planta){
@@ -155,55 +155,55 @@ if(!is_object($empreendimento)){
       <h2 class="title2 cor"><strong><?=($empreendimento->titulo_2)?></strong></h2>
       <p class="texto mt-3 mb-3"><?=($empreendimento->texto_2)?></p>
       <div class="descricao ver-detalhes">
-        <? 
+        <?
           if ($empreendimento->dormitorio != NULL){
         ?>
           <span><strong class="num"><?=($empreendimento->dormitorio)?></strong>Suítes + 1 quarto</span>
-        <? 
+        <?
           } if ($empreendimento->garagem != NULL){
         ?>
           <span><strong class="num"><?=($empreendimento->garagem)?></strong>vagas de garagem</span>
-        <? 
+        <?
           } if ($empreendimento->area_lazer != NULL){
         ?>
           <span><strong class="num"><?=($empreendimento->area_lazer)?></strong>Áreas de lazer</span>
-        <? 
+        <?
           } if ($empreendimento->metragem != NULL){
         ?>
           <span><strong class="num"><?=($empreendimento->metragem)?></strong>metragem</span>
-        <? 
+        <?
           } if ($empreendimento->elevador != NULL){
         ?>
           <span><strong class="num"><?=($empreendimento->elevador)?></strong>elevadores</span>
-        <? 
+        <?
           } if ($empreendimento->ap_andar != NULL){
         ?>
           <span><strong class="num"><?=($empreendimento->ap_andar)?></strong>ap&ecirc; por andar</span>
-        <? 
+        <?
           } if ($empreendimento->terreno != NULL){
         ?>
           <span><strong class="num"><?=($empreendimento->terreno)?></strong>&aacute;rea de terreno</span>
-        <? 
+        <?
           } if ($empreendimento->pavimentos != NULL){
         ?>
           <span><strong class="num"><?=($empreendimento->pavimentos)?></strong>pavimentos</span>
-        <? 
+        <?
           } if ($empreendimento->adicional_1 != NULL){
         ?>
           <span><strong class="num"><?=($empreendimento->adicional_1)?></strong><?=($empreendimento->info_1)?></span>
-        <? 
+        <?
           } if ($empreendimento->adicional_2 != NULL){
         ?>
           <span><strong class="num"><?=($empreendimento->adicional_2)?></strong><?=($empreendimento->info_2)?></span>
-        <? 
+        <?
           } if ($empreendimento->adicional_3 != NULL){
         ?>
           <span><strong class="num"><?=($empreendimento->adicional_3)?></strong><?=($empreendimento->info_3)?></span>
-        <? 
+        <?
           } if ($empreendimento->adicional_4 != NULL){
         ?>
           <span><strong class="num"><?=($empreendimento->adicional_4)?></strong><?=($empreendimento->info_4)?></span>
-        <? 
+        <?
           }
         ?>
       </div>

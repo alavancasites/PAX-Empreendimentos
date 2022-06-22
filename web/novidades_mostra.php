@@ -1,9 +1,9 @@
 <?
 include_once("extranet/autoload.php");
-$novidade = Novidade::model()->findByPk($_GET['novidade'],array('condition' => "ativo = '1'")); 
+$novidade = Novidade::model()->findByPk($_GET['novidade'],array('condition' => "ativo = '1'"));
 if(!is_object($novidade)){
-	echo "Página inexistente!"; exit; 
-} 
+	echo "Página inexistente!"; exit;
+}
 $criteria = new CDbCriteria();
 $criteria->order = 'idnovidade desc';
 $criteria->addCondition("ativo = 1");
@@ -26,7 +26,7 @@ $novidades = Novidade::model()->findAll($criteria);
   <section class="banner-interno" style="background-image: url(img/banner-novidade.png)">
     <div class="container">
       <img src="extranet/uploads/Novidade/<?=($novidade->banner)?>" class="imagem-destaque" alt="<?=($novidade->titulo)?>">
-      <h1><a href="novidade">Home | <strong>Novidades</strong></a><strong><?=($novidade->titulo)?></strong></h1>
+      <h1><a href="inicial">Home | </a>  <a href="novidades"> <strong>Novidades</strong></a><br><strong><?=($novidade->titulo)?></strong></h1> 
     </div>
   </section>
   <div class="clear"></div>

@@ -3,7 +3,7 @@
 <?php include_once("RequestManager.php");$request_manager = new RequestManager();$base_url = $request_manager->getBaseUrl($absolute=true).'/';$server = $_SERVER['SERVER_NAME']; ?><base href="<?=$base_url?>"/><?php include("header_nocache.php"); ?>
 
 <?php /*?>https://www.websiteplanet.com/pt-br/webtools/favicon-generator/<?php */?>
-<link rel="icon" type="image/png" sizes="16x16"  href="img/favicon.png">
+<link rel="icon" type="image/png" sizes="16x16"  href="img/favicon.ico">
 <meta name="msapplication-TileColor" content="#ffffff">
 <meta name="theme-color" content="#ffffff">
 

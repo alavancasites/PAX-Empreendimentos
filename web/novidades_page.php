@@ -26,7 +26,9 @@ $novidades = $data_provider->getData();
   <header><div id="topo"><?php include("topo.php"); ?></div></header>
   <div class="clear"></div>
   <section class="banner-interno" style="background-image: url(img/banner-noviades.png)">
-    <div class="container"><h1><a href="novidade">Home | <strong>Novidades</strong></a><strong>Aqui você ficaa tualizado sobre as novidades</strong></h1></div>
+    <div class="container"><h1>
+      <a href="inicial">Home | </a> <a href="novidades"><strong>Novidades</strong></a> <br>
+      <strong>Aqui você ficaa tualizado sobre as novidades</strong></h1></div>
   </section>
   <div class="clear"></div>
   <section class="novidades">
@@ -55,7 +57,7 @@ $novidades = $data_provider->getData();
         }
       ?>
       </div>
-      <div class="paginacao"> 
+      <div class="paginacao">
           <div class="paginacao-itens">
             <?php
             $pagination = $data_provider->pagination;
@@ -97,8 +99,8 @@ $novidades = $data_provider->getData();
             <?php
               }
             ?>
-          </div>          
-        </div>      
+          </div>
+        </div>
     </div>
   </section>
   <div class="clear"></div>
@@ -108,7 +110,7 @@ $novidades = $data_provider->getData();
         <h3><strong>Increva-se em nossa newsletter para receber novidades</strong></h3>
         <form class="mt-2 mb-3" action="index.html" method="post">
           <input type="text" name="" value="" placeholder="Seu melhor e-mail">
-          <button class="btn-secundary mt-3" type="button" name="button">Inscreva-se</button>
+          <button class="btn-secundary btn-lg mt-3" type="button" name="button">Inscreva-se</button>
         </form>
       </div>
       <div class="colunas col-12">
