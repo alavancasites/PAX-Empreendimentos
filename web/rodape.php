@@ -10,10 +10,10 @@
 		<div class="colunas col-4 off-1 mobile-hidden">
 			<a href="javascript:;" class="tit">navegação</a>
 			<a href="inicial">Home</a>
-			<a href="sobre">Sobre nós</a>
+			<a href="sobre">Sobre n&oacute;s</a>
 			<? /* <a href="novidades">Novidades</a> */ ?>
 			<a href="contato">Contato</a>
-			<a href="#">Portal do Cliente</a>
+			<?php /*?><a href="#">Portal do Cliente</a><?php */?>
 		</div>
 		<div class="colunas col-4 mobile-hidden">
 			<a href="empreendimento" class="tit">Empreendimentos</a>

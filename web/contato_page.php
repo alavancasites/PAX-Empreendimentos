@@ -90,11 +90,10 @@ $form = new CActiveForm();
     <section>
       <div class="container">
         <div class="colunas col-5">
-					<h2 class="title-bord mt-5 ml-0"><strong class="num">onde a <br> <span class="extra-bold cor">pax</span> está</strong></h2>
-          <p class="texto mt-3"><img src="img/local.svg" alt="Localização"> <strong>Chapecó, Santa Catarina</strong></p>
+					<h2 class="title-bord mt-5 ml-0"><strong class="num">onde a <br> <span class="extra-bold cor">pax</span> est&aacute;</strong></h2>
+          <p class="texto mt-3"><img src="img/local.svg" alt="Localização"> <strong>Chapec&oacute;, Santa Catarina</strong></p>
           <p class="texto mt-1">
-            Av. Getúlio Dorneles Vargas, 1183N - Centro, 89803-003
-          </p>
+          Av. Get&uacute;lio Dorneles Vargas, 1183N - Centro, 89803-003 </p>
         </div>
         <div class="colunas col-15 mt-5">
           <div class="border-radius mb-5">
