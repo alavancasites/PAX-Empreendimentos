@@ -11,6 +11,7 @@ $(document).ready(function () {
   $(document).on("scroll", function () {
     if ($(document).scrollTop() > 70) {
       $(".topo").addClass("topo-fixo");
+      console.log("a");
 
     } else {
       $(".topo").removeClass("topo-fixo");

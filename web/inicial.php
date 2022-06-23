@@ -9,10 +9,10 @@
 </head>
 
 <body>
-  <header>
-    <div id="topo"><?php include("topo.php"); ?></div>
+
+    <?php include("topo.php"); ?>
     <?php include("banner_lista.php"); ?>
-  </header>
+
   <div class="clear"></div>
   <section id="conteudo" class="empreendimentos-inicial mt-5">
     <img src="img/elemento.png" class="elemento" alt="mercado moderno e sustentável">

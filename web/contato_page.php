@@ -25,9 +25,7 @@ $form = new CActiveForm();
 <style type="text/css"><?php echo file_get_contents ('css/slick.css');?><?php echo file_get_contents ('css/unite-gallery.css');?><?php echo file_get_contents ('css/formularios.css');?></style>
 </head>
 <body>
-  <header>
-    <div id="topo"><?php include("topo.php"); ?></div>
-  </header>
+  <?php include("topo.php"); ?>
   <div class="clear"></div>
   <section class="banner-interno" style="background-image: url(img/banner-contato.jpg)">
     <div class="container">

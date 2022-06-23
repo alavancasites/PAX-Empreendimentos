@@ -14,9 +14,7 @@ if(!is_object($empreendimento)){
 <style type="text/css"><?php echo file_get_contents ('css/slick.css');?><?php echo file_get_contents ('css/lightbox.min.css');?></style>
 </head>
 <body>
-  <header>
-    <div id="topo"><?php include("topo.php"); ?></div>
-  </header>
+  <?php include("topo.php"); ?>
   <div class="clear"></div>
   <section class="banner-interno" style="background-image: url(extranet/uploads/Empreendimento/<?=($empreendimento->banner)?>)">
     <div class="container">

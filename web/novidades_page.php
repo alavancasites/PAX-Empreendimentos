@@ -23,7 +23,7 @@ $novidades = $data_provider->getData();
 <style type="text/css"><?php echo file_get_contents ('css/slick.css');?><?php echo file_get_contents ('css/unite-gallery.css');?></style>
 </head>
 <body>
-  <header><div id="topo"><?php include("topo.php"); ?></div></header>
+  <?php include("topo.php"); ?>
   <div class="clear"></div>
   <section class="banner-interno" style="background-image: url(img/banner-noviades.png)">
     <div class="container"><h1>

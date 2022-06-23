@@ -8,9 +8,9 @@
 </head>
 
 <body>
-  <header>
-    <div id="topo"><?php include("topo.php"); ?></div>
-  </header>
+
+  <?php include("topo.php"); ?>
+
   <div class="clear"></div>
   <section class="banner-interno mb-3" style="background-image: url(img/banner-sobre.png)">
     <div class="container">

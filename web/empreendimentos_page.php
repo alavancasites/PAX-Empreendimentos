@@ -7,9 +7,7 @@
 <?php include("header.php"); ?>
 </head>
 <body>
-  <header>
-    <div id="topo"><?php include("topo.php"); ?></div>
-  </header>
+  <?php include("topo.php"); ?>
   <div class="clear"></div>
   <section class="banner-interno mb-4" style="background-image: url(img/banner-empreendimento.jpg)">
     <div class="container">
