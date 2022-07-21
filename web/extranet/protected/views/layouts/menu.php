@@ -8,6 +8,10 @@
         ?>
           <a href="<?=$this->createUrl('banner/index');?>"><i class="fa fa-lg fa-caret-right"></i><span>Banner</span></a>
         <?
+          } if ( Yii::app()->user->obj->group->temPermissaoAction( 'empresa', 'index' ) ) {
+        ?>
+          <a href="<?=$this->createUrl('empresa/index');?>"><i class="fa fa-lg fa-caret-right"></i><span>Sobre nós</span></a>
+        <?
           }
         ?>
         <div class="submenu accordion-group">

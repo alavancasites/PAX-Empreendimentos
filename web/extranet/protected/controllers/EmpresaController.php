@@ -1,29 +1,29 @@
 <?php
 
-class BannerController extends GxController {
+class EmpresaController extends GxController {
 
 	
     public function getRepresentingFields(){
-		return Banner::representingColumn();
+		return Empresa::representingColumn();
 	}
     
 	public function actionView($id) {
 		$this->render('view', array(
-			'model' => $this->loadModel($id, 'Banner'),
+			'model' => $this->loadModel($id, 'Empresa'),
 		));
 	}
 
 	public function actionCreate() {
-		$model = new Banner;
+		$model = new Empresa;
         
-		if (isset($_POST['Banner'])) {
-			$model->setAttributes($_POST['Banner']);
+		if (isset($_POST['Empresa'])) {
+			$model->setAttributes($_POST['Empresa']);
 
 			if ($model->save()) {
 				if (Yii::app()->getRequest()->getIsAjaxRequest())
 					Yii::app()->end();
 				else
-					$this->redirect($this->createUrlRel('view',array('id' => $model->idbanner,'success'=>'create')));
+					$this->redirect($this->createUrlRel('view',array('id' => $model->idempresa,'success'=>'create')));
 			}
 		}
         else{
@@ -34,13 +34,13 @@ class BannerController extends GxController {
 	}
 
 	public function actionUpdate($id) {
-		$model = $this->loadModel($id, 'Banner');
+		$model = $this->loadModel($id, 'Empresa');
 
-		if (isset($_POST['Banner'])) {
-			$model->setAttributes($_POST['Banner']);
+		if (isset($_POST['Empresa'])) {
+			$model->setAttributes($_POST['Empresa']);
 
 			if ($model->save()) {
-                $this->redirect($this->createUrlRel('view',array('id' => $model->idbanner,'success'=>'update')));
+                $this->redirect($this->createUrlRel('view',array('id' => $model->idempresa,'success'=>'update')));
 			}
 		}
 
@@ -50,7 +50,7 @@ class BannerController extends GxController {
 	}
 
 	public function actionDelete($id) {
-		$model = $this->loadModel($id, 'Banner');
+		$model = $this->loadModel($id, 'Empresa');
 		if($_GET['confirm'] == 1){
 			$model->delete();
 			if($_GET['ajax'] == 1){
@@ -82,7 +82,7 @@ class BannerController extends GxController {
 
 	public function loadModel($id)
 	{
-		$model=Banner::model()->findByPk($id);
+		$model=Empresa::model()->findByPk($id);
 		if($model===null)
 			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
@@ -93,7 +93,7 @@ class BannerController extends GxController {
 		
 		//Códgio de busca
 		if(isset($_GET['q'])){
-			$model = new Banner();
+			$model = new Empresa();
 			$atributos = $model->tableSchema->columns;
 					
 			foreach($atributos as $att){
@@ -106,7 +106,7 @@ class BannerController extends GxController {
 			$criteria->order = $_GET['f']." ".$_GET['o'];
 		}
         else{
-        	$criteria->order = 'idbanner desc';
+        	$criteria->order = 'idempresa desc';
         }
 		
 		if(count($this->rel_conditions) > 0){
@@ -115,7 +115,7 @@ class BannerController extends GxController {
 			}
 		}
 		
-		$dataProvider = new CActiveDataProvider('Banner', array(
+		$dataProvider = new CActiveDataProvider('Empresa', array(
             'criteria'=>$criteria,
 			'pagination' => array(
 				'pageSize'=> Yii::app()->user->pageSize,
@@ -125,7 +125,7 @@ class BannerController extends GxController {
 		
 		$this->render('index', array(
 			'dataProvider' => $dataProvider,
-			'model' => Banner::model(),
+			'model' => Empresa::model(),
 		));
 	}
     

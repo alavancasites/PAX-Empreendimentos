@@ -69,6 +69,7 @@
         ) );
         ?>
       </dd>
+      <dd style="margin-top: 10px;"><strong>Tamanho da imagem:</strong> 398x617px</dd>
     </dl>
   </div>
   <div class="formSep">
@@ -82,6 +83,7 @@
         ) );
         ?>
       </dd>
+      <dd style="margin-top: 10px;"><strong>Tamanho da imagem:</strong> 580x840px</dd>
     </dl>
   </div>
   <div class="formSep">
@@ -97,6 +99,7 @@
         echo $form->hiddenField( $model, 'gallery_id' );
         ?>
       </dd>
+      <dd style="margin-top: 10px;"><strong>Tamanho da imagem:</strong> 800x600px</dd>
     </dl>
   </div>
   <div class="formSep">
@@ -112,6 +115,7 @@
         echo $form->hiddenField( $model, 'gallery_id1' );
         ?>
       </dd>
+      <dd style="margin-top: 10px;"><strong>Tamanho da imagem:</strong> 900x400px</dd>
     </dl>
   </div>
   <div class="formSep">
@@ -274,6 +278,18 @@
     <dl class="dl-horizontal">
       <dt><?php echo $form->labelEx($model,'cidade_estado',array('class'=>'control-label')); ?> </dt>
       <dd> <?php echo $form->textField($model, 'cidade_estado', array('maxlength' => 100,'class' => 'input-xxlarge')); ?> </dd>
+    </dl>
+  </div>
+  <div class="formSep">
+    <dl class="dl-horizontal">
+      <dt><?php echo $form->labelEx($model,'destaque',array('class'=>'control-label')); ?> </dt>
+      <dd> <?php echo $form->checkBox($model, 'destaque'); ?> </dd>
+    </dl>
+  </div>
+  <div class="formSep">
+    <dl class="dl-horizontal">
+      <dt><?php echo $form->labelEx($model,'rodape',array('class'=>'control-label')); ?> </dt>
+      <dd> <?php echo $form->checkBox($model, 'rodape'); ?> </dd>
     </dl>
   </div>
   <div class="formSep">

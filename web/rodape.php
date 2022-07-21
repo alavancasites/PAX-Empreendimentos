@@ -21,6 +21,7 @@
         $criteria = new CDbCriteria();
         $criteria->order = 'ordem asc';
         $criteria->addCondition("ativo = 1");
+        $criteria->addCondition("rodape = 1");
         $empreendimentos = Empreendimento::model()->findAll($criteria);
         foreach($empreendimentos as $empreendimento) {
       ?>

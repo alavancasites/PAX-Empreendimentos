@@ -28,6 +28,7 @@
           $criteria = new CDbCriteria();
           $criteria->order = 'ordem asc';
           $criteria->addCondition("ativo = 1");
+          $criteria->addCondition("destaque = 1");
           $empreendimentos = Empreendimento::model()->findAll($criteria);
           foreach($empreendimentos as $empreendimento) {
             $direita++;
@@ -83,7 +84,7 @@
       <img src="img/elemento-contato.png" class="elemento" alt="COnheça a pax">
       <div class="container">
         <div class="colunas col-14 off-3">
-          <iframe width="100%" height="380" src="https://www.youtube.com/embed/pAgnJDJN4VA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          <iframe width="100%" height="380" src="https://www.youtube.com/embed/IuWRAj1IYkY" title="Pax Empreendimentos" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
       </div>
     </div>

@@ -19,7 +19,7 @@ if(!is_object($empreendimento)){
   <section class="banner-interno" style="background-image: url(extranet/uploads/Empreendimento/<?=($empreendimento->banner)?>)">
     <div class="container">
       <h1>
-        <a href="inicial">Home | </a> <a href="empreendimentos">Empreendimentos | </a><a href="javascript:;"> <strong><?=($empreendimento->titulo)?></strong></a> <br>
+        <a href="inicial">Home | </a> <a href="empreendimentos">Empreendimentos | </a> <a href="javascript:;"> <strong><?=($empreendimento->titulo)?></strong></a> <br>
         <strong><?=($empreendimento->slogan)?></strong>
       </h1>
     </div>
@@ -93,7 +93,7 @@ if(!is_object($empreendimento)){
               <div class="num"><?=($empreendimento->fundacao)?>%</div>
                <svg class="round" viewbox="0 0 100 100" width="100" height="100" data-percent="<?=($empreendimento->fundacao)?>"><circle cx="50" cy="50" r="40" /></svg>
              </div>
-             <h3><img src="img/building.svg" alt="Fundação">FUNDA&Ccedil;&Otilde;ES</h3>
+             <h3><img src="img/andamento_1.png" alt="Fundação">FUNDA&Ccedil;&Otilde;ES</h3>
           </div>
         </div>
         <div class="colunas col-6">
@@ -102,7 +102,7 @@ if(!is_object($empreendimento)){
               <div class="num"><?=($empreendimento->estrutura)?>%</div>
                <svg class="round" viewbox="0 0 100 100" width="100" height="100" data-percent="<?=($empreendimento->estrutura)?>"><circle cx="50" cy="50" r="40" /></svg>
              </div>
-             <h3><img src="img/estrutura.svg" alt="Estrutura">ESTRUTURA</h3>
+             <h3><img src="img/andamento_2.png" alt="Estrutura">ESTRUTURA</h3>
           </div>
         </div>
         <div class="colunas col-6">
@@ -111,7 +111,7 @@ if(!is_object($empreendimento)){
               <div class="num"><?=($empreendimento->vedacao)?>%</div>
                <svg class="round" viewbox="0 0 100 100" width="100" height="100" data-percent="<?=($empreendimento->vedacao)?>"><circle cx="50" cy="50" r="40" /></svg>
              </div>
-             <h3><img src="img/implantaca.svg" alt="Vedações">VEDA&Ccedil;&Otilde;ES</h3>
+             <h3><img src="img/andamento_3.png" alt="Vedações">VEDA&Ccedil;&Otilde;ES</h3>
           </div>
         </div>
       </div>
@@ -123,7 +123,7 @@ if(!is_object($empreendimento)){
               <div class="num"><?=($empreendimento->instalacao)?>%</div>
                <svg class="round" viewbox="0 0 100 100" width="100" height="100" data-percent="<?=($empreendimento->instalacao)?>"><circle cx="50" cy="50" r="40" /></svg>
              </div>
-             <h3><img src="img/building.svg" alt="Instalação">INSTALA&Ccedil;&Otilde;ES</h3>
+             <h3><img src="img/andamento_4.png" alt="Instalação">INSTALA&Ccedil;&Otilde;ES</h3>
           </div>
         </div>
         <div class="colunas col-6">
@@ -132,7 +132,7 @@ if(!is_object($empreendimento)){
               <div class="num"><?=($empreendimento->fachada)?>%</div>
                <svg class="round" viewbox="0 0 100 100" width="100" height="100" data-percent="<?=($empreendimento->fachada)?>"><circle cx="50" cy="50" r="40" /></svg>
              </div>
-             <h3><img src="img/estrutura.svg" alt="Fachada">FACHADA</h3>
+             <h3><img src="img/andamento_5.png" alt="Fachada">FACHADA</h3>
           </div>
         </div>
         <div class="colunas col-6">
@@ -141,7 +141,7 @@ if(!is_object($empreendimento)){
               <div class="num"><?=($empreendimento->acabamento)?>%</div>
                <svg class="round" viewbox="0 0 100 100" width="100" height="100" data-percent="<?=($empreendimento->acabamento)?>"><circle cx="50" cy="50" r="40" /></svg>
              </div>
-             <h3><img src="img/implantaca.svg" alt="Acabamento">ACABAMENTO</h3>
+             <h3><img src="img/andamento_6.png" alt="Acabamento">ACABAMENTO</h3>
           </div>
         </div>
       </div>
@@ -156,7 +156,7 @@ if(!is_object($empreendimento)){
         <?
           if ($empreendimento->dormitorio != NULL){
         ?>
-          <span><strong class="num"><?=($empreendimento->dormitorio)?></strong>Suítes + 1 quarto</span>
+          <span><strong class="num"><?=($empreendimento->dormitorio)?></strong>Dormit&oacute;rios</span>
         <?
           } if ($empreendimento->garagem != NULL){
         ?>
@@ -164,7 +164,7 @@ if(!is_object($empreendimento)){
         <?
           } if ($empreendimento->area_lazer != NULL){
         ?>
-          <span><strong class="num"><?=($empreendimento->area_lazer)?></strong>Áreas de lazer</span>
+          <span><strong class="num"><?=($empreendimento->area_lazer)?></strong>&Aacute;reas de lazer</span>
         <?
           } if ($empreendimento->metragem != NULL){
         ?>
@@ -208,7 +208,7 @@ if(!is_object($empreendimento)){
     </div>
   </section>
   <div class="clear"></div>
-  <section>
+  <section class="mt100">
     <div class="container">
       <div class="colunas col-5">
         <h2 class="title-bord ml-0 mt-3"><strong class="num">Localiza&ccedil;&atilde;o privilegiada</strong></h2>
@@ -216,7 +216,7 @@ if(!is_object($empreendimento)){
         <p class="texto mt-1"><?=($empreendimento->endereco)?></p>
       </div>
       <div class="colunas col-15">
-        <div class="border-radius mb-5"><?=($empreendimento->mapa)?></div>
+        <div class="border-radius mb-5 gmaps"><?=($empreendimento->mapa)?></div>
       </div>
     </div>
   </section>

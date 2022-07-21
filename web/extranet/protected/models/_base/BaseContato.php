@@ -93,4 +93,15 @@ abstract class BaseContato extends GxActiveRecord {
 			'criteria' => $criteria,
 		));
 	}
+	public function afterSave(){
+		$message = new YiiMailMessage;
+		$message->view = 'contato';
+		$message->setBody(array('contato' => $this),'text/html','latin1');
+		$message->subject = 'Contato'.' - '.date('d/m/Y H:i:s');
+		$message->addTo(Yii::app()->params['email_contato']);
+		$message->setReplyTo($this->email);
+		$message->setFrom(array('noreply@popupdigital.com.br'  => Yii::app()->name));
+		Yii::app()->mail->send($message);
+	}
+
 }

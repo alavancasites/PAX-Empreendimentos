@@ -30,74 +30,68 @@ $this->breadcrumbs[] = Yii::t('app','Visualizar');
         </div>
         <div class="formSep">
           <dl class="dl-horizontal">
-            <dt><?=Util::formataTexto($model->getAttributeLabel('texto'));?></dt>
-            <dd><?=$model->texto?></dd>
+            <dt><?=Util::formataTexto($model->getAttributeLabel('slogan'));?></dt>
+            <dd><?=Util::formataTexto($model->slogan)?></dd>
           </dl>
         </div>
         <div class="formSep">
           <dl class="dl-horizontal">
-            <dt><?=Util::formataTexto($model->getAttributeLabel('emp_nome'));?></dt>
-            <dd><?=Util::formataTexto($model->emp_nome)?></dd>
+            <dt><?=Util::formataTexto($model->getAttributeLabel('sobre_nos'));?></dt>
+            <dd><?=$model->sobre_nos?></dd>
           </dl>
         </div>
         <div class="formSep">
           <dl class="dl-horizontal">
-            <dt><?=Util::formataTexto($model->getAttributeLabel('emp_tag'));?></dt>
-            <dd><?=Util::formataTexto($model->emp_tag)?></dd>
+            <dt><?=Util::formataTexto($model->getAttributeLabel('sobre_imagem'));?></dt>
+            <dd><a style="margin-top:10px;" target="_blank" class="btn-link" href="<?php echo Yii::app()->request->baseUrl; ?>/uploads/Empresa/<?=$model->sobre_imagem;?>" ><?=$model->sobre_imagem;?></a></dd>
           </dl>
         </div>
         <div class="formSep">
           <dl class="dl-horizontal">
-            <dt><?=Util::formataTexto($model->getAttributeLabel('quartos'));?></dt>
-            <dd><?=Util::formataTexto($model->quartos)?></dd>
+            <dt><?=Util::formataTexto($model->getAttributeLabel('titulo_2'));?></dt>
+            <dd><?=Util::formataTexto($model->titulo_2)?></dd>
           </dl>
         </div>
         <div class="formSep">
           <dl class="dl-horizontal">
-            <dt><?=Util::formataTexto($model->getAttributeLabel('metragem'));?></dt>
-            <dd><?=Util::formataTexto($model->metragem)?></dd>
+            <dt><?=Util::formataTexto($model->getAttributeLabel('texto_2'));?></dt>
+            <dd><?=$model->texto_2?></dd>
           </dl>
         </div>
         <div class="formSep">
           <dl class="dl-horizontal">
-            <dt><?=Util::formataTexto($model->getAttributeLabel('vagas'));?></dt>
-            <dd><?=Util::formataTexto($model->vagas)?></dd>
+            <dt><?=Util::formataTexto($model->getAttributeLabel('como_fazemos_esq'));?></dt>
+            <dd><?=$model->como_fazemos_esq?></dd>
           </dl>
         </div>
         <div class="formSep">
           <dl class="dl-horizontal">
-            <dt><?=Util::formataTexto($model->getAttributeLabel('imagem'));?></dt>
-            <dd><a style="margin-top:10px;" target="_blank" class="btn-link" href="<?php echo Yii::app()->request->baseUrl; ?>/uploads/Banner/<?=$model->imagem;?>" ><?=$model->imagem;?></a></dd>
+            <dt><?=Util::formataTexto($model->getAttributeLabel('como_fazemos_dir'));?></dt>
+            <dd><?=$model->como_fazemos_dir?></dd>
           </dl>
         </div>
         <div class="formSep">
           <dl class="dl-horizontal">
-            <dt><?=Util::formataTexto($model->getAttributeLabel('responsivo_1024'));?></dt>
-            <dd><a style="margin-top:10px;" target="_blank" class="btn-link" href="<?php echo Yii::app()->request->baseUrl; ?>/uploads/Banner/<?=$model->responsivo_1024;?>" ><?=$model->responsivo_1024;?></a></dd>
+            <dt><?=Util::formataTexto($model->getAttributeLabel('time'));?></dt>
+            <dd><?=$model->time?></dd>
           </dl>
         </div>
         <div class="formSep">
           <dl class="dl-horizontal">
-            <dt><?=Util::formataTexto($model->getAttributeLabel('responsivo_1800'));?></dt>
-            <dd><a style="margin-top:10px;" target="_blank" class="btn-link" href="<?php echo Yii::app()->request->baseUrl; ?>/uploads/Banner/<?=$model->responsivo_1800;?>" ><?=$model->responsivo_1800;?></a></dd>
+            <dt><?=Util::formataTexto($model->getAttributeLabel('time_img'));?></dt>
+            <dd><a style="margin-top:10px;" target="_blank" class="btn-link" href="<?php echo Yii::app()->request->baseUrl; ?>/uploads/Empresa/<?=$model->time_img;?>" ><?=$model->time_img;?></a></dd>
           </dl>
         </div>
         <div class="formSep">
           <dl class="dl-horizontal">
-            <dt><?=Util::formataTexto($model->getAttributeLabel('botao'));?></dt>
-            <dd><?=Util::formataTexto($model->botao)?></dd>
+            <dt><?=Util::formataTexto($model->getAttributeLabel('institucional'));?></dt>
+            <dd><?=$model->institucional?></dd>
           </dl>
         </div>
         <div class="formSep">
           <dl class="dl-horizontal">
-            <dt><?=Util::formataTexto($model->getAttributeLabel('link'));?></dt>
-            <dd><?=Util::formataTexto($model->link)?></dd>
-          </dl>
-        </div>
-        <div class="formSep">
-          <dl class="dl-horizontal">
-            <dt><?=Util::formataTexto($model->getAttributeLabel('externo'));?></dt>
-            <dd><?=Util::formataTexto($model->externo ? 'Sim' : 'Não')?></dd>
+            <dt><?=Util::formataTexto($model->getAttributeLabel('institucional_img'));?></dt>
+            <dd><a style="margin-top:10px;" target="_blank" class="btn-link" href="<?php echo Yii::app()->request->baseUrl; ?>/uploads/Empresa/<?=$model->institucional_img;?>" ><?=$model->institucional_img;?></a></dd>
           </dl>
         </div>
         <div class="formSep">
@@ -117,7 +111,7 @@ $this->breadcrumbs[] = Yii::t('app','Visualizar');
                   	<?
                     if(Yii::app()->user->obj->group->temPermissaoAction($this->id,'update')){
                         ?>
-                        <a class="btn" href="<?php echo $this->createUrlRel('update',array('id'=>$model->idbanner));?>"><i class="icon-edit "></i> Editar</a>
+                        <a class="btn" href="<?php echo $this->createUrlRel('update',array('id'=>$model->idempresa));?>"><i class="icon-edit "></i> Editar</a>
                         <?
                     }
                     ?>          
@@ -131,7 +125,7 @@ $this->breadcrumbs[] = Yii::t('app','Visualizar');
                     <?
                     if(Yii::app()->user->obj->group->temPermissaoAction($this->id,'delete')){
                         ?>
-                        <a class="btn btn-delete" href="<?php echo $this->createUrlRel('delete',array('id'=>$model->idbanner));?>" style="margin-left:30px;"><i class="icon-trash"></i> Excluir</a>
+                        <a class="btn btn-delete" href="<?php echo $this->createUrlRel('delete',array('id'=>$model->idempresa));?>" style="margin-left:30px;"><i class="icon-trash"></i> Excluir</a>
                         <?
                     }
                     ?>           

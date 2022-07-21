@@ -38,16 +38,16 @@
           $alinhamento = "";
         }
     ?>
-      <section class="lista-empreendimentos mt-5 mb-5 <?=($alinhamento)?>" style="background-image: url(img/bg-branco.jpg), url(img/bg-aqua.jpg);">
+      <section class="lista-empreendimentos mt-5 mb-5 <?=($alinhamento)?>" style="background-image: url(img/bg-branco.jpg), url(extranet/uploads/Empreendimento/<?=($empreendimento->banner)?>);">
         <div class="container">
-          <div class="colunas col-7"><img src="img/aqua.jpg" class="img-responsive" alt="Aqua residence"></div>
+          <div class="colunas col-7"><img src="extranet/uploads/Empreendimento/<?=($empreendimento->imagem)?>" class="img-responsive" alt="<?=($empreendimento->titulo)?>"></div>
           <div class="colunas col-13">
-            <h2 class="title-bord ml-3 mt-3"><strong class="num">Aqua residence</strong><small>Em construção</small></h2>
+            <h2 class="title-bord ml-3 mt-3"><strong class="num"><?=($empreendimento->titulo)?></strong><small><?=($empreendimento->empCategoria)?></small></h2>
             <div class="descricao">
               <?
                 if ($empreendimento->dormitorio != NULL){
               ?>
-                <span><strong class="num"><?=($empreendimento->dormitorio)?></strong>Suítes + 1 quarto</span>
+                <span><strong class="num"><?=($empreendimento->dormitorio)?></strong>Dormit&oacute;rios</span>
               <?
                 } if ($empreendimento->garagem != NULL){
               ?>
@@ -55,7 +55,7 @@
               <?
                 } if ($empreendimento->area_lazer != NULL){
               ?>
-                <span><strong class="num"><?=($empreendimento->area_lazer)?></strong>Áreas de lazer</span>
+                <span><strong class="num"><?=($empreendimento->area_lazer)?></strong>&aacute;reas de lazer</span>
               <?
                 } if ($empreendimento->metragem != NULL){
               ?>

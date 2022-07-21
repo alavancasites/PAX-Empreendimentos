@@ -47,6 +47,8 @@
  * @property string $endereco
  * @property string $mapa
  * @property string $cidade_estado
+ * @property string $destaque
+ * @property string $rodape
  * @property string $ativo
  *
  * @property EmpCategoria $empCategoria
@@ -79,10 +81,10 @@ abstract class BaseEmpreendimento extends GxActiveRecord {
 			array('titulo, fundacao, estrutura, vedacao,fachada, instalacao, acabamento, dormitorio, garagem, area_lazer, metragem, elevador, ap_andar, terreno, pavimentos, adicional_1, info_1, adicional_2, info_2, adicional_3, info_3, adicional_4, info_4, endereco, cidade_estado', 'length', 'max'=>100),
 			array('banner, capa, imagem', 'length', 'max'=>140),
 			array('titulo_2', 'length', 'max'=>200),
-			array('ativo', 'length', 'max'=>1),
+			array('ativo, destaque, rodape', 'length', 'max'=>1),
 			array('slogan, chamada, texto_2, mapa', 'safe'),
-			array('ordem, titulo, banner, slogan, chamada, capa, imagem, fundacao, estrutura, vedacao,fachada instalacao, acabamento, titulo_2, texto_2, dormitorio, garagem, area_lazer, metragem, elevador, ap_andar, terreno, pavimentos, adicional_1, info_1, adicional_2, info_2, adicional_3, info_3, adicional_4, info_4, endereco, mapa, cidade_estado, ativo', 'default', 'setOnEmpty' => true, 'value' => null),
-			array('idempreendimento, emp_categoria_idemp_categoria, ordem, titulo, banner, slogan, chamada, capa,fachada, imagem, gallery_id, gallery_id1, fundacao, estrutura, vedacao, instalacao, acabamento, titulo_2, texto_2, dormitorio, garagem, area_lazer, metragem, elevador, ap_andar, terreno, pavimentos, adicional_1, info_1, adicional_2, info_2, adicional_3, info_3, adicional_4, info_4, endereco, mapa, cidade_estado, ativo', 'safe', 'on'=>'search'),
+			array('ordem, titulo, banner, slogan, chamada, capa, imagem, fundacao, estrutura, vedacao,fachada instalacao, acabamento, titulo_2, texto_2, dormitorio, garagem, area_lazer, metragem, elevador, ap_andar, terreno, pavimentos, adicional_1, info_1, adicional_2, info_2, adicional_3, info_3, adicional_4, info_4, endereco, mapa, cidade_estado, destaque, rodape, ativo', 'default', 'setOnEmpty' => true, 'value' => null),
+			array('idempreendimento, emp_categoria_idemp_categoria, ordem, titulo, banner, slogan, chamada, capa,fachada, imagem, gallery_id, gallery_id1, fundacao, estrutura, vedacao, instalacao, acabamento, titulo_2, texto_2, dormitorio, garagem, area_lazer, metragem, elevador, ap_andar, terreno, pavimentos, adicional_1, info_1, adicional_2, info_2, adicional_3, info_3, adicional_4, info_4, endereco, mapa, cidade_estado, destaque, rodape, ativo', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -137,6 +139,8 @@ abstract class BaseEmpreendimento extends GxActiveRecord {
 			'endereco' => Yii::t('app', 'Endereço'),
 			'mapa' => Yii::t('app', 'Mapa'),
 			'cidade_estado' => Yii::t('app', 'Cidade/Estado'),
+			'destaque' => Yii::t('app', 'Destaque'),
+			'rodape' => Yii::t('app', 'Aparecer no rodapé'),
 			'ativo' => Yii::t('app', 'Ativo'),
 			'empCategoria' => Yii::t('app', 'Categoria'),
 			'gallery' => Yii::t('app', 'Galeria'),
@@ -184,6 +188,8 @@ abstract class BaseEmpreendimento extends GxActiveRecord {
 		$criteria->compare('endereco', $this->endereco, true);
 		$criteria->compare('mapa', $this->mapa, true);
 		$criteria->compare('cidade_estado', $this->cidade_estado, true);
+		$criteria->compare('destaque', $this->destaque, true);
+		$criteria->compare('rodape', $this->rodape, true);
 		$criteria->compare('ativo', $this->ativo, true);
 
 		return new CActiveDataProvider($this, array(

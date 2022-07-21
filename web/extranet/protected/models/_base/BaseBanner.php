@@ -18,7 +18,8 @@
  * @property string $metragem
  * @property string $vagas
  * @property string $imagem
- * @property string $responsivo
+ * @property string $responsivo_1024
+ * @property string $responsivo_1800
  * @property string $botao
  * @property string $link
  * @property string $externo
@@ -49,11 +50,11 @@ abstract class BaseBanner extends GxActiveRecord {
 		return array(
 			array('titulo, link', 'length', 'max'=>200),
 			array('emp_nome, emp_tag, quartos, metragem, vagas, botao', 'length', 'max'=>100),
-			array('imagem, responsivo', 'length', 'max'=>140),
+			array('imagem, responsivo_1024, responsivo_1800', 'length', 'max'=>140),
 			array('externo, ativo', 'length', 'max'=>1),
 			array('texto', 'safe'),
-			array('titulo, texto, emp_nome, emp_tag, quartos, metragem, vagas, imagem, responsivo, botao, link, externo, ativo', 'default', 'setOnEmpty' => true, 'value' => null),
-			array('idbanner, titulo, texto, emp_nome, emp_tag, quartos, metragem, vagas, imagem, responsivo, botao, link, externo, ativo', 'safe', 'on'=>'search'),
+			array('titulo, texto, emp_nome, emp_tag, quartos, metragem, vagas, imagem, responsivo_1024, responsivo_1800, botao, link, externo, ativo', 'default', 'setOnEmpty' => true, 'value' => null),
+			array('idbanner, titulo, texto, emp_nome, emp_tag, quartos, metragem, vagas, imagem, responsivo_1024, responsivo_1800, botao, link, externo, ativo', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -72,13 +73,14 @@ abstract class BaseBanner extends GxActiveRecord {
 			'idbanner' => Yii::t('app', 'Idbanner'),
 			'titulo' => Yii::t('app', 'Título'),
 			'texto' => Yii::t('app', 'Texto'),
-			'emp_nome' => Yii::t('app', 'Empreendimento'),
-			'emp_tag' => Yii::t('app', 'TAG'),
-			'quartos' => Yii::t('app', 'Quartos'),
-			'metragem' => Yii::t('app', 'Metragem'),
-			'vagas' => Yii::t('app', 'Vagas'),
+			'emp_nome' => Yii::t('app', 'Emprendimento - Nome'),
+			'emp_tag' => Yii::t('app', 'Emprendimento - Tag'),
+			'quartos' => Yii::t('app', 'Emprendimento - Dormitórios'),
+			'metragem' => Yii::t('app', 'Emprendimento - Metragem'),
+			'vagas' => Yii::t('app', 'Emprendimento - Vagas'),
 			'imagem' => Yii::t('app', 'Imagem'),
-			'responsivo' => Yii::t('app', 'Responsivo'),
+			'responsivo_1024' => Yii::t('app', 'Responsivo 1024px'),
+			'responsivo_1800' => Yii::t('app', 'Responsivo 1800px'),
 			'botao' => Yii::t('app', 'Botão'),
 			'link' => Yii::t('app', 'Link'),
 			'externo' => Yii::t('app', 'Link externo?'),
@@ -98,7 +100,8 @@ abstract class BaseBanner extends GxActiveRecord {
 		$criteria->compare('metragem', $this->metragem, true);
 		$criteria->compare('vagas', $this->vagas, true);
 		$criteria->compare('imagem', $this->imagem, true);
-		$criteria->compare('responsivo', $this->responsivo, true);
+		$criteria->compare('responsivo_1024', $this->responsivo_1024, true);
+		$criteria->compare('responsivo_1800', $this->responsivo_1800, true);
 		$criteria->compare('botao', $this->botao, true);
 		$criteria->compare('link', $this->link, true);
 		$criteria->compare('externo', $this->externo, true);
