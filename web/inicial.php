@@ -52,7 +52,7 @@
                 <span> |</span>
                 <span><img src="img/carro.svg" alt="Garagem"> <br><?=$empreendimento->garagem?></span>
               </div>
-              <a href="empreendimento" class="bt">Saiba mais</a>
+              <a href="empreendimento/<?=$empreendimento->idempreendimento?>/<?=Util::removerAcentos($empreendimento->titulo)?>" class="bt">Saiba mais</a>
             </div>
           </div>
         <?php

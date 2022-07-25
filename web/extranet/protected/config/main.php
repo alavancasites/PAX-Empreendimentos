@@ -99,7 +99,7 @@ return array(
 		),
 	),
 	'params'=>array(
-		'email_contato'=>'thyquevedo@gmail.com',
+		'email_contato'=>'contato@soupax.com.br',
 		'defaultPageSize' => 10,
 	),
 );

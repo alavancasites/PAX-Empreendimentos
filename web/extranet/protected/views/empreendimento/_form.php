@@ -44,6 +44,7 @@
         ) );
         ?>
       </dd>
+      <dd style="margin-top: 10px;"><strong>Tamanho da imagem:</strong> 1550x480px</dd>      
     </dl>
   </div>
   <div class="formSep">
